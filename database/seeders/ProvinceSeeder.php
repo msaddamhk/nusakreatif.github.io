@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
-use App\Models\provinces;
+use App\Models\Provinces;
 
 class ProvinceSeeder extends Seeder
 {
@@ -28,6 +28,6 @@ class ProvinceSeeder extends Seeder
                 'province' => $province['province'],
             ];
         }
-        provinces::insert($data_province);
+        Provinces::insert($data_province);
     }
 }

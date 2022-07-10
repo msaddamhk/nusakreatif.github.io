@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
-use App\Models\cities;
+use App\Models\Cities;
 
-class cityseeder extends Seeder
+class CitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -31,6 +31,6 @@ class cityseeder extends Seeder
                 'postal_code' => $city['postal_code'],
             ];
         }
-        cities::insert($data_city);
+        Cities::insert($data_city);
     }
 }
