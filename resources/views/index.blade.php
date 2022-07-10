@@ -85,7 +85,7 @@
                 <!-- end row -->
             </div>
             <a href="/detailkategori" data-aos="fade-up" class="btn text-white mt-3 melayang"
-                style="background-color: #020203; font-size: 13px"><i class="fas fa-fw fa-arrow-right"></i> Lihat
+                style="background-color: #6C5ECF; font-size: 13px"><i class="fas fa-fw fa-arrow-right"></i> Lihat
                 Selengkapnya</a>
         </div>
     </section>
