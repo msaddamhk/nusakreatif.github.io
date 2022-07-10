@@ -148,13 +148,9 @@
                         },
                         success: function(result) {
                             const opsi_pengiriman = document.getElementById('opsi_pengiriman');
-                            let options = document.querySelectorAll('ongkir_option');
-                            options.forEach(el => {
-                                el.delete();
-                            })
+                            opsi_pengiriman.innerHTML = '';
                             result.costs.forEach(element => {
                                 let option = document.createElement('option');
-                                option.classList.add('ongkir_option');
                                 option.value =
                                     `${element.service},${element.cost[0].etd},${element.cost[0].value}`;
                                 option.text =
