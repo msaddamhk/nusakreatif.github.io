@@ -127,14 +127,16 @@ class PesananController extends Controller
         $notification = new Notification();
 
 
-        $pecah = explode('-',  $notification->order_id);
+        $order = explode('-',  $notification->order_id);
         // Assign ke variable untuk memudahkan coding
         $status = $notification->transaction_status;
         $type = $notification->payment_type;
         $fraud = $notification->fraud_status;
-        $order_id = $pecah[1];
+        $order_id = $order[1];
 
         // Cari transaksi berdasarkan ID
+        // $transaction = Pesanan::findOrFail($order_id);
+
         $transaction = Pesanan::findOrFail($order_id);
 
         // Handle notification status midtrans
