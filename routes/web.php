@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\AdminController;
@@ -10,9 +9,7 @@ use App\Http\Controllers\KelolaController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\RajaongkirController;
-use App\Http\Controllers\TambahbarangController;
 use App\Http\Controllers\KelolaTransaksiController;
 
 
