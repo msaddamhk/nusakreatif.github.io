@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
+  use HasFactory;
+
   public function barang()
   {
     return $this->belongsTo('App\barang', 'barang_id', 'id');

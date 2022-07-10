@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class post extends Model
+class Postw extends Model
 {
     use HasFactory;
-    protected $guarded = ['id','gambar,tanggal'];
+
+    protected $guarded = ['id', 'gambar,tanggal'];
 }
