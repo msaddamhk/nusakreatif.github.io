@@ -6,9 +6,8 @@ namespace App\Http\Controllers;
 use Exception;
 use Midtrans\Config;
 use Midtrans\Snap;
-use App\Models\cities;
-use App\Models\provinces;
-use App\Models\Keranjang;
+use App\Models\Provinces;
+use App\Models\Keranjang as keranjang;
 use Midtrans\Notification;
 use App\Models\Pesanan;
 use App\Models\PesananItems;
@@ -19,7 +18,7 @@ class PesananController extends Controller
 {
     public function index()
     {
-        $provinsi = provinces::all();
+        $provinsi = Provinces::all();
         $keranjang = keranjang::where('id_user', auth()->user()->id)->get();
         $berat = $keranjang->reduce(function ($totalBerat, $item) {
             return $totalBerat + $item->barang->berat;

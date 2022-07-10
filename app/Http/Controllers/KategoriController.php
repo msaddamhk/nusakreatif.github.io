@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Models\kategori;
-use App\Models\barang;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Kategori as kategori;
 use Illuminate\Support\Str;
-use PhpParser\Node\Stmt\Echo_;
+
 
 class KategoriController extends Controller
 {

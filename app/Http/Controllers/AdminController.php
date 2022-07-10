@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\barang;
-use App\Models\kategori;
+use App\Models\Barang as barang;
+use App\Models\Kategori as kategori;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 

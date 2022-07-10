@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\barang;
+use App\Models\Barang as barang;
 use App\Models\Keranjang as keranjang;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 

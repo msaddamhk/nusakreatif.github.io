@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Request;
-use App\Models\cities;
-use App\Models\provinces;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Cities;
 use App\Models\Keranjang;
-use App\Models\pesanan;
+
 
 
 class RajaongkirController extends Controller
@@ -18,7 +14,7 @@ class RajaongkirController extends Controller
         // if (!Auth::user()) {
         //     return redirect('login')->with('loginError', 'Silahkan Masuk, Jika Ingin Berbelanja');
         // }
-        $keranjang = keranjang::where('id_user', auth()->user()->id)->get();
+        $keranjang = Keranjang::where('id_user', auth()->user()->id)->get();
         $berat = $keranjang->reduce(function ($totalBerat, $item) {
             return $totalBerat + $item->barang->berat;
         }, 0);

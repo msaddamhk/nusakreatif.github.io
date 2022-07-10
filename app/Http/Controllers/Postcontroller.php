@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\barang;
-use App\Models\kategori;
-use Illuminate\Http\Request;
-use Illuminate\support\Facedes\DB;
+use App\Models\Barang as barang;
+use App\Models\Kategori as kategori;
+
 
 class Postcontroller extends Controller
 {
