@@ -148,7 +148,10 @@
                         },
                         success: function(result) {
                             const opsi_pengiriman = document.getElementById('opsi_pengiriman');
-                            opsi_pengiriman.removeChild('option');
+                            let options = document.getElementByClassName('ongkir_option');
+                            options.forEach(el => {
+                                el.delete();
+                            })
                             result.costs.forEach(element => {
                                 let option = document.createElement('option');
                                 option.classList.add('ongkir_option');
