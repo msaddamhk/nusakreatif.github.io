@@ -1,0 +1,280 @@
+/* search */
+/* #custom-search-input{
+  padding: 3px;
+  border: solid 1px #E4E4E4;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+#custom-search-input input{
+  border: 0;
+  box-shadow: none;
+}
+
+#custom-search-input button{
+  margin: 2px 0 0 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: #666666;
+  padding: 0 8px 0 10px;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+  border: 0;
+  box-shadow: none;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+  font-size: 23px;
+} */
+
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+/* hero */
+.jumbotron {
+  height: 630px;
+  
+}
+.jmb1 {
+  /* background-image: url(foto/ft3.jpg); */
+  background-size: cover;
+  height: 630px;
+  position: relative; 
+  background-attachment: fixed;
+}
+.jmb1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.3),#ffffff );
+  position: absolute;
+  bottom: 0;
+}
+
+.containergb {
+  position: relative;
+  z-index: 100;
+}
+
+/* produk */
+.jmb2 {
+  background-image: url(../foto/ft11.jpeg);
+  /* background-image: url(foto/ft3.jpg);
+  background-image: url(foto/ft11.jpeg); */
+  background-size: cover;
+  height: 420px;
+  position: relative; 
+  background-attachment: fixed;
+}
+.jmb2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.6),#ffffff );
+  position: absolute;
+  bottom: 0;
+}
+
+.containergb {
+  position: relative;
+  z-index: 100;
+}
+.garis_verikal{
+  border-left: 1px black solid;
+  height: 170px;
+  width: 0px;
+  }
+
+.info1 {
+  box-shadow: 0 3px 20px rgb(39, 80, 98, 0.5);
+  background-color: white;
+  border-radius: 12px;
+  margin-top: -100px;
+  padding: 30px;
+}
+.info1 img {
+  width: 150px;
+  height: 155px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.info1 a {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+.info1 p {
+  font-size: 14px;
+  color: #acacac;
+  margin-top: -100;
+  font-weight: 250;
+}
+
+/* kategori */
+.product {
+  height: 150px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.product:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0));
+    /* #919191 */
+}
+
+.product-content {
+  position: absolute;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  /* background-color: red; */
+}
+.komponen-produk {
+    margin-bottom: 20px;
+  }
+  .foto-produk {
+    width: 100%;
+    height: 150px;
+    border-radius:5px;
+    background-size: cover;
+  }
+
+  .foto-produk:hover {
+    transform: scale(1.1);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s ease;
+  }
+
+  .text-produk {
+    font-size: 18px;
+    margin-top: 12px;
+    color: black;
+  }
+
+  .text-produk1 {
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+  }
+
+  .komponen-produk:hover {
+    text-decoration: none;
+  }
+
+
+  /* detail kategori */
+/* kategori */
+.produkkategori {
+  height: 150px;
+  width: 260px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.produkkategori:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, #919191, rgba(0, 0, 0, 0));
+}
+
+.produkkategori-content {
+  position: absolute;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  /* background-color: red; */
+}
+
+
+.judul{
+  color: #242231; 
+  font-size: 42px; 
+  font-weight: 500;
+}
+.judul2{
+  color: #242231; 
+}
+.jmb1 .btn-primari{
+  background-color: #6C5ECF; 
+  color: rgb(255, 255, 255);
+}
+
+.futer p{
+  font-size: 15px;
+}
+
+
+/* responsi */
+@media screen and (max-width: 800px)  { 
+  .judul{
+    margin-top: 200px;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .judul2{
+    text-align: center;
+  }
+  .jmb1 .btn-primari{
+    background-color: #6C5ECF; 
+    color: rgb(255, 255, 255);
+    /* display: block; */
+    /* justify-content: center;
+    text-align: center;
+    margin: auto; */
+  }
+  .center{
+    margin: 0;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    /* absolute */
+    left: 28%;
+    -ms-transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
+  }
+  .futer p{
+    font-size: 15px;
+  }
+  .jmb2 {
+    background-image: url(../foto/ft12.jpg);
+    background-size: cover;
+    height: 420px;
+    position: relative; 
+    background-attachment: fixed;
+  }
+}
