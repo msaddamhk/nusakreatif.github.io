@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\barang;
-use App\Models\kategori;
+use App\Models\Kategori as kategori;
 use App\Helpers\ApiFormatter;
 
 class ApikategoriController extends Controller

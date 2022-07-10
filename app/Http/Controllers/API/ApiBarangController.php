@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
-use App\Models\barang;
+use App\Models\Barang as barang;
 use App\Models\kategori;
 use Illuminate\Http\Request;
 
