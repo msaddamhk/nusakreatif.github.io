@@ -14,11 +14,11 @@ class Barang extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(kategori::class, 'kategori_id');
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
     public function keranjang()
     {
-        return $this->hasMany(keranjang::class, 'id');
+        return $this->hasMany(Keranjang::class, 'id');
     }
     // public function items()
     // {

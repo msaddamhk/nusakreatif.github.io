@@ -11,7 +11,7 @@ class Item extends Model
 
   public function barang()
   {
-    return $this->belongsTo('App\barang', 'barang_id', 'id');
+    return $this->belongsTo(Barang::class, 'barang_id', 'id');
   }
   public function order()
   {
