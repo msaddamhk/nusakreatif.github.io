@@ -45,7 +45,7 @@ class PesananController extends Controller
             "etd" => $pecah[1],
             "total_ongkir" => $pecah[2],
             "total_harga" => $request->harga,
-            "transaction_status" => 'PENDING',
+            "transaction_status" =>  'PENDING',
             "kodepesanan" => $code,
         ]);
 
@@ -88,7 +88,7 @@ class PesananController extends Controller
         // Buat array untuk dikirim ke midtrans
         $midtrans = array(
             'transaction_details' => array(
-                'order_id' =>  $code . '-' . rand(1000, 9999),
+                'order_id' =>  $code,
                 'gross_amount' => (int) $request->harga + $pecah[2],
             ),
             'customer_details' => array(
@@ -115,7 +115,7 @@ class PesananController extends Controller
     }
 
     // calback
-    public function callback()
+    public function callback(Request $request)
     {
         // Set konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
@@ -125,50 +125,43 @@ class PesananController extends Controller
 
         // Buat instance midtrans notification
         $notification = new Notification();
+
+
         $order = explode('-',  $notification->order_id);
         // Assign ke variable untuk memudahkan coding
         $status = $notification->transaction_status;
-        // $type = $notification->payment_type;
-        // $fraud = $notification->fraud_status;
-        $order_id = $order[0] . '-' . $order[1];
+        $type = $notification->payment_type;
+        $fraud = $notification->fraud_status;
+        $order_id = $order[1];
 
         // Cari transaksi berdasarkan ID
         // $transaction = Pesanan::findOrFail($order_id);
-        if (in_array($status, ['capture', 'settlement'])) {
-            $status_baru = 'SUCCESS';
-        } elseif ($status == 'pending') {
-            $status_baru = 'PENDING';
-        } else {
-            $status_baru = 'CANCELLED';
-        }
 
-        $transaction = Pesanan::where('kodepesanan', $order_id)->first();
-        $transaction->update([
-            'transaction_status' => $status_baru
-        ]);
+        $transaction = Pesanan::findOrFail($order_id);
 
         // Handle notification status midtrans
-        // if ($status == 'capture') {
-        //     if ($type == 'credit_card') {
-        //         if ($fraud == 'challenge') {
-        //             $transaction->transaction_status = 'PENDING';
-        //         } else {
-        //             $transaction->transaction_status = 'SUCCESS';
-        //         }
-        //     }
-        // } else if ($status == 'settlement') {
-        //     $transaction->transaction_status = 'SUCCESS';
-        // } else if ($status == 'pending') {
-        //     $transaction->transaction_status = 'PENDING';
-        // } else if ($status == 'deny') {
-        //     $transaction->transaction_status = 'CANCELLED';
-        // } else if ($status == 'expire') {
-        //     $transaction->transaction_status = 'CANCELLED';
-        // } else if ($status == 'cancel') {
-        //     $transaction->transaction_status = 'CANCELLED';
-        // }
+        if ($status == 'capture') {
+            if ($type == 'credit_card') {
+                if ($fraud == 'challenge') {
+                    $transaction->transaction_status = 'PENDING';
+                } else {
+                    $transaction->transaction_status = 'SUCCESS';
+                }
+            }
+        } else if ($status == 'settlement') {
+            $transaction->transaction_status = 'SUCCESS';
+        } else if ($status == 'pending') {
+            $transaction->transaction_status = 'PENDING';
+        } else if ($status == 'deny') {
+            $transaction->transaction_status = 'CANCELLED';
+        } else if ($status == 'expire') {
+            $transaction->transaction_status = 'CANCELLED';
+        } else if ($status == 'cancel') {
+            $transaction->transaction_status = 'CANCELLED';
+        }
 
         // Simpan transaksi
+        $transaction->save();
     }
     public function pesanandetail()
     {
@@ -182,3 +175,34 @@ class PesananController extends Controller
     //     return redirect('/pesanandetail')->with('success', 'data berhasil dihapus');
     // }
 }
+
+
+//  Set konfigurasi midtrans
+//  Config::$serverKey = config('services.midtrans.serverKey');
+//  Config::$isProduction = config('services.midtrans.isProduction');
+//  Config::$isSanitized = config('services.midtrans.isSanitized');
+//  Config::$is3ds = config('services.midtrans.is3ds');
+
+//  Buat instance midtrans notification
+//  $notification = new Notification();
+//  $order = explode('-',  $notification->order_id);
+//  Assign ke variable untuk memudahkan coding
+//  $status = $notification->transaction_status;
+//  $type = $notification->payment_type;
+//  $fraud = $notification->fraud_status;
+//  $order_id = $order[0] . '-' . $order[1];
+
+//  Cari transaksi berdasarkan ID
+//  $transaction = Pesanan::findOrFail($order_id);
+//  if (in_array($status, ['capture', 'settlement'])) {
+//      $status_baru = 'SUCCESS';
+//  } elseif ($status == 'pending') {
+//      $status_baru = 'PENDING';
+//  } else {
+//      $status_baru = 'CANCELLED';
+//  }
+
+//  $transaction = Pesanan::where('kodepesanan', $order_id)->first();
+//  $transaction->update([
+//      'transaction_status' => $status_baru
+//  ]);
