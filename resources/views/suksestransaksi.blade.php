@@ -29,4 +29,9 @@
             </div>
         </div>
     </div>
+
+    {{-- <form action="{{ route('pesan1') }}" method="post">
+        @csrf
+        <input type="hidden" class="form-control" name="harga" id="harga" value="{{ $totalharga }}">
+    </form> --}}
 @endsection

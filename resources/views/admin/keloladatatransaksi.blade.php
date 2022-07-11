@@ -37,7 +37,7 @@
                             <td>{{ $item->nama_penerima }}</td>
                             <td>{{ $item->alamat }}</td>
                             <td>{{ $item->notlp }}</td>
-                            <td>{{ $item->kodepesanan }}</td>
+                            <td>NUSAKREATIF-{{ $item->id }}</td>
                             <td>{{ $item->created_at->diffForhumans() }}</td>
                             <td value="">{{ $item->transaction_status }}</td>
                             <td>

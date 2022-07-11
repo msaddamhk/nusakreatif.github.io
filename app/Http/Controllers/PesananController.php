@@ -25,14 +25,9 @@ class PesananController extends Controller
         }, 0);
         return view('pesanan', compact('provinsi', 'keranjang', 'berat'));
     }
-    public function sukses(Request $request)
-    {
-        return $request;
-        // return view('suksestransaksi');
-    }
+
     public function pesanan(Request $request)
     {
-
         $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
         $keranjang = keranjang::where('id_user', auth()->user()->id)->get();
         $results =  $request->opsi_pengiriman;
@@ -51,7 +46,7 @@ class PesananController extends Controller
             "total_ongkir" => $pecah[2],
             "total_harga" => $request->harga,
             "transaction_status" =>  'PENDING',
-            "kodepesanan" => $code,
+            "kodepesanan" => 1,
         ]);
 
         $databarang = [];
