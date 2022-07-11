@@ -2,7 +2,7 @@
 
 @section('body')
     <!-- hero -->
-    <div class="jumbotron jmb1 jumbotron-fluid" style="background-image: url(foto/ft3.jpg)">
+    <div class="jumbotron jmb1 jumbotron-fluid">
         <div class="container  containergb" style="  margin-top: 170px;">
             <h1 class="judul" data-aos="fade-up" data-aos-delay="100">
                 Selamat Datang <br> di Website Resmi Nusa Kreatif
@@ -10,14 +10,12 @@
             <p class="judul2" data-aos="fade-up" data-aos-delay="140">
                 Kepuasan Anda adalah <b>Prioritas Kami</b>
             </p>
-            {{-- <a href="#produk" class="btn my-2 my-sm-0 mb-5 btn-link" type="submit">Belanja Sekarang</a> --}}
 
             <div class="center mt-2 " data-aos="fade-up" data-aos-delay="140">
                 <a class="btn btn-primari
                 text-white" href="#produk" role="button">Belanja sekarang</a>
-                {{-- <i class="fa fa-arrow-down ml-2" aria-hidden="true"></i> --}}
             </div>
-            <!-- ak dvcntainer -->
+
         </div>
     </div>
     <!-- Akhir Hero -->
@@ -27,11 +25,10 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-10 info1">
-                <div class="row">
+                <div class="row p-1">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-body align-items-center">
-                                <!--end of col-->
+                            <div class="card-bod p-3 align-items-center">
                                 <form action="{{ route('tampilproduk') }}" method="GET">
                                     <div id="custom-search-input" class="col-md-12">
                                         <div class="input-group ">
@@ -42,13 +39,13 @@
 
                                             <span class="input-group-btn">
                                                 <div class="col-auto">
-                                                    <button class="btn btn-lg text-white melayang"
-                                                        style="background-color: #6C5ECF;" type="submit">Cari
+                                                    <button class="btn  text-white melayang"
+                                                        style="background-color: #6C5ECF;" type="submit">Cari</button>
+                                                </div>
                                             </span>
                                         </div>
                                     </div>
                                 </form>
-                                <!--end of col-->
                             </div>
                         </div>
                     </div>
@@ -58,7 +55,7 @@
     </div>
     <!-- akhrinfo1 -->
     <!-- kategori -->
-    <section id="kategori" class="kategori-produk mt-5 p-3">
+    <section id="kategori" class="kategori-produk  mt-5 p-3">
         <div class="container">
             <h5 class="" data-aos="fade-up" style="font-size: 22px; color: #242231; font-weight: 700;">
                 Produk Kategori</h5>
@@ -85,21 +82,19 @@
                 <!-- end row -->
             </div>
             <a href="/detailkategori" data-aos="fade-up" class="btn text-white mt-3 melayang"
-                style="background-color: #6C5ECF; font-size: 13px"><i class="fas fa-fw fa-arrow-right"></i> Lihat
-                Selengkapnya</a>
+                style="background-color: #6C5ECF; font-size: 13px"> Lihat
+                Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
         </div>
     </section>
     <!-- ak kategori -->
 
     <!-- card baru -->
-    <section id="produk" class="produk mt-5 p-3" style="background-color: #f8f8f8;">
-        <div class="container">
+    <section id="produk" class="produk mt-5  p-3 " style="background-color: #f8f8f8; ">
+        <div class="container" style="">
             <h5 data-aos="fade-up" class="mt-4" style="font-size: 22px; color: #242231; font-weight: 700;"> Produk
                 Unggulan</h5>
-
             <hr data-aos="fade-up">
             <div class="row mt-4">
-
                 @php $kategoriaos = 0 @endphp
                 @foreach ($bar as $barang)
                     <div class="col-6 col-md-4 col-lg-3 mb-2" data-aos="fade-up"
@@ -110,9 +105,6 @@
                                     style="background-image: url('{{ asset('storage/produk/' . $barang->gambar) }}');">
                                 </div>
                             </div>
-                            {{-- <div class="text-produk">
-                                {{ $barang->kategori->nama }}
-                            </div> --}}
                             <div class="text-produk">
                                 {{ $barang->judul }}
                             </div>
@@ -125,8 +117,8 @@
                 <!-- row -->
             </div>
             <a href="/produk" data-aos="fade-up" class="btn text-white mb-4 melayang"
-                style="background-color: #6C5ECF; font-size: 13px"><i class="fas fa-fw fa-arrow-right"></i> Lihat
-                Selengkapnya</a>
+                style="background-color: #6C5ECF; font-size: 13px">Lihat
+                Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
         </div>
     </section>
     <!-- akhir card baru -->
@@ -142,10 +134,13 @@
                 <p style="" class="mb-4" data-aos="fade-up" data-aos-delay="150">
                     Gampong Nusa adalah sebuah Gampong wisata yang terletak di Kecamatan Lhoknga, Kabupaten Aceh Besar.
                     Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata berbasis
-                    masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan tujuan utama
+                    masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan tujuan
+                    utama
                     adalah meningkatkan ekonomi masyarakat dan menjaga keberlanjutan lingkungan.
-                    Salah satu yang terkenal dari Gampong ini adalah pengelolaan sampahnya, dari hasil pengelolaan sampah
-                    tersebut akan di daur ulang menjadi barang yang bermanfaat, seperti tas, tempat tisu, dan berbagai macam
+                    Salah satu yang terkenal dari Gampong ini adalah pengelolaan sampahnya, dari hasil pengelolaan
+                    sampah
+                    tersebut akan di daur ulang menjadi barang yang bermanfaat, seperti tas, tempat tisu, dan berbagai
+                    macam
                     lainya.
                 </p>
             </div>
