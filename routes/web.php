@@ -59,7 +59,7 @@ Route::patch('updatetransaksi/{transaksi}', [KelolaTransaksiController::class, '
 Route::get('/showpesanan/{id}', [KelolaTransaksiController::class, 'show'])->name('showpesanan');
 
 // 
-Route::get('/suksuestransaksi', function () {
+Route::get('/suksestransaksi', function () {
     return view('suksestransaksi');
 });
 

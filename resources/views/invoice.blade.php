@@ -13,9 +13,9 @@
                         <p>Nama Penerima : {{ $item->nama_penerima }}</p>
                         <p>No Telepon : {{ $item->notlp }}</p>
                     </div>
-                    <div class="col-md-4 font-weight-bold">
+                    {{-- <div class="col-md-4 font-weight-bold">
                         <p>Kode Pesanan : {{ $item->kodepesanan }}</p>
-                    </div>
+                    </div> --}}
 
                 </div>
 
