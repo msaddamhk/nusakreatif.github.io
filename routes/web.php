@@ -64,5 +64,3 @@ Route::get('/suksestransaksi', function () {
 });
 
 Route::get('/detaildatabarang/{id}', [AdminController::class, 'show'])->name('showbarang');
-
-Route::post('/pesanan/callback', 'PesananController@callback')->name('midtrans-callback');
