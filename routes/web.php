@@ -48,6 +48,9 @@ Route::delete('/hapuskeranjang/{keranjang}', [RajaongkirController::class, 'dest
 // pesanan
 Route::get('/pesanan', [PesananController::class, 'index'])->name('pesan')->middleware('auth');
 Route::post('/pesanan1', [PesananController::class, 'pesanan'])->name('pesan1');
+// bru
+Route::get('/suksestransaksi', [PesananController::class, 'sukses']);
+
 
 // pesanan detail
 Route::get('/pesanandetail', [PesananController::class, 'pesanandetail']);
@@ -59,8 +62,8 @@ Route::patch('updatetransaksi/{transaksi}', [KelolaTransaksiController::class, '
 Route::get('/showpesanan/{id}', [KelolaTransaksiController::class, 'show'])->name('showpesanan');
 
 // 
-Route::get('/suksestransaksi', function () {
-    return view('suksestransaksi');
-});
+// Route::get('/suksestransaksi', function () {
+//     return view('suksestransaksi');
+// });
 
 Route::get('/detaildatabarang/{id}', [AdminController::class, 'show'])->name('showbarang');

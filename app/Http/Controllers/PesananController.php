@@ -25,6 +25,11 @@ class PesananController extends Controller
         }, 0);
         return view('pesanan', compact('provinsi', 'keranjang', 'berat'));
     }
+    public function sukses(Request $request)
+    {
+        return $request;
+        // return view('suksestransaksi');
+    }
     public function pesanan(Request $request)
     {
 
