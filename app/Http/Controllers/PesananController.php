@@ -105,8 +105,6 @@ class PesananController extends Controller
             // Ambil halaman payment
             $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
 
-            // return $paymentUrl;
-
             // Redirect ke halaman midtrans
             return redirect($paymentUrl);
         } catch (Exception $e) {
@@ -168,12 +166,6 @@ class PesananController extends Controller
         $datatransaksi = Pesanan::where('user_id', auth()->id())->latest()->get();
         return view('invoice', compact('datatransaksi'));
     }
-
-    // public function destroy(PesananItems $pesananitems)
-    // {
-    //     $pesananitems->delete();
-    //     return redirect('/pesanandetail')->with('success', 'data berhasil dihapus');
-    // }
 }
 
 
