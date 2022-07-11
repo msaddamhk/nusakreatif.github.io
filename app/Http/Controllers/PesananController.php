@@ -88,7 +88,7 @@ class PesananController extends Controller
         // Buat array untuk dikirim ke midtrans
         $midtrans = array(
             'transaction_details' => array(
-                'order_id' =>  $code,
+                'order_id' =>  'NUSAKREATIF-' . $pesanan->id,
                 'gross_amount' => (int) $request->harga + $pecah[2],
             ),
             'customer_details' => array(
@@ -160,6 +160,8 @@ class PesananController extends Controller
 
         // Simpan transaksi
         $transaction->save();
+
+        return  $transaction;
     }
     public function pesanandetail()
     {

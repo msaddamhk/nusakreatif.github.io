@@ -21,7 +21,8 @@ use App\Http\Controllers\API\UserController;
 */
 
 
-Route::post('callback', [PesananController::class, 'callback']);
+Route::post('/callback', [PesananController::class, 'callback']);
+// Route::post('/callback', 'PesananController@callback')->name('midtrans-callback');
 Route::get('user1', [UserController::class, 'fetch']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('logout', [UserController::class, 'logout']);
