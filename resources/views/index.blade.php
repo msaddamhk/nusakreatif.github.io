@@ -4,7 +4,7 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 13px;" class="bg-dange d-block d-sm-none p-1 ">
+    <div style="margin-top: 12px;" class="bg-dange d-block d-sm-none p-1 ">
         <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
