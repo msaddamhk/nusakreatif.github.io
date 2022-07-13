@@ -4,8 +4,8 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 100px;" class="bg-dange d-block d-sm-none p-1 ">
-        <div class="m-4 card"style="border-radius:7px">
+    <div style="margin-top: 16px;" class="bg-dange d-block d-sm-none p-1 ">
+        <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
                     <div id="custom-search-input" class="col-md-12">
@@ -29,9 +29,9 @@
     <section class="m-1">
         <div class="d-block d-sm-none " style="margin-top: -15px;">
             <div class="jumbotron m-4 containerbaru jumbotron4 ">
-                <div class="bungkus p-4">
+                <div class="bungkus p-3">
                     <p class="judul7 " data-aos="fade-up" data-aos-delay="100">
-                        Selamat Datang <br> di Resmi Nusa Kreatif
+                        Selamat Datang <br> di Website Nusa Kreatif
                     </p>
                     <p class="judul8" data-aos="fade-up" data-aos-delay="140">
                         Kepuasan Anda adalah <b>Prioritas Kami</b>
@@ -48,6 +48,7 @@
             background-image: url(../foto/ft19.jpg);
             background-size: cover;
             position: relative;
+            border-radius: 10px;
             height: 260px;
         }
 
@@ -58,6 +59,7 @@
             top: 0;
             right: 0;
             left: 0;
+            border-radius: 10px;
             background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #f1f1f1);
             position: absolute;
             bottom: 0;
@@ -70,7 +72,7 @@
 
         .judul7 {
             font-weight: 500;
-            font-size: 20px;
+            font-size: 21px;
             margin-top: 31px
         }
 
@@ -119,7 +121,7 @@
         <div class="jumbotron containerbaru jumbotron3">
             <div class="bungkus my-auto">
                 <h1 class="judul5 " data-aos="fade-up" data-aos-delay="100">
-                    Selamat Datang <br> di Website Resmi Nusa Kreatif
+                    Selamat Datang <br> di Website Nusa Kreatif
                 </h1>
                 <p class="judul6" data-aos="fade-up" data-aos-delay="140">
                     Kepuasan Anda adalah <b>Prioritas Kami</b>
@@ -161,7 +163,7 @@
 
         .judul5 {
             font-weight: 500;
-            font-size: 25px;
+            font-size: 28px;
             margin-top: 11px
         }
 

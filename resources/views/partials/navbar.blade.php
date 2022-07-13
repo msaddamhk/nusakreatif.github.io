@@ -1,6 +1,6 @@
  <!-- navbar -->
- <nav
-     class="navbar d-block d-sm-none d-none d-sm-block d-md-none navbar-expand-lg bg-transparentf fixed-top navbar-light py-4">
+ <nav class="navbar  navbar-expand-lg bg-transparentf fixed-top navbar-light py-4">
+     {{-- d-block d-sm-none d-none d-sm-block d-md-none --}}
      <div class="container">
          <a class="navbar-brand" style="color: #242231; font-weight: 800; font-size:24px"
              href="{{ route('home') }}">Nusakreatif</a>
