@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nusa Kreatif | {{ $title }}</title>
+    <title>Document</title>
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
@@ -39,57 +39,166 @@
 
 <body style="font-family: 'Poppins', sans-serif;">
 
-    @include('partials.navbar')
+    <div class="d-block d-sm-none d-none d-sm-block d-md-none p-3 " style="background-color: #1F1D2B">
+        <div class="container text-white">
+            <a href="/" class="text-white" style="text-decoration: none">
+                <p class="mt-3" style="font-size: 20px"><i class="fa fa-arrow-left m-1" aria-hidden="true"></i>
+                    Kembali
+                </p>
+            </a>
+        </div>
+    </div>
+
+    {{-- nvbar2 --}}
+    <nav class="navbar  d-none d-md-block d-lg-nonex navbar-expand-lg bg-transparentf fixed-top navbar-light py-4">
+        <div class="container">
+            <a class="navbar-brand" style="color: #242231; font-weight: 800; font-size:24px"
+                href="{{ route('home') }}">Nusakreatif</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ route('home') }}">Beranda <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/#produk">Produk<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#vidio">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#kategori
+                   ">Kategori</a>
+                    </li>
+
+                    @auth
+
+                        <li class="nav-item d-none d-lg-block ">
+                            <a class="nav-link">| </a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hi,{{ auth('')->user()->name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/pesanandetail">Pesanan</a>
+                            </div>
+                        </li>
+                        {{-- <li class="nav-item">
+                       <a class="nav-link" href="#">Hi,{{ auth('')->user()->name }}</a>
+
+                   </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link fa fa-cart-plus mr-3" style="font-size: 22px;" href="/keranjang"></a>
+
+                        </li>
+
+
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="btn p-2 my-2 my-sm-0 text-white"
+                                style="background-color: #6C5ECF; font-size:14px" type="submit"><i
+                                    class="fas fa-sign-out-alt p-1"></i>Keluar</button>
+                        </form>
+                    @else
+                        <a href="/login" class="btn  my-2 my-sm-0 text-white" style="background-color: #6C5ECF;"
+                            type="submit">Masuk</a>
+
+                    @endauth
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+
+
+    <style>
+        @media screen and (max-width: 900px) {}
+
+        .navcolor {
+            background-color: #ffffff;
+            color: #242231;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);
+            transition: all ease-in-out 0.7s;
+        }
+
+        .nav-link {
+            color: #242231;
+            font-size: 18px;
+        }
+
+        /* .navbar-2 {
+        display: none;
+        content: "";
+    } */
+
+        .navbar {
+            display: none;
+        }
+
+        .bg-transparentf {
+            transition: all ease-in 0.5s;
+            background-color: #ffffff;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2); */
+        }
+    </style>
+
+    <script>
+        const navbar = document.getElementsByTagName('nav')[0];
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 2) {
+                navbar.classList.replace('bg-transparentf', 'navcolor');
+            } else if (this.window.scrollY <= 0) {
+                navbar.classList.replace('navcolor', 'bg-transparentf')
+            }
+        });
+    </script>
+    <!-- akhirnavbar -->
+
+
+
     @yield('body')
 
 
 
     {{-- futer mobile --}}
-    <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
-        style="background-color: #1F1D2B;  border-top-right-radius: 18px; border-top-left-radius: 18px;">
-        {{-- Developed By :
+    {{-- <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
+        style="background-color: #1F1D2B;  border-top-right-radius: 20px; border-top-left-radius: 20px;">
+        Developed By :
         <a class=" text-white fw-bold"
             href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
-            Husein Khatami</a> --}}
+            Husein Khatami</a>
 
 
         <div class="row">
 
             <div class="col-3 text-white" style="font-size: 15px">
-                <a href="/" class="sidebar-item {{ $title === 'Beranda' ? 'active' : '' }}">
-                    <i class="fa-solid fa-house"></i>
-                </a>
-
+                <i class="fa-solid fa-house"></i>
             </div>
             <div class="col-3 text-white" style="font-size: 15px">
-                <a href="/pesanandetail" class="sidebar-item {{ $title === 'Pesanan' ? 'active' : '' }}">
-                    <i class="fa-solid fa-list"></i>
-                </a>
-
+                <i class="fa-solid fa-list"></i>
             </div>
             <div class="col-3 text-white" style="font-size: 15px">
-                <a href="/keranjang" class="sidebar-item {{ $title === 'Keranjang' ? 'active' : '' }}">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+                <i class="fas fa-shopping-cart"></i>
             </div>
             <div class="col-3 text-white" style="font-size: 15px">
-                <a href="" class="sidebar-item {{ $title === 'User' ? 'active' : '' }}">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-
+                <i class="fa-solid fa-user"></i>
             </div>
+
         </div>
-    </div>
-
-    <style>
-        .sidebar-item {
-            color: #ffffff
-        }
-
-        .sidebar-item.active {
-            color: #6C5ECF;
-        }
-    </style>
+    </div> --}}
     {{-- akhir mobile --}}
 
 

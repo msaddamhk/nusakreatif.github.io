@@ -6,13 +6,6 @@
 /* akhir vrsi android */
 
 
-
-
-
-
-
-
-
 .form-control-borderless {
   border: none;
 }
@@ -272,6 +265,15 @@
    font-size: 15px;
     /* background-color: red; */
   }
-
+  .product:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, #949494, rgba(0, 0, 0, 0.1));
+    /* #919191 */
+}
   
 }

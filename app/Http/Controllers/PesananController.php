@@ -166,7 +166,8 @@ class PesananController extends Controller
     public function pesanandetail()
     {
         $datatransaksi = Pesanan::where('user_id', auth()->id())->latest()->get();
-        return view('invoice', compact('datatransaksi'));
+        $title = "Pesanan";
+        return view('invoice', compact('datatransaksi', 'title'));
     }
 }
 

@@ -4,7 +4,7 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 12px;" class="bg-dange d-block d-sm-none p-1 ">
+    <div style="margin-top: 12px;" class="bg-dange d-block d-sm-none p-1" data-aos="fade-up">
         <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
@@ -97,7 +97,7 @@
     {{-- versi tablet --}}
 
     {{-- form --}}
-    <div style="margin-top: 120px;" class="container d-none d-sm-block d-md-none">
+    <div style="margin-top: 40px;" class="container d-none d-sm-block d-md-none">
         <div class="container card"style="border-radius:7px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
@@ -179,11 +179,6 @@
         }
     </style>
     {{-- akhir vs tablet --}}
-
-
-
-
-
 
 
     {{-- awal website --}}

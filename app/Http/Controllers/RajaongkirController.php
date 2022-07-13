@@ -18,7 +18,8 @@ class RajaongkirController extends Controller
         $berat = $keranjang->reduce(function ($totalBerat, $item) {
             return $totalBerat + $item->barang->berat;
         }, 0);
-        return view('keranjang', compact('keranjang'));
+        $title = "Keranjang";
+        return view('keranjang', compact('keranjang', 'title'));
     }
     public function ajax($id)
     {

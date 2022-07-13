@@ -13,7 +13,8 @@ class Postcontroller extends Controller
         $barangs = barang::latest();
         $kategoris = kategori::paginate(4);
         $bar = $barangs->limit(8)->get();
-        return view('index', compact('bar', 'kategoris'));
+        $title = "Beranda";
+        return view('index',  compact('bar', 'title', 'kategoris'));
     }
     public function tampilproduk()
     {
