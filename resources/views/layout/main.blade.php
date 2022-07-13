@@ -46,7 +46,7 @@
 
     {{-- futer mobile --}}
     <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
-        style="background-color: #1F1D2B">
+        style="background-color: #1F1D2B;  border-top-right-radius: 32px; border-top-left-radius: 32px;">
         {{-- Developed By :
         <a class=" text-white fw-bold"
             href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
@@ -55,16 +55,16 @@
 
         <div class="row">
 
-            <div class="col-3 text-white" style="font-size: 22px">
+            <div class="col-3 text-white" style="font-size: 20px">
                 <i class="fa-solid fa-house"></i>
             </div>
-            <div class="col-3 text-white" style="font-size: 22px">
+            <div class="col-3 text-white" style="font-size: 20px">
                 <i class="fa-solid fa-list"></i>
             </div>
-            <div class="col-3 text-white" style="font-size: 22px">
+            <div class="col-3 text-white" style="font-size: 20px">
                 <i class="fas fa-shopping-cart"></i>
             </div>
-            <div class="col-3 text-white" style="font-size: 22px">
+            <div class="col-3 text-white" style="font-size: 20px">
                 <i class="fa-solid fa-user"></i>
             </div>
 
