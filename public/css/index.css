@@ -1,3 +1,17 @@
+/* versi android */
+
+/* jumbotron */
+
+/* ak jmb */
+/* akhir vrsi android */
+
+
+
+
+
+
+
+
 
 .form-control-borderless {
   border: none;
@@ -13,6 +27,7 @@
   height: 630px;
   
 }
+
 .jmb1 {
   background-image: url(../foto/ft22.jpg);
   background-size: cover;
@@ -201,6 +216,11 @@
 .futer p{
   font-size: 15px;
 }
+.judul10{
+  font-size: 22px; 
+  color: #242231; 
+  font-weight: 700;
+}
 
 
 /* responsi */
@@ -225,13 +245,6 @@
     color: rgb(255, 255, 255);
   }
   .center{
-    /* margin: 0;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    absolute
-    left: 29%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
 
     display: flex;
     justify-content: center;
@@ -249,4 +262,16 @@
     position: relative; 
     background-attachment: fixed;
   }
+  .judul10{
+    font-size: 20px; 
+    color: #242231; 
+    font-weight: 600;
+  }
+  .product-content {
+   font-weight: 100;
+   font-size: 15px;
+    /* background-color: red; */
+  }
+
+  
 }

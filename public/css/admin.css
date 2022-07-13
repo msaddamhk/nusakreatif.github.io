@@ -25,7 +25,7 @@ html, body {
 
 #toggle-navbar {
   margin-right: 15px;
-  display: block;
+  /* display: block; */
 }
 @media (min-width: 1200px) {
   #toggle-navbar {

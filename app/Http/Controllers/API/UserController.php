@@ -95,7 +95,11 @@ class UserController extends Controller
 
     public function logout(Request $request)
     {
+
         $token = $request->user()->currentAccessToken()->delete();
         return Apiformatter::success($token, 'Token Revoked');
+
+        // auth()->logout();
+        // return Apiformatter::success();
     }
 }
