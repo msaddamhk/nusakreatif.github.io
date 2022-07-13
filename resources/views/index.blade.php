@@ -4,7 +4,7 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 16px;" class="bg-dange d-block d-sm-none p-1 ">
+    <div style="margin-top: 13px;" class="bg-dange d-block d-sm-none p-1 ">
         <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
@@ -27,16 +27,16 @@
     {{-- versi android --}}
 
     <section class="m-1">
-        <div class="d-block d-sm-none " style="margin-top: -15px;">
-            <div class="jumbotron m-4 containerbaru jumbotron4 ">
+        <div class="d-block d-sm-none" style="margin-top: -15px;" data-aos="fade-up">
+            <div class="jumbotron m-4 containerbaru jumbotron4">
                 <div class="bungkus p-3">
-                    <p class="judul7 " data-aos="fade-up" data-aos-delay="100">
+                    <p class="judul7 " data-aos="fade-up">
                         Selamat Datang <br> di Website Nusa Kreatif
                     </p>
-                    <p class="judul8" data-aos="fade-up" data-aos-delay="140">
+                    <p class="judul8" data-aos="fade-up">
                         Kepuasan Anda adalah <b>Prioritas Kami</b>
                     </p>
-                    <div class=" mt-2 " data-aos="fade-up" data-aos-delay="140">
+                    <div class=" mt-2 " data-aos="fade-up">
                         <a class="btn bg1 text-white" href="#produk" role="button">Belanja sekarang</a>
                     </div>
                 </div>
@@ -50,6 +50,7 @@
             position: relative;
             border-radius: 10px;
             height: 260px;
+
         }
 
         .jumbotron4::before {
@@ -307,7 +308,7 @@
     <!-- akhir card baru -->
 
     <!-- yt -->
-    <div id="vidio" class="container d-md-block  mt-4 p-4">
+    <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 100px">
         <h3 class="judul10" data-aos="fade-up">
             Tentang Kami
         </h3>
@@ -331,7 +332,7 @@
                     lainya.
                 </p>
             </div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-5">
                 <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-up">
 
                     <iframe class="yt" width="560" height="315" src="https://www.youtube.com/embed/185FHRdxiTc"
