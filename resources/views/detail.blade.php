@@ -3,7 +3,7 @@
 @section('body')
     {{-- mobile --}}
 
-    <div class="jumbotron1" style="margin-top: 55px">
+    <div class="jumbotron1" style="margin-top: 132px">
         <section class="">
             <div class="d-block d-sm-none" style="margin-top: -15px;" data-aos="fade-up">
                 <div class="jumbotron4 m-4"

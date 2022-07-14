@@ -39,7 +39,7 @@
 
 <body style="font-family: 'Poppins', sans-serif;">
 
-    <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 " style="background-color: #1F1D2B">
+    <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 fixed-top" style="background-color: #1F1D2B">
         <div class="container text-white">
             <a href="javascript:window.history.go(-1);" class="text-white" style="text-decoration: none">
                 <p class="mt-3" style="font-size: 18px"><i class="fa fa-arrow-left m-1" aria-hidden="true"></i>

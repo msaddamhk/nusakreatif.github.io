@@ -3,9 +3,9 @@
 @section('body')
 
     {{-- mobile --}}
-    <div class="p-4 bg-dange  d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up">
+    <div class="p-4 mt-5 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up">
         @foreach ($keranjang as $keranjangs)
-            <div class="container mb-4 card p-3 ">
+            <div class="container mt-5  mb-4 card p-3 ">
                 <div class="media">
                     <img src="{{ asset('storage/produk/' . $keranjangs->barang->gambar) }}" alt="" height="90"
                         width="120" class="img-flui rounded shadow-sm">

@@ -13,7 +13,7 @@
                     <form action="/logout" method="post">
                         @csrf
                         <button type="submit" class="btn p-2 my-2 my-sm-0 text-white"
-                            style="background-color: #6C5ECF; font-size:14px" type="submit"><i
+                            style="background-color: #6C5ECF; font-size: 11px" type="submit"><i
                                 class="fas fa-sign-out-alt p-1"></i>Keluar</button>
                     </form>
                 </div>
