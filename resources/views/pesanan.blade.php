@@ -2,7 +2,7 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container  d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up" style="margin-top: 35px">
+    <div class="container d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up" style="margin-top: 120px">
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Detail Pesanan
         </h3>

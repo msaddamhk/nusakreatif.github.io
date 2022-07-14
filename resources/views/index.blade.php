@@ -26,17 +26,17 @@
     {{-- ak form --}}
     {{-- versi android --}}
 
-    <section class="m-1">
-        <div class="d-block d-sm-none" style="margin-top: -17px;" data-aos="fade-up">
+    <section class="m-1" data-aos="fade-up">
+        <div class="d-block d-sm-none" style="margin-top: -17px;">
             <div class="jumbotron m-4 containerbaru jumbotron4">
-                <div class="bungkus p-3">
-                    <p class="judul7 " data-aos="fade-up">
-                        Selamat Datang <br> di Website Nusa Kreatif
+                <div class="bungkus p-3" data-aos="fade-up">
+                    <p class="judul7">
+                        Selamat Datang <br> di Aplikasi Nusa Kreatif
                     </p>
-                    <p class="judul8" data-aos="fade-up">
+                    <p class="judul8">
                         Kepuasan Anda adalah <b>Prioritas Kami</b>
                     </p>
-                    <div class=" mt-2 " data-aos="fade-up">
+                    <div class=" mt-2 ">
                         <a class="btn bg1 text-white" href="#produk" role="button">Belanja sekarang</a>
                     </div>
                 </div>
@@ -74,7 +74,8 @@
         .judul7 {
             font-weight: 500;
             font-size: 21px;
-            margin-top: 31px
+            margin-top: 31px;
+
         }
 
         .judul8 {

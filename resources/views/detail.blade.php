@@ -24,13 +24,13 @@
 
     <div class="container  d-block d-sm-none">
         <div class="m-2">
-            <h1 class="" style="font-size: 18px" data-aos="fade-up" data-aos-delay="300">
+            <h1 class="" style="font-size: 18px" data-aos="fade-up" data-aos-delay="310">
                 {{ $barang->judul }}
             </h1>
-            <h4 class="ml-auto" style="font-size: 17px; color:#000000" data-aos="fade-up" data-aos-delay="400">
+            <h4 class="ml-auto" style="font-size: 17px; color:#000000" data-aos="fade-up" data-aos-delay="310">
                 <b>Harga : Rp.{{ number_format($barang->harga) }}</b>
             </h4>
-            <h4 style="font-size: 17px" data-aos="fade-up" data-aos-delay="500">
+            <h4 style="font-size: 17px" data-aos="fade-up" data-aos-delay="320">
                 Stock : {{ $barang->stock }}
             </h4>
         </div>
@@ -38,21 +38,21 @@
 
         <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
             @csrf
-            <hr data-aos="fade-up" data-aos-delay="550">
-            <div class="form-group mb-4 m-2" data-aos="fade-up" data-aos-delay="600">
+            <hr data-aos="fade-up" data-aos-delay="340">
+            <div class="form-group mb-4 m-2" data-aos="fade-up" data-aos-delay="360">
                 <label for="jumlahpesanan">Jumlah Pesanan</label>
                 <input type="number" max="{{ $barang->stock }}" name="jumlahpesanan" class="form-control"
                     id="jumlahpesanan" placeholder="Masukkan jumlah Pesanan Anda" required>
             </div>
 
-            <hr data-aos="fade-up" data-aos-delay="800">
+            <hr data-aos="fade-up" data-aos-delay="410">
             <div class="row p-2">
-                <div class="col-6 col-md-6 col-lg-6 mb-2" data-aos="fade-up" data-aos-delay="900">
+                <div class="col-6 col-md-6 col-lg-6 mb-2" data-aos="fade-up" data-aos-delay="370">
                     <button class="btn  my-1 my-sm-0 text-white btn-block" style="background-color: #6C5ECF;font-size:13px;"
                         type="submit">Tambah Keranjang</i></button>
                 </div>
 
-                <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="1000">
+                <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="380">
                     <a href="https://api.whatsapp.com/send?phone=6285760557702&text=Hai Admin Saya Ingin   Membeli {{ $barang->judul }}  , dengan Jumlah Pesanan     "
                         class="btn  my-1 my-sm-0 text-white btn-block " style="background-color: #009940; font-size:13px;"
                         type="submit">Beli Sekarang

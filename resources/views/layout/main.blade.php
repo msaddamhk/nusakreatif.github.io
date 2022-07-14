@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , virtual-keyboard=overlays-content">
     <title>Nusa Kreatif | {{ $title }}</title>
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
@@ -45,7 +45,7 @@
 
 
     {{-- futer mobile --}}
-    <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
+    <div class="text-center bottom-box  fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
         style="background-color: #1F1D2B;  border-top-right-radius: 18px; border-top-left-radius: 18px;">
         {{-- Developed By :
         <a class=" text-white fw-bold"
@@ -98,6 +98,12 @@
 
         .sidebar-item.active {
             color: #6C5ECF;
+        }
+
+        .bottom-box {
+            position: fixed;
+            bottom: 0;
+            margin-bottom: calc(0px + env(keyboard-inset-height));
         }
     </style>
     {{-- akhir mobile --}}
