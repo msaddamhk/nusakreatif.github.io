@@ -29,10 +29,99 @@
 
 <body style="font-family: 'Poppins', sans-serif;">
 
+    {{-- mobile --}}
+    <div class="container p-5 d-block d-sm-none d-none d-sm-block d-md-none" style="">
+        <form action="/register" method="post" class="text-left ">
+            <div class="row justify-content-center align-content-center h-100 my-auto">
+                <div class="" style="width: 500px;">
+                    <h2 class="" class="text-justify" style="font-size: 24px; font-weight: bold; color:#242231">
+                        NusaKreatif
+                    </h2>
+                    <p>Silahkan Daftar Akun Anda</p>
+
+                    <hr>
+                    @csrf
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="name">Nama</label>
+                        <input type="text" name="name" id="name"
+                            class="form-control form-control-lg @error('name') is-invalid @enderror"
+                            value="{{ old('name') }}" />
+
+                        @error('name')
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="email">Alamat Email</label>
+                        <input type="email" id="email" name=email
+                            class="form-control form-control-lg  @error('email') is-invalid @enderror"
+                            value="{{ old('email') }}" />
+                        @error('email')
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="name">Alamat</label>
+                        <input type="text" name="alamat" id="alamat" class="form-control form-control-lg " />
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" name=password
+                            class="form-control form-control-lg  @error('password') is-invalid @enderror"
+                            value="{{ old('password') }}" />
+                        @error('password')
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="pt-1 mb-4">
+                        <button class="btn btn-block" style="background-color: #6C5ECF; color: rgb(221, 221, 221);"
+                            type="submit">Daftar sekarang</button>
+                    </div>
+
+                    <p>Sudah Registrasi? <a href="/login" class="link-info">Masuk sekarang</a></p>
+                </div>
+            </div>
+        </form>
+        <style>
+            .shadow {
+                box-shadow: 0 3px 20px rgb(39, 80, 98, 0.3);
+                border: none;
+            }
+        </style>
+    </div>
+    </center>
+    {{-- akhir mobile --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     {{-- <center> --}}
-    <div class="container p-5" style="">
-
+    <div class="container p-5 d-none d-md-block d-lg-nonex" style="">
 
         <form action="/register" method="post" class="text-left ">
             <div class="row justify-content-center align-content-center h-100 my-auto">

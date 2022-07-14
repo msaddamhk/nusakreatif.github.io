@@ -29,8 +29,110 @@
 
 <body style="font-family: 'Poppins', sans-serif;">
 
+
+    {{-- anfdroid --}}
+    {{-- <div class="div "> --}}
+    <div class="container d-block mt-2 d-sm-none d-none d-sm-block d-md-none p-5 justify-content-center">
+
+        <!-- allert sukses -->
+
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        <!-- akhir allert sukses-->
+
+
+        <!-- allert gagal -->
+
+        @if (session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        <!-- akhir allert gagal-->
+
+
+
+
+        <form action="/login" method="post" class="text-left   ">
+            @csrf
+            <div class="row justify-content-center align-content-center h-100 my-auto">
+                <div class="  " style="width: 500px">
+                    <h2 class="" class="text-justify" style="font-size: 24px; font-weight: bold; color:#242231">
+                        NusaKreatif</h2>
+                    <p>Silahkan Login Akun Anda</p>
+                    <hr>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email"
+                            class="form-control form-control-lg @error('email') is-invalid @enderror" autofocus required
+                            value=" {{ old('email') }}" />
+
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control form-control-lg"
+                            required />
+
+                    </div>
+
+                    <div class="pt-1 mb-4">
+                        <button class="btn btn-block" style="background-color: #6C5ECF; color: rgb(221, 221, 221);"
+                            type="submit">Masuk Sekarang</button>
+                    </div>
+
+                    <p>Tidak punya akun? <a href="/register" class="link-info">Daftar sekarang</a></p>
+                </div>
+            </div>
+        </form>
+
+        <style>
+            /* .shadow {
+                box-shadow: 0 3px 20px rgb(39, 80, 98, 0.3);
+                border: none;
+            } */
+        </style>
+
+    </div>
+
+
+    {{-- akhir android --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {{-- <center> --}}
-    <div class="container p-5" style="margin-top: 11vh ;">
+    <div class="container d-none d-md-block d-lg-nonex p-5" style="margin-top: 11vh ;">
 
         <!-- allert sukses -->
 
@@ -71,8 +173,8 @@
                     <div class="form-outline mb-4">
                         <label class="form-label" for="email">Alamat Email</label>
                         <input type="email" id="email" name="email"
-                            class="form-control form-control-lg @error('email') is-invalid @enderror" autofocus required
-                            value=" {{ old('email') }}" />
+                            class="form-control form-control-lg @error('email') is-invalid @enderror" autofocus
+                            required value=" {{ old('email') }}" />
 
                         @error('email')
                             <div class="invalid-feedback">
@@ -107,7 +209,7 @@
         </style>
 
     </div>
-    </center>
+    {{-- </center> --}}
 
 
 

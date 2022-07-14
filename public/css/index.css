@@ -238,12 +238,9 @@
     color: rgb(255, 255, 255);
   }
   .center{
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-  
   }
   .futer p{
     font-size: 15px;
@@ -251,7 +248,7 @@
   .jmb2 {
     background-image: url(../foto/ft18.jpg);
     background-size: cover;
-    height: 430px;
+    height: 400px;
     position: relative; 
     background-attachment: fixed;
   }

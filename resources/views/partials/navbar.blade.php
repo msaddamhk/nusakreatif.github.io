@@ -29,7 +29,6 @@
                  </li>
 
                  @auth
-
                      <li class="nav-item d-none d-lg-block ">
                          <a class="nav-link">| </a>
 
@@ -63,7 +62,6 @@
                  @else
                      <a href="/login" class="btn  my-2 my-sm-0 text-white" style="background-color: #6C5ECF;"
                          type="submit">Masuk</a>
-
                  @endauth
 
 

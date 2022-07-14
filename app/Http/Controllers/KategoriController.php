@@ -36,7 +36,8 @@ class KategoriController extends Controller
     public function tampilkategori($kategori)
     {
         $kategori = kategori::where('slug', $kategori)->get()->first();
-        return view('kategori', compact('kategori'));
+        $title = "tampil kategori";
+        return view('kategori', compact('kategori', 'title'));
     }
 
 

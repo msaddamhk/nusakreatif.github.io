@@ -3,7 +3,7 @@
 @section('body')
     {{-- mobile --}}
 
-    <div class="jumbotron1" style="margin-top: 66px">
+    <div class="jumbotron1" style="margin-top: 55px">
         <section class="">
             <div class="d-block d-sm-none" style="margin-top: -15px;" data-aos="fade-up">
                 <div class="jumbotron4 m-4"
@@ -18,10 +18,8 @@
                 position: relative;
                 border-radius: 10px;
                 height: 260px;
-
             }
         </style>
-
     </div>
 
     <div class="container  d-block d-sm-none">
@@ -131,10 +129,7 @@
     </div>
     </div>
 
-
-
-
-
+    {{-- akhir --}}
 
 
 

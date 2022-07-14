@@ -4,7 +4,7 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 12px;" class="bg-dange d-block d-sm-none p-1" data-aos="fade-up">
+    <div style="margin-top: 9px;" class="bg-dange d-block d-sm-none p-1" data-aos="fade-up">
         <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
@@ -27,7 +27,7 @@
     {{-- versi android --}}
 
     <section class="m-1">
-        <div class="d-block d-sm-none" style="margin-top: -15px;" data-aos="fade-up">
+        <div class="d-block d-sm-none" style="margin-top: -17px;" data-aos="fade-up">
             <div class="jumbotron m-4 containerbaru jumbotron4">
                 <div class="bungkus p-3">
                     <p class="judul7 " data-aos="fade-up">
@@ -303,17 +303,15 @@
     <!-- akhir card baru -->
 
     <!-- yt -->
-    <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 100px">
+    <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 50px">
         <h3 class="judul10" data-aos="fade-up">
             Tentang Kami
         </h3>
         <hr data-aos="fade-up">
         <div class="row mt-4">
             <div class="col-md-6">
-                <p style="" class="mb-4" data-aos="fade-up" data-aos-delay="150">
-                    Gampong Nusa adalah sebuah Gampong wisata yang terletak di Kecamatan Lhoknga, Kabupaten Aceh
-                    Besar.
-                    Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata
+                <p style="font-size :13px" class="mb-4" data-aos="fade-up" data-aos-delay="150">
+                    Gampong Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata
                     berbasis
                     masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan
                     tujuan

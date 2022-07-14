@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.maindetail')
 @section('body')
     <!-- card baru -->
     <!-- hero -->

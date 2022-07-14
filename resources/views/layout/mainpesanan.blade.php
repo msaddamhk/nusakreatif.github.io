@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nusa Kreatif | {{ $title }}</title>
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
@@ -41,11 +41,9 @@
 
     <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 " style="background-color: #1F1D2B">
         <div class="container text-white">
-            <a href="javascript:window.history.go(-1);" class="text-white" style="text-decoration: none">
-                <p class="mt-3" style="font-size: 18px"><i class="fa fa-arrow-left m-1" aria-hidden="true"></i>
-                    Kembali
-                </p>
-            </a>
+            <p class="mt-3" style="font-size: 18px">
+                Detail {{ $title }}
+            </p>
         </div>
     </div>
 
@@ -125,8 +123,6 @@
 
 
     <style>
-        @media screen and (max-width: 900px) {}
-
         .navcolor {
             background-color: #ffffff;
             color: #242231;
@@ -167,37 +163,65 @@
     <!-- akhirnavbar -->
 
 
+    <div class="div">
+        @yield('body')
+    </div>
 
-    @yield('body')
+
+
+
+
+
+
 
 
 
     {{-- futer mobile --}}
-    {{-- <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
-        style="background-color: #1F1D2B;  border-top-right-radius: 20px; border-top-left-radius: 20px;">
-        Developed By :
+    <div class="text-center fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
+        style="background-color: #1F1D2B;  border-top-right-radius: 18px; border-top-left-radius: 18px;">
+        {{-- Developed By :
         <a class=" text-white fw-bold"
             href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
-            Husein Khatami</a>
+            Husein Khatami</a> --}}
 
 
         <div class="row">
 
             <div class="col-3 text-white" style="font-size: 15px">
-                <i class="fa-solid fa-house"></i>
-            </div>
-            <div class="col-3 text-white" style="font-size: 15px">
-                <i class="fa-solid fa-list"></i>
-            </div>
-            <div class="col-3 text-white" style="font-size: 15px">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="col-3 text-white" style="font-size: 15px">
-                <i class="fa-solid fa-user"></i>
-            </div>
+                <a href="/" class="sidebar-item {{ $title === 'Beranda' ? 'active' : '' }}">
+                    <i class="fa-solid fa-house"></i>
+                </a>
 
+            </div>
+            <div class="col-3 text-white" style="font-size: 15px">
+                <a href="/pesanandetail" class="sidebar-item {{ $title === 'Pesanan' ? 'active' : '' }}">
+                    <i class="fa-solid fa-list"></i>
+                </a>
+
+            </div>
+            <div class="col-3 text-white" style="font-size: 15px">
+                <a href="/keranjang" class="sidebar-item {{ $title === 'Keranjang' ? 'active' : '' }}">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="col-3 text-white" style="font-size: 15px">
+                <a href="" class="sidebar-item {{ $title === 'User' ? 'active' : '' }}">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            </div>
         </div>
-    </div> --}}
+    </div>
+
+    <style>
+        .sidebar-item {
+            color: #ffffff
+        }
+
+        .sidebar-item.active {
+            color: #6C5ECF;
+        }
+    </style>
     {{-- akhir mobile --}}
 
 

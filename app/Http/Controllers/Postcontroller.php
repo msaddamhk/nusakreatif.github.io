@@ -21,12 +21,15 @@ class Postcontroller extends Controller
         $barangs = barang::latest()
             ->where('judul', 'like', '%' . (request('search') ?? '') . '%')
             ->get();
-        return view('produk', compact('barangs'));
+
+        $title = "Produk";
+        return view('produk', compact('barangs', 'title'));
     }
     public function tampilkategori()
     {
         $kategoris = kategori::paginate(8);
-        return view('detailkategori', compact('kategoris'));
+        $title = "detailkategori";
+        return view('detailkategori', compact('kategoris', 'title'));
     }
     public function cari()
     {

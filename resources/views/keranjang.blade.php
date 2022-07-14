@@ -1,7 +1,43 @@
-@extends('layout.main')
+@extends('layout.mainpesanan')
 
 @section('body')
-    <div class="container " data-aos="fade-up" style="margin-top: 100px;min-height:50vh">
+
+    {{-- mobile --}}
+    <div class="p-4 bg-dange  d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up">
+        @foreach ($keranjang as $keranjangs)
+            <div class="container mb-4 card p-3 ">
+                <div class="media">
+                    <img src="{{ asset('storage/produk/' . $keranjangs->barang->gambar) }}" alt="" height="90"
+                        width="120" class="img-flui rounded shadow-sm">
+                    <div class="media-body ml-3 ">
+                        <p class="" style="margin: 0px; font-size:15px">{{ $keranjangs->barang->judul }}</p>
+                        <p class="" style="margin: 0px; ; font-size:15px">jumlah : {{ $keranjangs->jumblah }}</p>
+                        <p class="mb-1" style="margin: 0px; ; font-size:15px">Total Harga : Rp.
+                            {{ number_format($keranjangs->getTotalHarga()) }}</p>
+                        <form action="{{ route('hapuskeranjang', $keranjangs) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button onclick="clicked(event)" class="text-white p-2"
+                                style="font-size: 9px;border-radius:4px ; background-color:#6C5ECF;  border:none ">Hapus
+                                Data</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+        <hr>
+        <div class="">
+            <a href="{{ route('pesan') }}" class="btn my-2 my-sm-0 text-white" id="ongkir"
+                style="background-color: #6C5ECF;" type="submit">Beli Sekarang
+            </a>
+        </div>
+    </div>
+    {{-- akhir mobile --}}
+
+
+
+    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-up" style="margin-top: 100px;min-height:50vh">
         <!-- Shopping cart table -->
         <div class="table-responsive">
             <table class="table">

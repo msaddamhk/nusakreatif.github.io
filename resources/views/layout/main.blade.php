@@ -72,12 +72,22 @@
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </div>
-            <div class="col-3 text-white" style="font-size: 15px">
-                <a href="" class="sidebar-item {{ $title === 'User' ? 'active' : '' }}">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-
-            </div>
+            @auth
+                {{-- keluar --}}
+                <div class="col-3 text-white" style="font-size: 15px">
+                    <a href="/user" class="sidebar-item {{ $title === 'User' ? 'active' : '' }}">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            @else
+                {{-- masuk --}}
+                <div class="col-3 text-white" style="font-size: 15px">
+                    <a href="/login" class="sidebar-item {{ $title === 'User' ? 'active' : '' }}">
+                        <i class="fa fa-sign-in" aria-hidden="true">
+                        </i>
+                    </a>
+                </div>
+            @endauth
         </div>
     </div>
 

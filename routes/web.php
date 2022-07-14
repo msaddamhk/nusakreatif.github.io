@@ -53,7 +53,7 @@ Route::post('/pesanan1', [PesananController::class, 'pesanan'])->name('pesan1');
 
 
 // pesanan detail
-Route::get('/pesanandetail', [PesananController::class, 'pesanandetail']);
+Route::get('/pesanandetail', [PesananController::class, 'pesanandetail'])->middleware('auth');
 
 // kelola pesanan
 Route::get('/kelolapesanan', [KelolaTransaksiController::class, 'index']);
@@ -66,4 +66,9 @@ Route::get('/suksestransaksi', function () {
     return view('suksestransaksi');
 });
 
+Route::get('/user', function () {
+    return view('user', [
+        'title' => 'User'
+    ]);
+})->middleware('auth');
 Route::get('/detaildatabarang/{id}', [AdminController::class, 'show'])->name('showbarang');
