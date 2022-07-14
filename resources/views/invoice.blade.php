@@ -2,7 +2,7 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none">
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up">
         @foreach ($datatransaksi as $item)
             <div class="card p-5 " style="margin-top:14px ; margin-bottom:100px">
                 <div class="row">
@@ -92,7 +92,7 @@
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex">
+    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-up">
         @foreach ($datatransaksi as $item)
             <div class="card p-5" style="margin-top:150px">
                 <div class="row">
