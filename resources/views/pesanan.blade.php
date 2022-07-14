@@ -2,182 +2,45 @@
 
 @section('body')
     {{-- mobile --}}
-
-    <div class="p-3 d-block d-sm-none d-none d-sm-block d-md-none">
-        <div class="container  " data-aos="fade-up" style="margin-top: 10px">
-            <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
-                Detail Pesanan
-            </h3>
-            <hr>
-            <div class="card p-5 mb-4">
-                <table class="table">
-                    <thead>
+    <div class="container  d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up" style="margin-top: 35px">
+        <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
+            Detail Pesanan
+        </h3>
+        <hr>
+        <div class="card p-5 mb-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="border-0">Nama Barang</th>
+                        <th scope="col" class="border-0 ">Harga</th>
+                        <th scope="col" class=" border-0">Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $totalharga = 0 @endphp
+                    @foreach ($keranjang as $keranjangs)
                         <tr>
-                            <th scope="col" class="border-0">Nama Barang</th>
-                            <th scope="col" class="border-0 ">Harga</th>
-                            <th scope="col" class=" border-0">Jumlah</th>
+                            <th scope="row" class=" ">{{ $keranjangs->barang->judul }}</th>
+                            <td class=" ">
+                                Rp. {{ number_format($keranjangs->getTotalHarga()) }}</td>
+                            <td class=" ">{{ $keranjangs->jumblah }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @php $totalharga = 0 @endphp
-                        @foreach ($keranjang as $keranjangs)
-                            <tr>
-                                <th scope="row" class=" ">{{ $keranjangs->barang->judul }}</th>
-                                <td class=" ">
-                                    Rp. {{ number_format($keranjangs->getTotalHarga()) }}</td>
-                                <td class=" ">{{ $keranjangs->jumblah }}</td>
-                            </tr>
-                            @php $totalharga +=  $keranjangs->getTotalHarga()  @endphp
-                        @endforeach
-                    </tbody>
+                        @php $totalharga +=  $keranjangs->getTotalHarga()  @endphp
+                    @endforeach
+                </tbody>
 
-                </table>
-                <h6>Total Harga Barang : <b>Rp. {{ number_format($totalharga) }} </b>
-                </h6>
-                <p style="font-size: 13px" class="text-black">catatan : Total Harga Belum Termasuk Biaya Jasa Pengiriman
-                </p>
-
-            </div>
-        </div>
-
-        {{-- akhir --}}
-        <!-- detail -->
-        <div class="container mb-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up">
-
-            <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
-                Data
-            </h3>
-            <hr>
-
-            <form action="{{ route('pesan1') }}" method="post">
-                @csrf
-
-                <input type="hidden" class="form-control" name="harga" id="harga" value="{{ $totalharga }}">
-
-                <div class="form-group">
-                    <label for="alamat">Nama</label>
-                    <input type="text" value="{{ auth('')->user()->name }}" class="mb-2 form-control" name="nama"
-                        id="nama" aria-describedby="emailHelp" required>
-                    <small style="font-size: 13px" for="alamat">Silahkan ubah Nama jika Nama penerima berbeda</small>
-                </div>
-                <div class="form-group">
-                    <label for="alamat">Detail Alamat</label>
-                    <input type="text" value="{{ auth('')->user()->alamat }}" class="form-control" name="alamat"
-                        id="alamat" aria-describedby="emailHelp" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="notelepon">No Telepon</label>
-                    <input type="number" class="form-control" name="notelepon" id="notelepon" aria-describedby="emailHelp"
-                        required>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-6 col-md-6 col-lg-6">
-                        <label for="provinsi">Provinsi</label>
-                        <select class="mb-2 form-control" id="provinsi" name="provinsi" required>
-                            <option value="" holder>Pilih Provinsi</option>
-                            @foreach ($provinsi as $item)
-                                <option value="{{ $item->id }},{{ $item->province }}" placeholder="Pilih Kota">
-                                    {{ $item->province }}
-                                </option>
-                            @endforeach
-                        </select>
-                        <small style="font-size: 13px" for="alamat">Silahkan isi data Provinsi dan Kabupaten untuk
-                            menghitung
-                            biaya pengiriman</small>
-                    </div>
-
-                    <div class="form-group col-6 col-md-6 col-lg-6">
-                        <label for="destination">Kabupaten/Kota</label>
-                        <select class="mb-2 form-control" id="destination" name="destination" required>
-                            <option value="" holder>Pilih Kota/Kabupaten</option>
-                        </select>
-                    </div>
-
-
-                </div>
-
-                <div class="form-group">
-                    <label for="">Kurir</label>
-                    <select class="mb-2 form-control" id="courier" name="courier" required>
-                        <option value="" holder>Silahkan Pilih Kurir</option>
-                        <option value="jne" holder>JNE</option>
-                        <option value="tiki" holder>TIKI</option>
-                        <option value="pos" holder>POS Indonesia</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="opsi_pengiriman">Opsi Pengiriman</label>
-                    <select class="mb-2 form-control" id="opsi_pengiriman" name="opsi_pengiriman" required>
-                    </select>
-                    <p style="font-size: 13px" class="text-black">Total Biaya Pengiriman akan ditambah secara otomatis
-                        dengan total harga Barang </p>
-                </div>
-
-                <script>
-                    function formatNumber(num) {
-                        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-                    }
-
-                    let tujuan = document.getElementById('destination');
-                    let courier = document.getElementById('courier');
-                    courier.addEventListener('change', (e) => {
-                        let destination = tujuan.value;
-                        let courier = e.target.value;
-                        let weight = "{{ $berat }}";
-                        $.ajax({
-                            url: '/api/cekOngkir',
-                            type: 'get',
-                            dataType: 'json',
-                            data: {
-                                destination,
-                                courier,
-                                weight
-                            },
-                            success: function(result) {
-                                const opsi_pengiriman = document.getElementById('opsi_pengiriman');
-                                opsi_pengiriman.innerHTML = '';
-                                result.costs.forEach(element => {
-                                    let option = document.createElement('option');
-                                    option.value =
-                                        `${element.service},${element.cost[0].etd},${element.cost[0].value}`;
-                                    option.text =
-                                        `${element.service} | Etd : ${element.cost[0].etd} Hari | Harga : Rp. ${formatNumber(element.cost[0].value )}`;
-                                    opsi_pengiriman.append(option)
-                                });
-                            }
-                        });
-                    })
-                </script>
-                <button class="btn  my-2 my-sm-0 text-white" id="pay-button" style="background-color: #6C5ECF;"
-                    type="submit">Bayar
-                    Sekarang</button>
-            </form>
-
-
+            </table>
+            <h6>Total Harga Barang : <b>Rp. {{ number_format($totalharga) }} </b>
+            </h6>
+            <p style="font-size: 13px" class="text-black">catatan : Total Harga Belum Termasuk Biaya Jasa Pengiriman
+            </p>
         </div>
     </div>
     {{-- akhir mobile --}}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container d-none d-md-block d-lg-nonex " data-aos="fade-up" style="margin-top: 120px">
+    <div class="container  p-4 d-none d-md-block d-lg-nonex" data-aos="fade-up" style="margin-top: 120px">
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Detail Pesanan
         </h3>
@@ -213,9 +76,8 @@
         </div>
     </div>
 
-    {{-- akhir --}}
     <!-- detail -->
-    <div class="container d-none d-md-block d-lg-nonex " data-aos="fade-up">
+    <div class="container p-3 mb-3" data-aos="fade-up">
 
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Data
@@ -256,9 +118,8 @@
                             </option>
                         @endforeach
                     </select>
-                    <small style="font-size: 13px" for="alamat">Silahkan isi data Provinsi dan Kabupaten untuk
-                        menghitung
-                        biaya pengiriman</small>
+                    {{-- <small style="font-size: 13px" for="alamat">Silahkan isi data Provinsi dan Kabupaten untuk menghitung
+                        biaya pengiriman</small> --}}
                 </div>
 
                 <div class="form-group col-6 col-md-6 col-lg-6">

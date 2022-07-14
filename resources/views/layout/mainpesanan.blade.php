@@ -41,11 +41,15 @@
 
     <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 " style="background-color: #1F1D2B">
         <div class="container text-white">
-            <p class="mt-3" style="font-size: 18px">
-                Detail {{ $title }}
-            </p>
+            <a href="javascript:window.history.go(-1);" class="text-white" style="text-decoration: none">
+                <p class="mt-3" style="font-size: 18px"><i class="fa fa-arrow-left m-1" aria-hidden="true"></i>
+                    Detail {{ $title }}
+                </p>
+            </a>
         </div>
     </div>
+
+
 
     {{-- nvbar2 --}}
     <nav class="navbar  d-none d-md-block d-lg-nonex navbar-expand-lg bg-transparentf fixed-top navbar-light py-4">
