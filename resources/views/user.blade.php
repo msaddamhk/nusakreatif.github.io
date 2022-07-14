@@ -2,8 +2,8 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container d-block d-sm-none d-none d-sm-block d-md-none p-3 mt-3">
-        <div class="card p-4">
+    <div class="container d-block d-sm-none d-none d-sm-block d-md-none p-3 mt-5">
+        <div class="card p-4 mt-5">
             <div class="row">
                 <div class="col-8">
                     <h6><b>Selamat Datang</b></h1>
