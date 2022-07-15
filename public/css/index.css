@@ -1,5 +1,7 @@
 /* versi android */
 
+
+/* slick */
 /* jumbotron */
 
 /* ak jmb */
@@ -277,7 +279,7 @@
     right: 0;
     left: 0;
     height: 100%;
-    background-image: linear-gradient(to top, #c2c2c2, rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(to top, #c9c9c9, rgba(0, 0, 0, 0.1));
     /* #919191 */
 }
 
@@ -285,7 +287,7 @@
 @media screen and (max-width: 500px)  { 
   .product-content {
     font-weight: 100;
-    font-size: 9px;
+    font-size: 12px;
      /* background-color: red; */
    }
    .foto-produk {

@@ -178,7 +178,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 2000,
+            duration: 1800,
             delay: 500,
             once: true
 

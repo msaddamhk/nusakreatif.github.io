@@ -27,8 +27,8 @@
     {{-- versi android --}}
 
     <section class="m-1" data-aos="fade-in">
-        <div class="d-block d-sm-none" style="margin-top: -17px;">
-            <div class="jumbotron m-4 containerbaru jumbotron4">
+        <div class="d-block d-sm-none  " style="margin-top: -17px;">
+            <div class="jumbotron m-4  containerbaru jumbotron4">
                 <div class="bungkus p-3" data-aos="fade-in">
                     <p class="judul7">
                         Selamat Datang <br> di Toko Online Nusa Kreatif
@@ -41,6 +41,33 @@
                     </div>
                 </div>
             </div>
+            {{-- <div class="jumbotron  containerbaru jumbotron4">
+                <div class="bungkus p-3" data-aos="fade-in">
+                    <p class="judul7">
+                        Selamat Datang <br> di Toko Online Nusa Kreatif
+                    </p>
+                    <p class="judul8">
+                        Kepuasan Anda adalah <b>Prioritas Kami</b>
+                    </p>
+                    <div class=" mt-2 ">
+                        <a class="btn bg1 text-white" href="#produk" role="button">Belanja sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="jumbotron  containerbaru jumbotron4">
+                <div class="bungkus p-3" data-aos="fade-in">
+                    <p class="judul7">
+                        Selamat Datang <br> di Toko Online Nusa Kreatif
+                    </p>
+                    <p class="judul8">
+                        Kepuasan Anda adalah <b>Prioritas Kami</b>
+                    </p>
+                    <div class=" mt-2 ">
+                        <a class="btn bg1 text-white" href="#produk" role="button">Belanja sekarang</a>
+                    </div>
+                </div>
+            </div> --}}
         </div>
     </section>
     <style>
@@ -73,7 +100,7 @@
 
         .judul7 {
             font-weight: 500;
-            font-size: 21px;
+            font-size: 19px;
             margin-top: 31px;
 
         }
@@ -344,13 +371,13 @@
 
     <!-- yt -->
     <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 50px">
-        <h3 class="judul10" data-aos="fade-in">
+        <h3 class="judul10" data-aos="fade-in" data-aos-delay="150">
             Tentang Kami
         </h3>
         <hr data-aos="fade-in">
         <div class="row mt-4">
             <div class="col-md-6">
-                <p style="font-size :13px" class="mb-4" data-aos="fade-in" data-aos-delay="150">
+                <p style="font-size :13px" class="mb-4" data-aos="fade-in" data-aos-delay="160">
                     Gampong Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata
                     berbasis
                     masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan
@@ -366,7 +393,7 @@
                 </p>
             </div>
             <div class="col-md-6 mb-5">
-                <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-in" data-aos-delay="170">
+                <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-in" data-aos-delay="162">
 
                     <iframe class="yt" width="560" height="315" src="https://www.youtube.com/embed/185FHRdxiTc"
                         title="YouTube video player" frameborder="0"

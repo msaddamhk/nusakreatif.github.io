@@ -1,107 +1,138 @@
+// $('.slider').slick({
+//   infinite: false,
+//   autoplay: true,
+//   centerMode: true,
+//   autoplaySpeed: 2000,
+//   slidesToShow:5,
+//   slidesToScroll: 4,
+//   dots: true,
+//   responsive: [
+//     {
+//       breakpoint: 1924,
+//       settings: {
+//         slidesToShow: 5,
+//         slidesToScroll: 5,
+//         infinite: true,
+//       }
+//     },
+
+//     {
+//       breakpoint: 1424,
+//       settings: {
+//         slidesToShow: 5,
+//         slidesToScroll: 5,
+//         infinite: true,
+//       }
+//     },
+
+//     {
+//       breakpoint: 1224,
+//       settings: {
+//         slidesToShow: 4,
+//         slidesToScroll: 4,
+//         infinite: true,
+//       }
+//     },
+
+//     {
+//       breakpoint: 990,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 3,
+//         infinite: true,
+//       }
+//     },
+
+//     {
+//       breakpoint: 824,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 3,
+//         infinite: true,
+//       }
+//     },
+
+
+//     {
+//       breakpoint: 763,
+//       settings: {
+//         slidesToShow: 2.5,
+//         slidesToScroll: 2.5,
+//         arrows: false
+//       }
+//     },
+
+
+//     {
+//       breakpoint: 510,
+//       settings: {
+//         slidesToShow: 2.3,
+//         slidesToScroll: 2.3,
+//         centerMode: true,
+//         arrows: false
+//       }
+//     },
+
+//     {
+//       breakpoint: 470,
+//       settings: {
+//         slidesToShow: 1,
+//         centerMode: true,
+//         slidesToScroll: 1,
+//         arrows: false
+//       }
+//     },
+
+//     {
+//       breakpoint: 430,
+//       settings: {
+//         slidesToShow: 1.7,
+//         centerMode: true,
+//         slidesToScroll:1.7,
+//         arrows: false
+//       }
+//     },
+//     {
+//       breakpoint: 364,
+//       settings: {
+//         slidesToShow: 1.5,
+//         centerMode: true,
+//         slidesToScroll:1.5,
+//         arrows: false
+//       }
+//     }
+ 
+//   ]
+// });
+
 $('.slider').slick({
-  infinite: false,
+  centerMode: true,
   autoplay: true,
-  autoplaySpeed: 2000,
-  slidesToShow:5,
-  slidesToScroll: 1,
-  dots: true,
+  centerPadding: '40px',
+  slidesToShow: 3,
+  // speed:1500,
+  // index: 2,
   responsive: [
     {
-      breakpoint: 1924,
+      breakpoint: 768,
       settings: {
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
       }
     },
-
     {
-      breakpoint: 1424,
+      breakpoint: 480,
       settings: {
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
-      }
-    },
-
-    {
-      breakpoint: 1224,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        infinite: true,
-      }
-    },
-
-    {
-      breakpoint: 990,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-      }
-    },
-
-    {
-      breakpoint: 824,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-      }
-    },
-
-    
-  
-
-    {
-      breakpoint: 763,
-      settings: {
-        slidesToShow: 2.5,
-        slidesToScroll: 2.5,
-        arrows: false
+        arrows: false,
+        centerMode: true,
+        centerPadding: '30px',
+        slidesToShow: 1,
       }
     },
 
 
-    {
-      breakpoint: 510,
-      settings: {
-        slidesToShow: 2.3,
-        slidesToScroll: 2.3,
-        arrows: false
-      }
-    },
-
-    {
-      breakpoint: 470,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        arrows: false
-      }
-    },
-
-    {
-      breakpoint: 430,
-      settings: {
-        slidesToShow: 1.7,
-        slidesToScroll:1.7,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 364,
-      settings: {
-        slidesToShow: 1.5,
-        slidesToScroll:1.5,
-        arrows: false
-      }
-    }
-    
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
   ]
 });
 
