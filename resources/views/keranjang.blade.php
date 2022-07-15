@@ -1,9 +1,8 @@
 @extends('layout.mainpesanan')
 
 @section('body')
-
     {{-- mobile --}}
-    <div class="p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up" style="margin-top: 90px">
+    <div class="p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in" style="margin-top: 90px">
         @foreach ($keranjang as $keranjangs)
             <div class="container  mb-4 card p-3 ">
                 <div class="media">
@@ -26,18 +25,36 @@
             </div>
         @endforeach
 
-        <hr>
-        <div class="">
+
+        @if ($keranjang->count() != 0)
+            <hr>
             <a href="{{ route('pesan') }}" class="btn my-2 my-sm-0 text-white" id="ongkir"
                 style="background-color: #6C5ECF;" type="submit">Beli Sekarang
             </a>
-        </div>
+        @else
+            <div class="keranjang">
+                <div class="row bg-dange justify-content-center align-content-center ">
+
+                    <p>Keranjang Anda masi Kosong</p>
+
+                    {{-- <div class="">
+                        <a href="" class="btn btn-danger"></a>
+                    </div> --}}
+                </div>
+
+                <style>
+                    .keranjang {
+                        margin-top: 88%;
+                    }
+                </style>
+            </div>
+        @endif
     </div>
     {{-- akhir mobile --}}
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-up" style="margin-top: 100px;min-height:50vh">
+    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top: 100px;min-height:50vh">
         <!-- Shopping cart table -->
         <div class="table-responsive">
             <table class="table">
@@ -115,11 +132,11 @@
         </div>
         <!-- End -->
         <hr>
-        {{-- @if ($keranjang->count() == 0) --}}
-        <a href="{{ route('pesan') }}" class="btn  my-2 my-sm-0 text-white" id="ongkir"
-            style="background-color: #6C5ECF;" type="submit">Beli Sekarang
-        </a>
-        {{-- @endif --}}
+        @if ($keranjang->count() != 0)
+            <a href="{{ route('pesan') }}" class="btn  my-2 my-sm-0 text-white" id="ongkir"
+                style="background-color: #6C5ECF;" type="submit">Beli Sekarang
+            </a>
+        @endif
     </div>
 
     <script>

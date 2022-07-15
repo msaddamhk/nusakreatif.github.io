@@ -4,7 +4,7 @@
     {{-- aplikasi --}}
     {{-- <div class="p-3"> --}}
     {{-- form --}}
-    <div style="margin-top: 9px;" class="bg-dange d-block d-sm-none p-1" data-aos="fade-up">
+    <div style="margin-top: 9px;" class="bg-dange d-block d-sm-none p-1" data-aos="fade-in">
         <div class="m-4 card"style="border-radius:11px">
             <div class="card-bod p-3">
                 <form action="{{ route('tampilproduk') }}" method="GET">
@@ -26,12 +26,12 @@
     {{-- ak form --}}
     {{-- versi android --}}
 
-    <section class="m-1" data-aos="fade-up">
+    <section class="m-1" data-aos="fade-in">
         <div class="d-block d-sm-none" style="margin-top: -17px;">
             <div class="jumbotron m-4 containerbaru jumbotron4">
-                <div class="bungkus p-3" data-aos="fade-up">
+                <div class="bungkus p-3" data-aos="fade-in">
                     <p class="judul7">
-                        Selamat Datang <br> di Aplikasi Nusa Kreatif
+                        Selamat Datang <br> di Toko Online Nusa Kreatif
                     </p>
                     <p class="judul8">
                         Kepuasan Anda adalah <b>Prioritas Kami</b>
@@ -92,11 +92,7 @@
     {{-- akhir android --}}
 
 
-
-
-
     {{-- versi tablet --}}
-
     {{-- form --}}
     <div style="margin-top: 40px;" class="container d-none d-sm-block d-md-none">
         <div class="container card"style="border-radius:7px">
@@ -118,17 +114,16 @@
         </div>
     </div>
     {{-- ak form --}}
-
     <div class="container d-none d-sm-block d-md-none" style="margin-top: 40px">
         <div class="jumbotron containerbaru jumbotron3">
             <div class="bungkus my-auto">
-                <h1 class="judul5 " data-aos="fade-up" data-aos-delay="100">
+                <h1 class="judul5 " data-aos="fade-in" data-aos-delay="100">
                     Selamat Datang <br> di Website Nusa Kreatif
                 </h1>
-                <p class="judul6" data-aos="fade-up" data-aos-delay="140">
+                <p class="judul6" data-aos="fade-in" data-aos-delay="140">
                     Kepuasan Anda adalah <b>Prioritas Kami</b>
                 </p>
-                <div class=" mt-2 " data-aos="fade-up" data-aos-delay="140">
+                <div class=" mt-2 " data-aos="fade-in" data-aos-delay="140">
                     <a class="btn bg
                 text-white" href="#produk" role="button">Belanja
                         sekarang</a>
@@ -183,16 +178,17 @@
 
 
     {{-- awal website --}}
+
     {{-- hero --}}
     <div class="jumbotron jmb1 d-none d-md-block jumbotron-fluid">
-        <div class="container  containergb" style="  margin-top: 170px;">
-            <h1 class="judul" data-aos="fade-up" data-aos-delay="100">
+        <div class="container containergb" style="  margin-top: 170px;">
+            <h1 class="judul" data-aos="fade-in" data-aos-delay="100">
                 Selamat Datang <br> di Website Resmi Nusa Kreatif
             </h1>
-            <p class="judul2" data-aos="fade-up" data-aos-delay="140">
+            <p class="judul2" data-aos="fade-in" data-aos-delay="140">
                 Kepuasan Anda adalah <b>Prioritas Kami</b>
             </p>
-            <div class="center mt-2 " data-aos="fade-up" data-aos-delay="140">
+            <div class="center mt-2 " data-aos="fade-in" data-aos-delay="140">
                 <a class="btn btn-primari
                 text-white" href="#produk" role="button">Belanja
                     sekarang</a>
@@ -201,7 +197,6 @@
         </div>
     </div>
     <!-- Akhir Hero -->
-
 
     <!-- info1 -->
     <div class="container-fluid d-none d-md-block mb-5">
@@ -236,19 +231,53 @@
         </div>
     </div>
     <!-- akhrinfo1 -->
-    <!-- kategori -->
-    <section id="kategori" class="kategori-produk d-md-block  mt-1 p-3">
+
+    {{-- Kategori mobile --}}
+    <section id="kategori" class="kategori-produk d-block d-sm-none p-3">
         <div class="container">
-            <h5 class="judul10" data-aos="fade-up">
+            <h5 class="judul10" data-aos="fade-in">
                 Produk Kategori</h5>
-            <hr data-aos="fade-up">
+            <hr data-aos="fade-in">
+            <div class="row mt-4 ">
+                <!-- start row -->
+                @php $kategoriaos = 0 @endphp
+                @foreach ($kategoris as $item)
+                    @if ($item->barangs->count() != 3)
+                        <div data-aos="fade-in" data-aos-delay="{{ $kategoriaos += 200 }}" class="col-4 "
+                            data-aos-delay="100">
+                            <a href="{{ route('kategori.tampil', $item->slug) }}">
+                                <div class="product mb-3"
+                                    style="background-image: url('{{ asset('storage/produk/kategori/' . $item->gambar) }}');">
+                                    <div class="product-content ">{{ $item->nama }}</div>
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+                <!-- end row -->
+            </div>
+            @if ($kategoris->count() == 4)
+                <a href="/detailkategori" data-aos="fade-in" class="btn text-white mt-2 melayang"
+                    style="background-color: #6C5ECF; font-size: 12px"> Lihat
+                    Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
+            @endif
+        </div>
+    </section>
+
+
+    <!-- kategori -->
+    <section id="kategori" class="kategori-produk d-none d-sm-block mt-1 p-3">
+        <div class="container">
+            <h5 class="judul10" data-aos="fade-in">
+                Produk Kategori</h5>
+            <hr data-aos="fade-in">
             <div class="row  mt-4 ">
                 <!-- start row -->
                 @php $kategoriaos = 0 @endphp
                 @foreach ($kategoris as $item)
                     {{-- @if ($item->barangs->count() != 0) --}}
-                    <div data-aos="fade-up" data-aos-delay="{{ $kategoriaos += 200 }}"
-                        class="col-6 col-md-4 col-lg-3 mb-3 " data-aos-delay="100">
+                    <div data-aos="fade-in" data-aos-delay="{{ $kategoriaos += 200 }}"
+                        class="col-6 col-md-4 col-lg-3 mb-3 ">
                         <a href="{{ route('kategori.tampil', $item->slug) }}">
                             <div class="product"
                                 style="background-image: url('{{ asset('storage/produk/kategori/' . $item->gambar) }}');">
@@ -260,7 +289,7 @@
                 @endforeach
                 <!-- end row -->
             </div>
-            <a href="/detailkategori" data-aos="fade-up" class="btn text-white mt-3 melayang"
+            <a href="/detailkategori" data-aos-delay="250" data-aos="fade-in" class="btn text-white mt-3 melayang"
                 style="background-color: #6C5ECF; font-size: 12px"> Lihat
                 Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
         </div>
@@ -268,17 +297,17 @@
     <!-- ak kategori -->
 
     <!-- card baru -->
-    <section id="produk" class="produk mt-5 d-md-block p-3 " style="background-color: #f8f8f8; ">
+    <section id="produk" class="produk mt-4 p-3 " style="background-color: #f8f8f8; ">
         <div class="container" style="">
-            <h5 data-aos="fade-up" class="mt-4 judul10">
+            <h5 data-aos="fade-in" class="mt-4 judul10">
                 Produk
                 Unggulan</h5>
-            <hr data-aos="fade-up">
+            <hr data-aos="fade-in">
             <div class="row mt-4">
                 @php $kategoriaos = 0 @endphp
                 @foreach ($bar as $barang)
-                    <div class="col-6 col-md-4 col-lg-3 mb-2" data-aos="fade-up"
-                        data-aos-delay="{{ $kategoriaos += 150 }}">
+                    <div class="col-6 col-md-4 col-lg-3 mb-2" data-aos="fade-in"
+                        data-aos-delay="{{ $kategoriaos += 350 }}">
                         <a href="/detail/{{ $barang->id }}" class="komponen-produk d-block">
                             <div class="produk">
                                 <div class="foto-produk"
@@ -296,22 +325,32 @@
                 @endforeach
                 <!-- row -->
             </div>
-            <a href="/produk" data-aos="fade-up" class="btn text-white mb-4 melayang"
-                style="background-color: #6C5ECF; font-size: 12px ">Lihat
-                Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
+            <div class="d-none d-sm-block">
+                <a href="/produk" data-aos="fade-in" class=" btn text-white mb-4 melayang"
+                    style="background-color: #6C5ECF; font-size: 12px ">Lihat
+                    Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
+            </div>
+            {{-- buton mobile --}}
+            @if ($bar->count() == 8)
+                <div class="d-block d-sm-none ">
+                    <a href="/produk" data-aos="fade-in" class="btn text-white mb-4 melayang"
+                        style="background-color: #6C5ECF; font-size: 12px ">Lihat
+                        Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
+                </div>
+            @endif
         </div>
     </section>
     <!-- akhir card baru -->
 
     <!-- yt -->
     <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 50px">
-        <h3 class="judul10" data-aos="fade-up">
+        <h3 class="judul10" data-aos="fade-in">
             Tentang Kami
         </h3>
-        <hr data-aos="fade-up">
+        <hr data-aos="fade-in">
         <div class="row mt-4">
             <div class="col-md-6">
-                <p style="font-size :13px" class="mb-4" data-aos="fade-up" data-aos-delay="150">
+                <p style="font-size :13px" class="mb-4" data-aos="fade-in" data-aos-delay="150">
                     Gampong Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata
                     berbasis
                     masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan
@@ -327,7 +366,7 @@
                 </p>
             </div>
             <div class="col-md-6 mb-5">
-                <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-up">
+                <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-in" data-aos-delay="170">
 
                     <iframe class="yt" width="560" height="315" src="https://www.youtube.com/embed/185FHRdxiTc"
                         title="YouTube video player" frameborder="0"

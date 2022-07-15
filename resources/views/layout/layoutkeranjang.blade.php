@@ -178,9 +178,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1500,
-            delay: 400,
+            duration: 2000,
+            delay: 500,
             once: true
+
+            // disable: function() {
+            //     var maxWidth = 800;
+            //     return window.innerWidth < maxWidth;
+            // }
         });
     </script>
     <script src="{{ asset('js/autoNumeric.min.js') }}"></script>

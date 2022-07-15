@@ -2,7 +2,9 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up"
+
+
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in"
         style="margin-top:55px ; margin-bottom:100px">
         @foreach ($datatransaksi as $item)
             <div class="card p-5 mt-5">
@@ -89,11 +91,27 @@
             </div>
         @endforeach
     </div>
+    {{-- ak code --}}
+
+
+    @if ($datatransaksi->count() == 0)
+        <div class="keranjang d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in">
+            <div class="text-center">
+                <p>Belum ada daftar pesanan</p>
+            </div>
+
+            <style>
+                .keranjang {
+                    margin-top: 86%;
+                }
+            </style>
+        </div>
+    @endif
     {{-- akhir Mobile --}}
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-up">
+    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in">
         @foreach ($datatransaksi as $item)
             <div class="card p-5" style="margin-top:150px">
                 <div class="row">
@@ -160,7 +178,8 @@
                     </div>
                 </div>
 
-                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}</p>
+                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}
+                </p>
 
                 <div class="row p-3">
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
