@@ -34,10 +34,10 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         document.write('<style>#footer{visibility:hidden}@media(min-height:' + ($(window).height() - 10) +
             'px){#footer{visibility:visible}}</style>');
-    </script>
+    </script> --}}
 
 </head>
 
@@ -226,7 +226,7 @@
 
     {{-- script --}}
 
-    <script>
+    {{-- <script>
         $(document).on('focus', 'input, textarea', function() {
             $.mobile.activePage.find("div[data-role='footer']").hide();
         });
@@ -234,7 +234,7 @@
         $(document).on('blur', 'input, textarea', function() {
             $.mobile.activePage.find("div[data-role='footer']").show();
         });
-    </script>
+    </script> --}}
 
 </body>
 

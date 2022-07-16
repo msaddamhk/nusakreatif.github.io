@@ -44,7 +44,7 @@
 
                 <style>
                     .keranjang {
-                        margin-top: 88%;
+                        margin-top: 86%;
                     }
                 </style>
             </div>
