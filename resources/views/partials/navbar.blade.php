@@ -16,7 +16,7 @@
                      <a class="nav-link" href="{{ route('home') }}">Beranda <span class="sr-only">(current)</span></a>
                  </li>
                  <li class="nav-item ">
-                     <a class="nav-link" href="/#produk">Produk<span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="/produk">Produk<span class="sr-only">(current)</span></a>
                  </li>
 
                  <li class="nav-item">
@@ -24,7 +24,7 @@
                  </li>
 
                  <li class="nav-item">
-                     <a class="nav-link" href="/#kategori
+                     <a class="nav-link" href="/detailkategori
                     ">Kategori</a>
                  </li>
 

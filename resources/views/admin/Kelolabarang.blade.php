@@ -3,7 +3,46 @@
 @section('body')
     <!-- navbar -->
 
-    <div class="mb-5">
+
+    <div class="keranjang d-block d-sm-none">
+        <div class="">
+
+            <h1 class="m-0" style="font-size: 40px;color:#242231"> <i class="fas fa-exclamation-triangle"></i></h1>
+            <h6 class="m-0 mt-2"> <b>Mohon maaf layanan ini tidak tersedia</b> </h6>
+            <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="btn btn1 mt-3  border-0 my-2 my-sm-0" type="submit">
+                    <i class="fas fa-sign-out-alt p-1"></i> Keluar
+                </button>
+            </form>
+        </div>
+        <style>
+            .keranjang {
+                text-align: center;
+                margin-top: 75%;
+            }
+
+            .btn1 {
+                background-color: #6C5ECF;
+                color: rgb(255, 255, 255)
+            }
+        </style>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="mb-5 d-none d-sm-block">
         <h5 style="font-size: 28px; color: #242231; font-weight: 700;">Kelola Produk</h5>
         <hr>
         <div class="row">

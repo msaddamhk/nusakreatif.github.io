@@ -45,27 +45,19 @@
 
 
     {{-- futer mobile --}}
-    <div class="text-center bottom-box  fixed-bottom text-mute p-4 d-block d-sm-none d-none d-sm-block d-md-none"
+    <footer class="container text-center fixed p-4 d-block d-sm-none d-none d-sm-block d-md-none"
         style="background-color: #1F1D2B;  border-top-right-radius: 18px; border-top-left-radius: 18px;">
-        {{-- Developed By :
-        <a class=" text-white fw-bold"
-            href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
-            Husein Khatami</a> --}}
-
 
         <div class="row">
-
             <div class="col-3 text-white" style="font-size: 15px">
                 <a href="/" class="sidebar-item {{ $title === 'Beranda' ? 'active' : '' }}">
                     <i class="fa-solid fa-house"></i>
                 </a>
-
             </div>
             <div class="col-3 text-white" style="font-size: 15px">
                 <a href="/pesanandetail" class="sidebar-item {{ $title === 'Pesanan' ? 'active' : '' }}">
                     <i class="fa-solid fa-list"></i>
                 </a>
-
             </div>
             <div class="col-3 text-white" style="font-size: 15px">
                 <a href="/keranjang" class="sidebar-item {{ $title === 'Keranjang' ? 'active' : '' }}">
@@ -89,7 +81,7 @@
                 </div>
             @endauth
         </div>
-    </div>
+    </footer>
 
     <style>
         .sidebar-item {
@@ -100,10 +92,28 @@
             color: #6C5ECF;
         }
 
-        .bottom-box {
-            position: fixed;
+        /* .fixed-botto {
             bottom: 0;
+            width: 100%;
+            height: auto;
             margin-bottom: calc(0px + env(keyboard-inset-height));
+        } */
+
+        .fixed {
+            position: sticky;
+            margin: 0px;
+            padding: 0px;
+            bottom: 0%;
+            margin-bottom: calc(0px + env(keyboard-inset-height));
+        }
+
+        @media screen and (max-height: 400px) {
+            .fixed {
+                position: sticky;
+                z-index: -2;
+            }
+
+            ...
         }
     </style>
     {{-- akhir mobile --}}
@@ -115,36 +125,6 @@
     <!-- Footer -->
     <footer class="d-none d-md-block d-lg-nonex text-lg-start text-muted border "
         style="background-color: #ffffff; margin-top: 80px;">
-        <!-- Section: Social media -->
-
-        {{-- <section class=" d-flex justify-content-center justify-content-lg-between p-4 border-bottom"> --}}
-        <!-- Left -->
-        {{-- <div class="me-5 d-none d-lg-block text-black ">
-            <span>Terhubung dengan kami di jejaring sosial:</span>
-        </div> --}}
-        <!-- Left -->
-
-        <!-- Right -->
-        {{-- <div>
-                <a href="" class="me-4  text-reset" style="color: #275062; font-size:20px">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset" style="color: #275062; font-size:20px">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset" style="color: #275062; font-size:20px">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="" class="me-4 text-reset" style="color: #275062; font-size:20px">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-
-            </div> --}}
-        <!-- Right -->
-        {{-- </section> --}}
-        <!-- Section: Social media -->
-
         <!-- Section: Links  -->
         <section class="p-4">
             <div class="container text-black  text-md-start ">
@@ -156,10 +136,6 @@
                         <h6 class=" fw-bold mb-4">
                             Alamat
                         </h6>
-                        {{-- <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15885.866445792522!2d95.26947416383098!3d5.497508795327145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30403a52bcac559f%3A0x4966e822a5857e23!2sNusa%2C%20Kec.%20Lhoknga%2C%20Kabupaten%20Aceh%20Besar%2C%20Aceh!5e0!3m2!1sid!2sid!4v1655977156437!5m2!1sid!2sid"
-                            width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
                         <p>
                             Kec. Lhoknga, Kabupaten Aceh Besar, Aceh
                         </p>
@@ -168,10 +144,6 @@
 
                     <!-- Grid column -->
                     <div class="col-md-3  mx-auto mb-4">
-                        <!-- Links -->
-                        {{-- <h6 class="text-uppercase fw-bold mb-4">
-                            Products
-                        </h6> --}}
                         <p>
                             <a href="https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi mengenai ....."
                                 class="text-reset">Bantuan</a>
@@ -190,26 +162,11 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    {{-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-
-                        <p>
-                            <a href="#!" class="text-reset">Help</a>
-                        </p>
-                    </div> --}}
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
                     <div class="col-md-3 mb-md-0 mb-4 futer">
                         <!-- Links -->
                         <h6 class="fw-bold mb-4">
                             Hubungi Kami
                         </h6>
-                        {{-- <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p> --}}
-                        {{-- <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            gampongnusa@gmail.com
-                        </p> --}}
                         <a href="https://www.instagram.com/accounts/login/?next=/gampongnusaku/" target="_blank"
                             class="text-reset" style="text-decoration: none">
                             <p> <i class="fab fa-instagram me-3"></i>
@@ -223,16 +180,16 @@
             </div>
         </section>
         <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center text-mute p-4" style="background-color: #1F1D2B">
-            Developed By :
-            <a class=" text-white fw-bold"
-                href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
-                Husein Khatami</a>
-        </div>
-        <!-- Copyright -->
     </footer>
+    <!-- Copyright -->
+    <div class="text-center p-4 d-none d-md-block d-lg-nonex text-lg-start"
+        style="color:rgb(161, 161, 161);background-color: #1F1D2B">
+        Developed By :
+        <a class=" text-white fw-bold"
+            href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
+            Husein Khatami</a>
+    </div>
+    <!-- Copyright -->
     <!-- akhir Footer -->
 
 

@@ -150,16 +150,14 @@
             </div>
         </section>
         <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center text-mute p-4" style="background-color: #242231">
-            Developed By :
-            <a class="text-white fw-bold" href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"
-                target="_blank">M Saddam Husein
-                Khatami</a>
-        </div>
-        <!-- Copyright -->
     </footer>
+    <div class="text-center p-4 d-none d-md-block d-lg-nonex text-lg-start"
+        style="color:rgb(161, 161, 161);background-color: #1F1D2B">
+        Developed By :
+        <a class=" text-white fw-bold"
+            href="https://www.instagram.com/accounts/login/?next=/msaddamhk01/"target="_blank">M Saddam
+            Husein Khatami</a>
+    </div>
     <!-- akhir Footer -->
 
 

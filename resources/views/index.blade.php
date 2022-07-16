@@ -14,7 +14,7 @@
                             <input class="form-control-borderless col input-lg p-2" placeholder="Silahkan cari Produk "
                                 name="search" type="search" value="{{ request('search') }}" />
                             <div class="ml-auto">
-                                <button class="btn text-white melayang" style="background-color: #6C5ECF;"
+                                <button class="btn text-white" style="background-color: #6C5ECF;"
                                     type="submit">Cari</button>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
     {{-- versi android --}}
 
     <section class="m-1" data-aos="fade-in">
-        <div class="d-block d-sm-none  " style="margin-top: -17px;">
+        <div class="d-block d-sm-none  " style="margin-top: -15px;">
             <div class="jumbotron m-4  containerbaru jumbotron4">
                 <div class="bungkus p-3" data-aos="fade-in">
                     <p class="judul7">
@@ -113,6 +113,28 @@
         .bg1 {
             background-color: #6C5ECF;
             font-size: 7px
+        }
+
+        @media screen and (max-width: 380px) {
+            .judul7 {
+                font-weight: 500;
+                font-size: 17px;
+                margin-top: 35px;
+
+            }
+        }
+
+        @media screen and (max-width: 280px) {
+            .judul7 {
+                font-weight: 500;
+                font-size: 16px;
+                margin-top: 31px;
+            }
+
+            .judul8 {
+                font-size: 8px;
+                margin-top: -11px
+            }
         }
     </style>
     </div>
@@ -295,9 +317,9 @@
     <!-- kategori -->
     <section id="kategori" class="kategori-produk d-none d-sm-block mt-1 p-3">
         <div class="container">
-            <h5 class="judul10" data-aos="fade-in">
+            <h5 class="judul10" data-aos="fade-in" data-aos-delay="100">
                 Produk Kategori</h5>
-            <hr data-aos="fade-in">
+            <hr data-aos="fade-in" data-aos-delay="150">
             <div class="row  mt-4 ">
                 <!-- start row -->
                 @php $kategoriaos = 0 @endphp
@@ -392,7 +414,7 @@
                     lainya.
                 </p>
             </div>
-            <div class="col-md-6 mb-5">
+            <div class="col-md-6">
                 <div class="embed-responsive embed-responsive-21by9 " data-aos="fade-in" data-aos-delay="162">
 
                     <iframe class="yt" width="560" height="315" src="https://www.youtube.com/embed/185FHRdxiTc"

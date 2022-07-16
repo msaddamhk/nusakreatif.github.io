@@ -5,9 +5,9 @@
 
 
     <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in"
-        style="margin-top:55px ; margin-bottom:100px">
+        style="margin-top:46px ; margin-bottom:100px">
         @foreach ($datatransaksi as $item)
-            <div class="card p-5 mt-5">
+            <div class="card p-4 mt-5">
                 <div class="row">
                     <div class="col-md-8">
                         <p class="responpesanan">Nama Penerima : {{ $item->nama_penerima }}</p>
@@ -78,7 +78,7 @@
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
                         @csrf
                         @method('DELETE') --}}
-                    <a class="btn text-white ml-auto" style="background-color: #008f2b;"
+                    <a class="btn text-white ml-auto" style="background-color: #008f2b; font-size:12px"
                         href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : NUSAKREATIF-{{ $item->id }}%0ANama : {{ $item->nama_penerima }} ">
                         <i class="fa-brands fa-whatsapp mr-1"></i>Hubungi
                         Admin
@@ -111,9 +111,9 @@
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in">
+    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top:150px">
         @foreach ($datatransaksi as $item)
-            <div class="card p-5" style="margin-top:150px">
+            <div class="card p-5 mt-5">
                 <div class="row">
                     <div class="col-md-8">
                         <p class="responpesanan">Nama Penerima : {{ $item->nama_penerima }}</p>

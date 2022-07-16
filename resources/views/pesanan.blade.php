@@ -2,12 +2,13 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-up" style="margin-top: 120px">
-        <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in"
+        style="margin-top: 80px;margin-bottom: -40px">
+        <h3 style="color: #242231; font-weight: 700; font-size: 20px ;">
             Detail Pesanan
         </h3>
         <hr>
-        <div class="card p-5 mb-4">
+        <div class="card p-4 mb-4">
             <table class="table">
                 <thead>
                     <tr>
@@ -40,7 +41,7 @@
 
 
 
-    <div class="container  p-4 d-none d-md-block d-lg-nonex" data-aos="fade-up" style="margin-top: 120px">
+    <div class="container  p-4 d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top: 120px">
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Detail Pesanan
         </h3>
@@ -77,7 +78,7 @@
     </div>
 
     <!-- detail -->
-    <div class="container p-3 mb-3" data-aos="fade-up">
+    <div class="container p-4 mb-3" data-aos="fade-in">
 
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Data
