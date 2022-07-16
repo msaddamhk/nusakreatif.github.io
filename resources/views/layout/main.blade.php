@@ -107,7 +107,7 @@
             margin-bottom: calc(0px + env(keyboard-inset-height));
         }
 
-        @media screen and (max-height: 400px) {
+        @media screen and (max-height: 900px) {
             .fixed {
                 position: sticky;
                 z-index: -2;
