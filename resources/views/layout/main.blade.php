@@ -34,6 +34,11 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script type="text/javascript">
+        document.write('<style>#footer{visibility:hidden}@media(min-height:' + ($(window).height() - 10) +
+            'px){#footer{visibility:visible}}</style>');
+    </script>
+
 </head>
 
 
@@ -45,7 +50,7 @@
 
 
     {{-- futer mobile --}}
-    <footer class="container text-center fixed p-4 d-block d-sm-none d-none d-sm-block d-md-none"
+    <footer class="text-center fixed p-4 d-block d-sm-none d-none d-sm-block d-md-none"
         style="background-color: #1F1D2B;  border-top-right-radius: 18px; border-top-left-radius: 18px;">
 
         <div class="row">
@@ -105,15 +110,6 @@
             padding: 0px;
             bottom: 0%;
             margin-bottom: calc(0px + env(keyboard-inset-height));
-        }
-
-        @media screen and (max-height: 900px) {
-            .fixed {
-                position: sticky;
-                z-index: -2;
-            }
-
-            ...
         }
     </style>
     {{-- akhir mobile --}}
@@ -227,6 +223,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
     @yield('javascript')
+
+    {{-- script --}}
+
+    <script>
+        $(document).on('focus', 'input, textarea', function() {
+            $.mobile.activePage.find("div[data-role='footer']").hide();
+        });
+
+        $(document).on('blur', 'input, textarea', function() {
+            $.mobile.activePage.find("div[data-role='footer']").show();
+        });
+    </script>
 
 </body>
 
