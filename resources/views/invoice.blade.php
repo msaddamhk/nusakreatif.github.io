@@ -102,7 +102,7 @@
 
             <style>
                 .keranjang {
-                    margin-top: 86%;
+                    margin-top: 84%;
                 }
             </style>
         </div>

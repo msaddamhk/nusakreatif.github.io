@@ -2,7 +2,7 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="p-4 d-block d-sm-none d-none " data-aos="fade-in" style="margin-top: 90px">
+    <div class="p-4 d-block d-sm-none d-none " data-aos="fade-in" style="margin-top: 85px">
         @foreach ($keranjang as $keranjangs)
             <div class="container mb-4 card p-3 ">
                 <div class="media">
