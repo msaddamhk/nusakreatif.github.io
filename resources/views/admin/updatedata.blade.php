@@ -55,15 +55,11 @@
                     <trix-editor input="x"></trix-editor>
                 </div>
 
-                {{-- <div class="form-group">
-                <label for="deskripsi">deskripsi</label>
-                <input type="text" name="deskripsi" class="form-control" id="deskripsi" placeholder="">
-            </div> --}}
-
                 <div class="form-group">
                     <label for="gambar">Tambahkan Foto</label>
-                    <input type="file" value="{{ $barangs->gambar }}" name="gambar" class="form-control-file "
-                        id="gambar">
+                    <input type="file" name="gambar" class="form-control-file" id="gambar" required>
+                    {{-- <input type="file" value="{{ $barangs->gambar }}" name="gambar" class="form-control-file "
+                        id="gambar" required> --}}
                     <label for="gambar">Masukkan Foto dengan format JPG, PNG, JPEG | Max ukuran foto 4 MB</label>
                 </div>
 

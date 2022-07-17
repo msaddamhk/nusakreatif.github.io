@@ -392,7 +392,7 @@
     <!-- akhir card baru -->
 
     <!-- yt -->
-    <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 50px">
+    <div id="vidio" class="container d-md-block mt-4 p-4" style="margin-bottom: 35px">
         <h3 class="judul10" data-aos="fade-in" data-aos-delay="150">
             Tentang Kami
         </h3>

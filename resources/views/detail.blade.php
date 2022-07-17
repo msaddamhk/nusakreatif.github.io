@@ -15,7 +15,7 @@
             </style>
         </div>
 
-        <div class="container p-4 d-block d-sm-none" style="margin-bottom: 130px">
+        <div class="container p-4 d-block d-sm-none" style="margin-bottom: 16px">
             <div class="row">
                 <h1 class="col-8" style="font-size: 18px" data-aos="fade-in" data-aos-delay="310">
                     <b> {{ $barang->judul }} </b>
@@ -29,22 +29,37 @@
             </h6>
 
 
-            <div class="mt-5 mb-3 d-block d-sm-none " data-aos="fade-in" data-aos-delay="340">
-
+            <div class="mt-4 mb-3 d-block d-sm-none " data-aos="fade-in" data-aos-delay="340">
                 <h3 style="color: #000000; font-weight: 600; font-size: 17px;  ;">
                     Deskripsi
                     <hr>
                 </h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam aliquid porro facere deleniti
-                eius, dicta dolorem perferendis neque necessitatibus quis nisi excepturi perspiciatis vitae dolor sapiente,
-                voluptate non voluptatem nesciunt, assumenda minus laboriosam. Tenetur reprehenderit nam id. Doloribus eos
-                omnis illo atque quaerat accusamus cumque id iste beatae! Voluptate.
-                {{-- {!! $barang->deskripsi !!} --}}
-
-                {{-- <hr> --}}
+                {!! $barang->deskripsi !!}
+                <hr>
             </div>
 
-            <div class="control p-3 fixed-bottom">
+            <div class="control" data-aos="fade-in" data-aos-delay="350">
+                <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
+                    @csrf
+                    <b class="">Jumlah</b>
+
+                    <div class="form-group mt-2 ">
+                        <input type="number" max="{{ $barang->stock }}" name="jumlahpesanan" class="form-control fr"
+                            id="jumlahpesanan" placeholder="Masukkan jumlah" required>
+                    </div>
+
+                    <div class="">
+                        <button class="btn d-block fr btn-block text-white btn-block"
+                            style="background-color: #6C5ECF;font-size:15px;" type="submit">
+                            Beli Sekarang
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+
+            {{-- opsional <div class="control p-3 fixed-bottom">
                 <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
                     @csrf
                     <p class="text-white mt-1">Jumlah</p>
@@ -63,8 +78,10 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <style>
+            </div> --}}
+
+
+            {{-- <style>
                 .control {
                     background-color: #242231;
                     border-top-right-radius: 15px;
@@ -74,7 +91,7 @@
                 .fr {
                     border-radius: 7px;
                 }
-            </style>
+            </style> --}}
 
         </div>
     </div>
