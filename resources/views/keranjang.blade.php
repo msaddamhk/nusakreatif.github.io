@@ -2,22 +2,22 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="p-4 d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in" style="margin-top: 90px">
+    <div class="p-4 d-block d-sm-none d-none " data-aos="fade-in" style="margin-top: 90px">
         @foreach ($keranjang as $keranjangs)
-            <div class="container  mb-4 card p-3 ">
+            <div class="container mb-4 card p-3 ">
                 <div class="media">
                     <img src="{{ asset('storage/produk/' . $keranjangs->barang->gambar) }}" alt="" height="90"
                         width="120" class="img-flui rounded shadow-sm">
                     <div class="media-body ml-3 ">
-                        <p class="" style="margin: 0px; font-size:15px">{{ $keranjangs->barang->judul }}</p>
-                        <p class="" style="margin: 0px; ; font-size:15px">jumlah : {{ $keranjangs->jumblah }}</p>
-                        <p class="mb-1" style="margin: 0px; ; font-size:15px">Total Harga : Rp.
+                        <p class="" style="margin: 0px; font-size:12px">{{ $keranjangs->barang->judul }}</p>
+                        <p class="mt-1" style="margin: 0px; ; font-size:12px">jumlah : {{ $keranjangs->jumblah }}</p>
+                        <p class="mb-2 mt-1" style="margin: 0px; ; font-size:12px">Total Harga : Rp.
                             {{ number_format($keranjangs->getTotalHarga()) }}</p>
                         <form action="{{ route('hapuskeranjang', $keranjangs) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button onclick="clicked(event)" class="text-white p-2"
-                                style="font-size: 9px;border-radius:4px ; background-color:#6C5ECF;  border:none ">Hapus
+                                style="font-size: 7px;border-radius:4px ; background-color:#6C5ECF;  border:none ">Hapus
                                 Data</button>
                         </form>
                     </div>
@@ -28,18 +28,25 @@
 
         @if ($keranjang->count() != 0)
             <hr>
-            <a href="{{ route('pesan') }}" class="btn my-2 my-sm-0 text-white" id="ongkir"
-                style="background-color: #6C5ECF;" type="submit">Beli Sekarang
-            </a>
+
+            <div class="card p-4">
+
+                <div class="row">
+                    @foreach ($keranjang as $keranjangs)
+                        <h6 class="col-9 mt-2">{{ $keranjangs->barang->judul }}</h6>
+                        <h6 class="col-3 mt-2">x{{ $keranjangs->jumblah }}</h6>
+                    @endforeach
+                </div>
+                <hr>
+                <a href="{{ route('pesan') }}" class="btn my-2 my-sm-0 text-white" id="ongkir"
+                    style="background-color: #6C5ECF; font-size:14px" type="submit">Lanjutkan
+                </a>
+
+            </div>
         @else
             <div class="keranjang">
                 <div class="row bg-dange justify-content-center align-content-center ">
-
                     <p>Keranjang Anda masi Kosong</p>
-
-                    {{-- <div class="">
-                        <a href="" class="btn btn-danger"></a>
-                    </div> --}}
                 </div>
 
                 <style>
@@ -54,7 +61,7 @@
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top: 100px;min-height:50vh">
+    <div class="container d-none d-sm-block " data-aos="fade-in" style="margin-top: 100px;min-height:50vh">
         <!-- Shopping cart table -->
         <div class="table-responsive">
             <table class="table">
@@ -147,26 +154,3 @@
         }
     </script>
 @endsection
-
-
-
-
-
-
-{{-- <hr class=" mt-4">
-        <h3 style="color: #275062; font-weight: 700; font-size: 17px;  ;">
-            Detail Pembayaran
-        </h3>
-        <p style="color: #8f8f8f">
-            Total Harga : <b style="color: #29A867">Rp.
-                {{ number_format($totalharga ?? 0) }}</b>
-        </p>
-        @if ($keranjang->count() > 0)
-            <a href="https://api.whatsapp.com/send?phone=6285760557702&text=Hai Admin Saya Ingin Membeli {{ $keranjangs->barang->judul }},dengan jumlah {{ $keranjangs->jumblah }} , Total Harga {{ number_format($keranjangs->getTotalHarga()) }}, Alamat "
-                class="btn  my-2 my-sm-0 text-white" style="background-color: #275062;" type="submit">Beli Sekarang</a>
-        @endif
-        <style>
-            .form-control {
-                background-color: #F3F3F3;
-            }
-        </style> --}}

@@ -2,72 +2,87 @@
 
 @section('body')
     {{-- mobile --}}
-
-    <div class="jumbotron1" style="margin-top: 130px">
-        <section class="">
-            <div class="d-block d-sm-none" style="margin-top: -15px;" data-aos="fade-in">
-                <div class="jumbotron4 m-4"
-                    style="background-image: url('{{ asset('storage/produk/' . $barang->gambar) }}');">
-                </div>
-            </div>
-        </section>
-        <style>
-            .jumbotron4 {
-                background-image: url('storage/produk/'. $barang->gambar);
-                background-size: cover;
-                position: relative;
-                border-radius: 10px;
-                height: 260px;
-            }
-        </style>
-    </div>
-
-    <div class="container d-block d-sm-none">
-        <div class="m-2">
-            <h1 class="" style="font-size: 18px" data-aos="fade-in" data-aos-delay="310">
-                {{ $barang->judul }}
-            </h1>
-            <h4 class="ml-auto" style="font-size: 17px; color:#000000" data-aos="fade-in" data-aos-delay="310">
-                <b>Harga : Rp.{{ number_format($barang->harga) }}</b>
-            </h4>
-            <h4 style="font-size: 17px" data-aos="fade-in" data-aos-delay="320">
-                Stock : {{ $barang->stock }}
-            </h4>
+    <div class="">
+        <div class="d-block d-sm-none">
+            <img class="img2" src="{{ asset('storage/produk/' . $barang->gambar) }}" class="card-img-top" alt="...">
+            <style>
+                .img2 {
+                    margin-top: 75px;
+                    width: 100%;
+                    background-size: cover;
+                    height: 320px
+                }
+            </style>
         </div>
 
+        <div class="container p-4 d-block d-sm-none" style="margin-bottom: 130px">
+            <div class="row">
+                <h1 class="col-8" style="font-size: 18px" data-aos="fade-in" data-aos-delay="310">
+                    <b> {{ $barang->judul }} </b>
+                </h1>
+                <h4 class="col-4" style="font-size: 17px" data-aos="fade-in" data-aos-delay="320">
+                    Stock : {{ $barang->stock }}
+                </h4>
+            </div>
+            <h6 class="mt-1" style="font-size: 17px; color:#000000" data-aos="fade-in" data-aos-delay="330">
+                Harga : Rp.{{ number_format($barang->harga) }}
+            </h6>
 
-        <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
-            @csrf
-            <hr data-aos="fade-in" data-aos-delay="340">
-            <div class="form-group mb-4 m-2" data-aos="fade-in" data-aos-delay="360">
-                <label for="jumlahpesanan">Jumlah Pesanan</label>
-                <input type="number" max="{{ $barang->stock }}" name="jumlahpesanan" class="form-control"
-                    id="jumlahpesanan" placeholder="Masukkan jumlah Pesanan Anda" required>
+
+            <div class="mt-5 mb-3 d-block d-sm-none " data-aos="fade-in" data-aos-delay="340">
+
+                <h3 style="color: #000000; font-weight: 600; font-size: 17px;  ;">
+                    Deskripsi
+                    <hr>
+                </h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quisquam aliquid porro facere deleniti
+                eius, dicta dolorem perferendis neque necessitatibus quis nisi excepturi perspiciatis vitae dolor sapiente,
+                voluptate non voluptatem nesciunt, assumenda minus laboriosam. Tenetur reprehenderit nam id. Doloribus eos
+                omnis illo atque quaerat accusamus cumque id iste beatae! Voluptate.
+                {{-- {!! $barang->deskripsi !!} --}}
+
+                {{-- <hr> --}}
             </div>
 
-            <hr data-aos="fade-in" data-aos-delay="410">
-            <div class="row p-2">
-                <div class="col-6 col-md-6 col-lg-6 mb-2" data-aos="fade-in" data-aos-delay="370">
-                    <button class="btn  my-1 my-sm-0 text-white btn-block" style="background-color: #6C5ECF;font-size:13px;"
-                        type="submit">Beli Sekarang</i></button>
-                </div>
+            <div class="control p-3 fixed-bottom">
+                <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
+                    @csrf
+                    <p class="text-white mt-1">Jumlah</p>
 
-                {{-- <div class="col-6 col-md-6 col-lg-6" data-aos="fade-in" data-aos-delay="380">
-                    <a href="https://api.whatsapp.com/send?phone=6285760557702&text=Hai Admin Saya Ingin   Membeli {{ $barang->judul }}  , dengan Jumlah Pesanan     "
-                        class="btn  my-1 my-sm-0 text-white btn-block " style="background-color: #009940; font-size:13px;"
-                        type="submit">Beli Sekarang
-                    </a>
-                </div> --}}
+                    <div class="row">
+                        <div class="form-group col-7">
+                            <input type="number" max="{{ $barang->stock }}" name="jumlahpesanan" class="form-control fr"
+                                id="jumlahpesanan" placeholder="Masukkan jumlah" required>
+                        </div>
+
+                        <div class="col-5">
+                            <button class="btn d-block fr btn-block text-white btn-block"
+                                style="background-color: #6C5ECF;font-size:15px;" type="submit">
+                                Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+            <style>
+                .control {
+                    background-color: #242231;
+                    border-top-right-radius: 15px;
+                    border-top-left-radius: 15px;
+                }
+
+                .fr {
+                    border-radius: 7px;
+                }
+            </style>
+
+        </div>
     </div>
-
-    {{-- mobile --}}
-
+    {{-- Akhir mobile --}}
 
 
     {{-- teb --}}
-    <div class="container d-none d-sm-block d-md-none" style="margin-top: 30px">
+    <div class="container p-4 d-none d-sm-block d-md-none" style="margin-top: 100px">
         <div class="jumbotron4 jumbotron"
             style="background-image: url('{{ asset('storage/produk/' . $barang->gambar) }}');">
         </div>
@@ -78,7 +93,6 @@
                 position: relative;
                 border-radius: 10px;
                 height: 260px;
-
             }
         </style>
         <div>
@@ -106,43 +120,25 @@
             <div class="row">
                 <div class="col-6 col-md-6 col-lg-6 mb-2" data-aos="fade-in" data-aos-delay="900">
                     <button class="btn  my-1 my-sm-0 text-white btn-block" style="background-color: #6C5ECF;font-size:13px;"
-                        type="submit">Tambah Keranjang</i></button>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-6" data-aos="fade-in" data-aos-delay="1000">
-                    <a href="https://api.whatsapp.com/send?phone=6285760557702&text=Hai Admin Saya Ingin   Membeli {{ $barang->judul }}  , dengan Jumlah Pesanan     "
-                        class="btn  my-1 my-sm-0 text-white btn-block " style="background-color: #009940; font-size:13px;"
-                        type="submit">Beli Sekarang
-                    </a>
+                        type="submit">Beli Sekarang</i></button>
                 </div>
             </div>
         </form>
     </div>
     {{-- ak Teb --}}
 
-    <div class="container d-block d-sm-none d-none d-sm-block d-md-none p-4  text-justify" data-aos="fade-in"
-        data-aos-delay="400">
-        <h3 style="color: #242231; font-weight: 700; font-size: 23px;  ;">
-            Deskripsi
-            <hr>
-        </h3>
-        {!! $barang->deskripsi !!}
-    </div>
-    </div>
 
-    {{-- akhir --}}
-
-
-
-    <div class="container p-4  d-none d-md-block d-lg-nonex" style="margin-top: 120px;">
+    {{-- desktop --}}
+    <div class="container p-4 d-none d-md-block d-lg-nonex" style="margin-top: 110px;">
         <div class="row">
             <div class="col-md-6 mb-4" data-aos="fade-in" data-aos-delay="200">
                 <a href="{{ asset('storage/produk/' . $barang->gambar) }}">
-                    <img src="{{ asset('storage/produk/' . $barang->gambar) }}" class="img-fluid "
-                        alt="Responsive image" style="width: 600px; height:350px; border-radius:6px">
+                    <img src="{{ asset('storage/produk/' . $barang->gambar) }}" class="img-fluid " alt="Responsive image"
+                        style="width: 600px; height:350px; border-radius:6px">
                 </a>
             </div>
             <div class="col-md-5 my-auto">
+
                 <h1 style="font-size: 20px" data-aos="fade-in" data-aos-delay="300">
                     {{ $barang->judul }}
                 </h1>
@@ -153,10 +149,6 @@
                     Stock : {{ $barang->stock }}
                 </h4>
                 <hr data-aos="fade-in" data-aos-delay="500">
-
-                {{-- <h4 style="font-size: 17px">
-                    Kategori : {{ $barang->kategori->nama }}
-                </h4> --}}
 
 
                 <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
@@ -170,27 +162,23 @@
                     <hr data-aos="fade-in" data-aos-delay="800">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-6 mb-2" data-aos="fade-in" data-aos-delay="900">
-                            <button class="btn  my-1 my-sm-0 text-white btn-block"
-                                style="background-color: #6C5ECF;font-size:13px;" type="submit">Tambahkan
-                                Kekeranjang</button>
+                            <button class="btn my-1 my-sm-0 text-white btn-block"
+                                style="background-color: #6C5ECF;font-size:13px;" type="submit">Beli
+                                Sekarang</button>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-6" data-aos="fade-in" data-aos-delay="1000">
+                        {{-- <div class="col-12 col-md-6 col-lg-6" data-aos="fade-in" data-aos-delay="1000">
                             <a href="https://api.whatsapp.com/send?phone=6285760557702&text=Hai Admin Saya Ingin   Membeli {{ $barang->judul }}  , dengan Jumlah Pesanan     "
                                 class="btn  my-1 my-sm-0 text-white btn-block "
                                 style="background-color: #009940; font-size:13px;" type="submit">Beli Sekarang
                                 Melaui wa</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </form>
-
-                {{-- row --}}
 
             </div>
         </div>
     </div>
-
-
     <style>
         .img3 {
             height: 300px;
@@ -205,22 +193,24 @@
     </style>
     </div>
 
-    <div class="container  p-4  d-none d-md-block d-lg-nonex  text-justify" data-aos="fade-in" data-aos-delay="400">
+
+
+    <div class="container p-4 d-none d-sm-block   text-justify" data-aos="fade-in" data-aos-delay="400">
         <h3 style="color: #242231; font-weight: 700; font-size: 23px;  ;">
             Deskripsi
             <hr>
         </h3>
         {!! $barang->deskripsi !!}
     </div>
+
+
     <!-- card baru -->
-    <section id="produk" class="produk   ">
+    <section id="produk" class="produk  d-none d-sm-block ">
         <div class="container p-4">
             <h5 data-aos="fade-in" class="mt-4" style="font-size: 22px; color: #242231; font-weight: 700;"> Produk
                 Lainnya</h5>
-
             <hr data-aos="fade-in">
             <div class="row mt-4">
-
                 @php $kategoriaos = 0 @endphp
                 @foreach ($barangs as $barang)
                     <div class="col-6 col-md-4 col-lg-3 mb-2" data-aos="fade-in"
@@ -231,9 +221,6 @@
                                     style="background-image: url('{{ asset('storage/produk/' . $barang->gambar) }}');">
                                 </div>
                             </div>
-                            {{-- <div class="text-produk">
-                            {{ $barang->kategori->nama }}
-                        </div> --}}
                             <div class="text-produk">
                                 {{ $barang->judul }}
                             </div>
@@ -245,9 +232,6 @@
                 @endforeach
                 <!-- row -->
             </div>
-            {{-- <a href="/produk" data-aos="fade-in" class="btn text-white mb-4"
-                style="background-color: #275062; font-size: 13px"><i class="fas fa-fw fa-arrow-right"></i> Lihat
-                Selengkapnya</a> --}}
         </div>
     </section>
     <!-- akhir card baru -->

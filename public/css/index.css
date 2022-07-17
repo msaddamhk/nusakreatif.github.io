@@ -285,6 +285,11 @@
 
 }
 @media screen and (max-width: 500px)  { 
+   .judul10{
+    font-size: 17px; 
+    color: #242231; 
+    font-weight: semi-bold;
+  }
   .product-content {
     font-weight: 100;
     font-size: 12px;
