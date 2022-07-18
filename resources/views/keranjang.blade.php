@@ -10,6 +10,9 @@
                         width="120" class="img-flui rounded shadow-sm">
                     <div class="media-body ml-3 ">
                         <p class="" style="margin: 0px; font-size:12px">{{ $keranjangs->barang->judul }}</p>
+                        <p class="mt-1" style="margin: 0px; ; font-size:12px">Harga Barang : Rp.
+                            {{ number_format($keranjangs->barang->harga) }}
+                        </p>
                         <p class="mt-1" style="margin: 0px; ; font-size:12px">jumlah : {{ $keranjangs->jumblah }}</p>
                         <p class="mb-2 mt-1" style="margin: 0px; ; font-size:12px">Total Harga : Rp.
                             {{ number_format($keranjangs->getTotalHarga()) }}</p>
@@ -17,7 +20,7 @@
                             @csrf
                             @method('DELETE')
                             <button onclick="clicked(event)" class="text-white p-2"
-                                style="font-size: 7px;border-radius:4px ; background-color:#6C5ECF;  border:none ">Hapus
+                                style="font-size: 8px;border-radius:4px ; background-color:#6C5ECF;  border:none ">Hapus
                                 Data</button>
                         </form>
                     </div>

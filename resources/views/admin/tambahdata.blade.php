@@ -21,7 +21,7 @@
                 </div>
 
                 <label>Kategori</label>
-                <select class="mb-2 form-control" name="kategori_id" id="kategori_id" required>
+                <select class="mb-2 form-control select" name="kategori_id" id="kategori_id" required>
                     <option value="" selected disabled> Masukkan nama kategori </option>
                     @foreach ($kategori as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }} </option>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="berat">berat</label>
+                    <label for="berat">Berat</label>
                     <input type="number" name="berat" class="form-control" id="berat"
                         placeholder="Masukkan berat barang dalam besaran Gram" required>
                 </div>
@@ -70,7 +70,24 @@
                 </div>
                 {{-- </div> --}}
 
+                <style>
+                    trix-editor:empty:not(:focus)::before {
+                        /* opacity: .4; */
+                        font-size: 13px;
+                    }
 
+
+                    .select {
+                        opacity: .8;
+                        font-size: 13px;
+                    }
+
+                    input::placeholder {
+                        /* font-weight: bold; */
+                        opacity: .4;
+                        font-size: 13px;
+                    }
+                </style>
 
         </div>
     </div>

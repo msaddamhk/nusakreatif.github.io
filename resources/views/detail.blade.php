@@ -10,7 +10,7 @@
                     margin-top: 75px;
                     width: 100%;
                     background-size: cover;
-                    height: 320px
+                    height: 300px
                 }
             </style>
         </div>

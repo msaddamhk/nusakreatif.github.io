@@ -68,6 +68,25 @@
                         type="submit">Update
                         Data</button>
                 </div>
+
+                <style>
+                    trix-editor:empty:not(:focus)::before {
+                        /* opacity: .4; */
+                        font-size: 13px;
+                    }
+
+
+                    .select {
+                        opacity: .8;
+                        font-size: 13px;
+                    }
+
+                    input::placeholder {
+                        /* font-weight: bold; */
+                        opacity: .4;
+                        font-size: 13px;
+                    }
+                </style>
         </div>
 
 

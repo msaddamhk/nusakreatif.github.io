@@ -93,25 +93,25 @@
             <div class="form-group">
                 <label for="alamat">Nama</label>
                 <input type="text" value="{{ auth('')->user()->name }}" class="mb-2 form-control" name="nama"
-                    id="nama" aria-describedby="emailHelp" required>
-                <small style="font-size: 13px" for="alamat">Silahkan ubah Nama jika Nama penerima berbeda</small>
+                    id="nama" aria-describedby="emailHelp" required placeholder="Silahkan Masukkan Nama">
+                {{-- <small style="font-size: 13px" for="alamat">Silahkan ubah Nama jika Nama penerima berbeda</small> --}}
             </div>
             <div class="form-group">
                 <label for="alamat">Detail Alamat</label>
                 <input type="text" value="{{ auth('')->user()->alamat }}" class="form-control" name="alamat"
-                    id="alamat" aria-describedby="emailHelp" required>
+                    id="alamat" aria-describedby="emailHelp" required placeholder="Silahkan Masukkan Alamat">
             </div>
 
             <div class="form-group">
                 <label for="notelepon">No Telepon</label>
                 <input type="number" class="form-control" name="notelepon" id="notelepon" aria-describedby="emailHelp"
-                    required>
+                    required placeholder="Silahkan Masukkan No HP">
             </div>
 
             <div class="row">
                 <div class="form-group col-6 col-md-6 col-lg-6">
                     <label for="provinsi">Provinsi</label>
-                    <select class="mb-2 form-control" id="provinsi" name="provinsi" required>
+                    <select class="mb-2 form-control select" id="provinsi" name="provinsi" required>
                         <option value="" holder>Pilih Provinsi</option>
                         @foreach ($provinsi as $item)
                             <option value="{{ $item->id }},{{ $item->province }}" placeholder="Pilih Kota">
@@ -125,7 +125,7 @@
 
                 <div class="form-group col-6 col-md-6 col-lg-6">
                     <label for="destination">Kabupaten/Kota</label>
-                    <select class="mb-2 form-control" id="destination" name="destination" required>
+                    <select class="mb-2 form-control select" id="destination" name="destination" required>
                         <option value="" holder>Pilih Kota/Kabupaten</option>
                     </select>
                 </div>
@@ -135,7 +135,7 @@
 
             <div class="form-group">
                 <label for="">Kurir</label>
-                <select class="mb-2 form-control" id="courier" name="courier" required>
+                <select class="mb-2 form-control select" id="courier" name="courier" required>
                     <option value="" holder>Silahkan Pilih Kurir</option>
                     <option value="jne" holder>JNE</option>
                     <option value="tiki" holder>TIKI</option>
@@ -145,11 +145,29 @@
 
             <div class="form-group">
                 <label for="opsi_pengiriman">Opsi Pengiriman</label>
-                <select class="mb-2 form-control" id="opsi_pengiriman" name="opsi_pengiriman" required>
+                <select class="mb-2 form-control select" id="opsi_pengiriman" name="opsi_pengiriman" required>
                 </select>
-                <p style="font-size: 13px" class="text-black">Total Biaya Pengiriman akan ditambah secara otomatis
-                    dengan total harga Barang </p>
+                {{-- <p style="font-size: 13px" class="text-black">Total Biaya Pengiriman akan ditambah secara otomatis
+                    dengan total harga Barang </p> --}}
             </div>
+
+
+            <style>
+                .select {
+                    opacity: .9;
+                    font-size: 13px;
+                }
+
+                input::placeholder {
+                    /* font-weight: bold; */
+                    opacity: .4;
+                    font-size: 13px;
+                }
+            </style>
+
+
+
+
 
             <script>
                 // new AutoNumeric('#opsi_pengiriman', {

@@ -399,7 +399,7 @@
         <hr data-aos="fade-in">
         <div class="row mt-4">
             <div class="col-md-6">
-                <p style="font-size :13px" class="mb-4" data-aos="fade-in" data-aos-delay="160">
+                <p style="font-size :14px" class="mb-4 text-justify" data-aos="fade-in" data-aos-delay="160">
                     Gampong Nusa merupakan satu diantara gampong di Aceh yang terus bergerak mengembangkan Desa wisata
                     berbasis
                     masyarakat. Potensi lokal yang dimiliki terus diramu menjadi berbagai atraksi wisata dengan

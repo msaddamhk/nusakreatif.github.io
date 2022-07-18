@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- css -->
-    <link rel="stylesheet" href="{{ asset('css/index.css ') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/bootstrap/css/bootstrap.min.css ') }}">
 
     <!-- slick css -->
