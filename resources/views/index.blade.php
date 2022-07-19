@@ -167,7 +167,7 @@
         <div class="jumbotron containerbaru jumbotron3">
             <div class="bungkus my-auto">
                 <h1 class="judul5 " data-aos="fade-in" data-aos-delay="100">
-                    Selamat Datang <br> di Website Nusa Kreatif
+                    Selamat Datang <br> di Toko Online Kreatif
                 </h1>
                 <p class="judul6" data-aos="fade-in" data-aos-delay="140">
                     Kepuasan Anda adalah <b>Prioritas Kami</b>
@@ -209,8 +209,8 @@
 
         .judul5 {
             font-weight: 500;
-            font-size: 28px;
-            margin-top: 11px
+            font-size: 27px;
+            margin-top: 10px
         }
 
         .judul6 {
@@ -232,7 +232,7 @@
     <div class="jumbotron jmb1 d-none d-md-block jumbotron-fluid">
         <div class="container containergb" style="  margin-top: 170px;">
             <h1 class="judul" data-aos="fade-in" data-aos-delay="100">
-                Selamat Datang <br> di Website Resmi Nusa Kreatif
+                Selamat Datang <br> di Toko Online Nusa Kreatif
             </h1>
             <p class="judul2" data-aos="fade-in" data-aos-delay="140">
                 Kepuasan Anda adalah <b>Prioritas Kami</b>
@@ -375,14 +375,14 @@
                 <!-- row -->
             </div>
             <div class="d-none d-sm-block">
-                <a href="/produk" data-aos="fade-in" class=" btn text-white mb-4 melayang"
+                <a href="/produk" data-aos="fade-in" data-aos-delay="360" class=" btn text-white mb-4 melayang"
                     style="background-color: #6C5ECF; font-size: 12px ">Lihat
                     Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
             </div>
             {{-- buton mobile --}}
             @if ($bar->count() == 8)
                 <div class="d-block d-sm-none ">
-                    <a href="/produk" data-aos="fade-in" class="btn text-white mb-4 melayang"
+                    <a href="/produk" data-aos="fade-in" data-aos-delay="360" class="btn text-white mb-4 melayang"
                         style="background-color: #6C5ECF; font-size: 12px ">Lihat
                         Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
                 </div>

@@ -37,7 +37,7 @@
 </head>
 
 
-<body style="font-family: 'Poppins', sans-serif;">
+<body style="font-family: 'Poppins', sans-serif; height:100%">
 
     <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 fixed-top" style="background-color: #1F1D2B">
         <div class="container text-white">

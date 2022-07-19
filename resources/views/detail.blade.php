@@ -17,19 +17,19 @@
 
         <div class="container p-4 d-block d-sm-none" style="margin-bottom: 16px">
             <div class="row">
-                <h1 class="col-8" style="font-size: 18px" data-aos="fade-in" data-aos-delay="310">
+                <h1 class="col-8" style="font-size: 18px" data-aos="fade-in">
                     <b> {{ $barang->judul }} </b>
                 </h1>
-                <h4 class="col-4" style="font-size: 17px" data-aos="fade-in" data-aos-delay="320">
+                <h4 class="col-4" style="font-size: 17px" data-aos="fade-in">
                     Stock : {{ $barang->stock }}
                 </h4>
             </div>
-            <h6 class="mt-1" style="font-size: 17px; color:#000000" data-aos="fade-in" data-aos-delay="330">
+            <h6 class="mt-1" style="font-size: 17px; color:#000000" data-aos="fade-in">
                 Harga : Rp.{{ number_format($barang->harga) }}
             </h6>
 
 
-            <div class="mt-4 mb-3 d-block d-sm-none " data-aos="fade-in" data-aos-delay="340">
+            <div class="mt-4 mb-3 d-block d-sm-none " data-aos="fade-in">
                 <h3 style="color: #000000; font-weight: 600; font-size: 17px;  ;">
                     Deskripsi
                     <hr>
@@ -38,7 +38,7 @@
                 <hr>
             </div>
 
-            <div class="control" data-aos="fade-in" data-aos-delay="350">
+            <div class="control" data-aos="fade-in">
                 <form action="{{ url('/pesanan', $barang->id) }}" method="POST">
                     @csrf
                     <b class="">Jumlah</b>

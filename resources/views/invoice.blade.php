@@ -94,8 +94,9 @@
     {{-- ak code --}}
 
 
-    @if ($datatransaksi->count() == 0)
-        <div class="keranjang d-block d-sm-none d-none d-sm-block d-md-none" data-aos="fade-in">
+
+    {{-- @if ($datatransaksi->count() == 0)
+        <div class="keranjang d-block d-sm-none" data-aos="fade-in">
             <div class="text-center">
                 <p>Belum ada daftar pesanan</p>
             </div>
@@ -106,12 +107,28 @@
                 }
             </style>
         </div>
+    @endif --}}
+
+    @if ($datatransaksi->count() == 0)
+        <div class="pes d-block d-sm-none border-0 card" data-aos="fade-in">
+            <div class="card-body text-center">
+                <p style="font-size: 17px">Belum ada data Transaksi</p>
+                <a href="/produk" class="btn text-white mt-0" style="font-size: 11px;background-color: #6C5ECF;">Silahkan
+                    Belanja</a>
+            </div>
+            <style>
+                .pes {
+                    margin-top: 55%;
+                    padding: 70px;
+                }
+            </style>
+        </div>
     @endif
     {{-- akhir Mobile --}}
 
 
 
-    <div class="container d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top:150px">
+    <div class="container d-none d-sm-block d-lg-nonex" data-aos="fade-in" style="margin-top:150px;">
         @foreach ($datatransaksi as $item)
             <div class="card p-5 mt-5">
                 <div class="row">
@@ -196,4 +213,17 @@
             </div>
         @endforeach
     </div>
+    @if ($datatransaksi->count() == 0)
+        <div class="ker  d-none d-sm-block container border-0 card" data-aos="fade-in">
+            <div class=" p-5 card-body text-center">
+                <h5>Belum ada data Transaksi</h5>
+                <a href="/produk" class="btn btn-danger mt-2" style="font-size: 12px">Silahkan Belanja</a>
+            </div>
+            <style>
+                .ker {
+                    padding: 40px
+                }
+            </style>
+        </div>
+    @endif
 @endsection

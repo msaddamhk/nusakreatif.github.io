@@ -152,7 +152,7 @@
                         <button id="toggle-navbar" onclick="toggleNavbar()">
                             <img src="./assets/img/global/burger.svg" class="mb-2" alt="" />
                         </button>
-                        <h2 class="nav-title">Overview</h2>
+                        {{-- <h2 class="nav-title">Overview</h2> --}}
                     </div>
                     {{-- <button class="btn-notif d-block d-md-none">
                         <img src="./assets/img/global/bell.svg" alt="" />
@@ -163,6 +163,7 @@
                 @yield('body')
             </div>
         </div>
+
 
 
     </div>

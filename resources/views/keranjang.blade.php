@@ -47,7 +47,7 @@
 
             </div>
         @else
-            <div class="keranjang">
+            {{-- <div class="keranjang">
                 <div class="row bg-dange justify-content-center align-content-center ">
                     <p>Keranjang Anda masi Kosong</p>
                 </div>
@@ -55,6 +55,20 @@
                 <style>
                     .keranjang {
                         margin-top: 86%;
+                    }
+                </style>
+            </div> --}}
+            <div class="pes border-0 card" data-aos="fade-in">
+                <div class="card-body text-center">
+                    <p style="font-size: 17px">Keranjang Anda masi Kosong</p>
+                    <a href="/produk" class="btn text-white mt-0"
+                        style="font-size: 11px;background-color: #6C5ECF;">Silahkan
+                        Belanja</a>
+                </div>
+                <style>
+                    .pes {
+                        margin-top: 70%;
+                        padding: 30px;
                     }
                 </style>
             </div>
@@ -144,7 +158,7 @@
         <hr>
         @if ($keranjang->count() != 0)
             <a href="{{ route('pesan') }}" class="btn  my-2 my-sm-0 text-white" id="ongkir"
-                style="background-color: #6C5ECF;" type="submit">Beli Sekarang
+                style="background-color: #6C5ECF;" type="submit">Lanjutkan
             </a>
         @endif
     </div>
