@@ -67,7 +67,7 @@
                 </div>
                 <style>
                     .pes {
-                        margin-top: 60%;
+                        margin-top: 57%;
                         padding: 30px;
                     }
                 </style>
