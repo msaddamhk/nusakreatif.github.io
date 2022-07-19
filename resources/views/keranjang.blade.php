@@ -59,16 +59,16 @@
                 </style>
             </div> --}}
             <div class="pes border-0 card" data-aos="fade-in">
-                <div class="card-body text-center">
-                    <p style="font-size: 17px">Keranjang Anda masi Kosong</p>
+                <div class="text-center">
+                    <p style="font-size: 17px">Belum ada data Keranjang</p>
                     <a href="/produk" class="btn text-white mt-0"
                         style="font-size: 11px;background-color: #6C5ECF;">Silahkan
                         Belanja</a>
                 </div>
                 <style>
                     .pes {
-                        margin-top: 57%;
-                        padding: 30px;
+                        margin-top: 50%;
+                        padding: 50px;
                     }
                 </style>
             </div>
