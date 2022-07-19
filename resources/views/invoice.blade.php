@@ -118,8 +118,8 @@
             </div>
             <style>
                 .pes {
-                    margin-top: 55%;
-                    padding: 70px;
+                    margin-top: 50%;
+                    padding: 50px;
                 }
             </style>
         </div>
