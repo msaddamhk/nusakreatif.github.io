@@ -291,17 +291,17 @@
                 <!-- start row -->
                 @php $kategoriaos = 0 @endphp
                 @foreach ($kategoris as $item)
-                    @if ($item->barangs->count() != 3)
-                        <div data-aos="fade-in" data-aos-delay="{{ $kategoriaos += 200 }}" class="col-4 "
-                            data-aos-delay="100">
-                            <a href="{{ route('kategori.tampil', $item->slug) }}">
-                                <div class="product mb-3"
-                                    style="background-image: url('{{ asset('storage/produk/kategori/' . $item->gambar) }}');">
-                                    <div class="product-content ">{{ $item->nama }}</div>
-                                </div>
-                            </a>
-                        </div>
-                    @endif
+                    {{-- @if ($item->barangs->count() != 3) --}}
+                    <div data-aos="fade-in" data-aos-delay="{{ $kategoriaos += 200 }}" class="col-4 "
+                        data-aos-delay="100">
+                        <a href="{{ route('kategori.tampil', $item->slug) }}">
+                            <div class="product mb-3"
+                                style="background-image: url('{{ asset('storage/produk/kategori/' . $item->gambar) }}');">
+                                <div class="product-content ">{{ $item->nama }}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {{-- @endif --}}
                 @endforeach
                 <!-- end row -->
             </div>
