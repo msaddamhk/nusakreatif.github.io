@@ -78,11 +78,11 @@
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
                         @csrf
                         @method('DELETE') --}}
-                    <a class="btn text-white ml-auto" style="background-color: #008f2b; font-size:12px"
+                    {{-- <a class="btn text-white ml-auto" style="background-color: #008f2b; font-size:12px"
                         href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : NUSAKREATIF-{{ $item->id }}%0ANama : {{ $item->nama_penerima }} ">
                         <i class="fa-brands fa-whatsapp mr-1"></i>Hubungi
                         Admin
-                    </a>
+                    </a> --}}
                     {{-- <button class="btn btn-danger " type="submit">Hapus</button> --}}
                     </form>
                 </div>
