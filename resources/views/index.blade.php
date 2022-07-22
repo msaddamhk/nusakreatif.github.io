@@ -305,7 +305,7 @@
                 @endforeach
                 <!-- end row -->
             </div>
-            @if ($kategoris->count() == 4)
+            @if ($kategoris->count() == 6)
                 <a href="/detailkategori" data-aos="fade-in" class="btn text-white mt-2 melayang"
                     style="background-color: #6C5ECF; font-size: 12px"> Lihat
                     Selengkapnya <i class="fas fa-fw fa-arrow-right"></i></a>
