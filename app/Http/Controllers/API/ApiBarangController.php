@@ -83,6 +83,8 @@ class ApiBarangController extends Controller
         if ($categories)
             $product->where('categories_id', $categories);
 
+        return $product->get();
+
         return ApiFormatter::success(
             $product->paginate($limit),
             'Data list produk berhasil diambil'
