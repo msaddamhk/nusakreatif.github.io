@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang as barang;
 use App\Models\Kategori as kategori;
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File as FacadesFile;
 
 class AdminController extends Controller
 {
@@ -105,7 +107,17 @@ class AdminController extends Controller
     public function update(Request $request, barang $barangs)
     {
 
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'harga' => 'required',
+            'berat' => 'required',
+            'stock' => 'required',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:4048',
+            'deskripsi' => 'required',
+        ]);
+
         if ($request->hasFile('gambar')) {
+            FacadesFile::delete('public/produk', $barangs->name);
             $resorce = $request->file('gambar');
             $name = time() . $resorce->getClientOriginalName();
             $resorce->storeAs('public/produk', $name);
@@ -117,7 +129,7 @@ class AdminController extends Controller
             'berat' => $request->berat,
             'stock' => $request->stock,
             'tanggal' => $request->tanggal,
-            'gambar' => $name,
+            'gambar' => $name ?? $barangs->gambar,
             'deskripsi' => $request->deskripsi,
         ]);
 

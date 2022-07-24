@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiBarangController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\API\ApikategoriController;
+use App\Http\Controllers\API\ApikeranjangController;
 use App\Http\Controllers\API\UserController;
 
 /*
@@ -27,6 +28,11 @@ Route::get('user1', [UserController::class, 'fetch']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('logout', [UserController::class, 'logout']);
 Route::post('register', [UserController::class, 'register']);
+Route::get('Apikeranjang', [ApikeranjangController::class, 'all']);
+Route::post('Tambahkeranjang', [ApikeranjangController::class, 'keranjang']);
+Route::delete('Hapuskeranjang', [ApikeranjangController::class, 'destroy']);
+
+
 
 Route::get('Apikategori', [ApikategoriController::class, 'all']);
 Route::get('Apibarang', [ApiBarangController::class, 'all']);
