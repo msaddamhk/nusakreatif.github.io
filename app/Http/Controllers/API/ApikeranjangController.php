@@ -17,7 +17,12 @@ class ApikeranjangController extends Controller
     {
         // return $request->all();
         $keranjang = Keranjang::where('id_user', $request->id_user)->get();
+
         if ($keranjang) {
+            $keranjang = collect($keranjang)->map(function ($item) {
+                $item->barang = $item->barang;
+                return $item;
+            });
             return ApiFormatter::success('Sukses', $keranjang);
         } else {
             return ApiFormatter::error(400, 'Gagal');
