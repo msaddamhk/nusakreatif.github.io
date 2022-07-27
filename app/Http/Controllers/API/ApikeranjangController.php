@@ -23,9 +23,11 @@ class ApikeranjangController extends Controller
                 $item->barang = $item->barang;
                 return $item;
             });
-            return ApiFormatter::success('Sukses', $keranjang);
+
+            dd($keranjang);
+            return ApiFormatter::createApi(200, 'Sukses', $keranjang);
         } else {
-            return ApiFormatter::error(400, 'Gagal');
+            return ApiFormatter::createApi(400, 'Gagal');
         }
     }
 
@@ -40,11 +42,11 @@ class ApikeranjangController extends Controller
             'id_barang' => $request->id_barang,
             'jumblah' => $request->jumblah
         ]);
-        return ApiFormatter::success($keranjang, 'berhasil ditambah');
+        return ApiFormatter::createApi($keranjang, 'berhasil ditambah');
     }
     public function destroy(Keranjang $keranjang)
     {
         $keranjang->delete();
-        return ApiFormatter::success('berhasil dihapus');
+        return ApiFormatter::createApi('berhasil dihapus');
     }
 }
