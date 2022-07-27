@@ -24,7 +24,7 @@ class ApikeranjangController extends Controller
                 return $item;
             });
 
-            dd($keranjang);
+            // dd($keranjang);
             return ApiFormatter::createApi(200, 'Sukses', $keranjang);
         } else {
             return ApiFormatter::createApi(400, 'Gagal');
