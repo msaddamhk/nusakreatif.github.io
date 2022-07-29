@@ -44,10 +44,20 @@ class ApikeranjangController extends Controller
         ]);
         return ApiFormatter::createApi($keranjang, 'berhasil ditambah');
     }
-    public function destroy($id)
+    // public function destroy()
+    // {
+    //     $keranjang = Keranjang::findOrFail(request('id'));
+    //     $keranjang->delete();
+    //     return ApiFormatter::createApi('berhasil dihapus');
+    // }
+    public function destroy(Request $request)
     {
-        $keranjang = Keranjang::findOrFail($id);
-        $keranjang->delete();
+
+
+        return $request;
+        Keranjang::where('id', $request->id)->delete();
+        // $keranjang = Keranjang::findOrFail($id);
+        // $keranjang->delete();
         return ApiFormatter::createApi('berhasil dihapus');
     }
 }
