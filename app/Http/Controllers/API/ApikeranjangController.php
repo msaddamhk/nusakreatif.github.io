@@ -54,7 +54,7 @@ class ApikeranjangController extends Controller
     {
 
 
-        return $request;
+        // return $request;
         Keranjang::where('id', $request->id)->delete();
         // $keranjang = Keranjang::findOrFail($id);
         // $keranjang->delete();
