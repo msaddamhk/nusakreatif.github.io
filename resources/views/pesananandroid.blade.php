@@ -20,8 +20,8 @@
                     @php $totalharga = 0 @endphp
                     @foreach ($keranjang as $keranjangs)
                         <tr>
-                            <th scope="" class="text">{{ $keranjangs->barang->judul }}</th>
-                            <td class="text">
+                            <td scope="" class="text1">{{ $keranjangs->barang->judul }}</td>
+                            <td class="text1">
                                 Rp. {{ number_format($keranjangs->getTotalHarga()) }} x {{ $keranjangs->jumblah }}</td>
                             {{-- <td class=" ">{{ $keranjangs->jumblah }}</td> --}}
                         </tr>
@@ -40,6 +40,10 @@
     <style>
         .text {
             font-size: 15px;
+        }
+
+        .text {
+            font-size: 12px;
         }
     </style>
     {{-- akhir mobile --}}
