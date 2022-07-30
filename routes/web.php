@@ -11,7 +11,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RajaongkirController;
 use App\Http\Controllers\KelolaTransaksiController;
-
+use App\Http\Controllers\pesananaplikasicontroller;
 
 Route::get('/', [Postcontroller::class, 'index'])->name('home');
 Route::get('/detail/{id}', [PesanController::class, 'index']);
@@ -51,7 +51,6 @@ Route::post('/pesanan1', [PesananController::class, 'pesanan'])->name('pesan1');
 // bru
 // Route::get('/suksestransaksi', [PesananController::class, 'sukses']);
 
-
 // pesanan detail
 Route::get('/pesanandetail', [PesananController::class, 'pesanandetail'])->middleware('auth');
 
@@ -72,3 +71,8 @@ Route::get('/user', function () {
     ]);
 })->middleware('auth');
 Route::get('/detaildatabarang/{id}', [AdminController::class, 'show'])->name('showbarang');
+
+
+
+Route::get('/pesananandroid', [pesananaplikasicontroller::class, 'index'])->name('pesananandroid');
+Route::post('/pesananandroid', [pesananaplikasicontroller::class, 'pesanan'])->name('pesananandroid1');

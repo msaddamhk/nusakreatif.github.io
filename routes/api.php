@@ -32,6 +32,7 @@ Route::get('Apikeranjang', [ApikeranjangController::class, 'all']);
 Route::post('Tambahkeranjang', [ApikeranjangController::class, 'keranjang']);
 Route::delete('Hapuskeranjang', [ApikeranjangController::class, 'destroy']);
 
+// Route::delete('Hapuskeranjang', [ApikategoriController::class, 'destroy']);
 Route::get('Apikategori', [ApikategoriController::class, 'all']);
 Route::get('Apibarang', [ApiBarangController::class, 'all']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
