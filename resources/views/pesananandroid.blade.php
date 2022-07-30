@@ -42,7 +42,7 @@
             font-size: 15px;
         }
 
-        .text {
+        .text1 {
             font-size: 12px;
         }
     </style>
