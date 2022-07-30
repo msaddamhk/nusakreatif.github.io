@@ -39,7 +39,7 @@
 
     <style>
         .text {
-            font-size: 15px;
+            font-size: 13px;
         }
 
         .text1 {
@@ -99,26 +99,26 @@
             <input type="hidden" class="form-control" name="harga" id="harga" value="{{ $totalharga }}">
 
             <div class="form-group">
-                <label for="alamat">Nama</label>
+                <label for="alamat" class="text">Nama</label>
                 <input type="text" value="{{ $user->name }}" class="mb-2 form-control" name="nama" id="nama"
                     aria-describedby="emailHelp" required placeholder="Silahkan Masukkan Nama">
                 {{-- <small style="font-size: 13px" for="alamat">Silahkan ubah Nama jika Nama penerima berbeda</small> --}}
             </div>
             <div class="form-group">
-                <label for="alamat">Detail Alamat</label>
+                <label for="alamat" class="text">Detail Alamat</label>
                 <input type="text" value="{{ $user->alamat }}" class="form-control" name="alamat" id="alamat"
                     aria-describedby="emailHelp" required placeholder="Silahkan Masukkan Alamat">
             </div>
 
             <div class="form-group">
-                <label for="notelepon">No Telepon</label>
+                <label for="notelepon" class="text">No Telepon</label>
                 <input type="number" class="form-control" name="notelepon" id="notelepon" aria-describedby="emailHelp"
                     required placeholder="Silahkan Masukkan No HP">
             </div>
 
             <div class="row">
                 <div class="form-group col-6 col-md-6 col-lg-6">
-                    <label for="provinsi">Provinsi</label>
+                    <label for="provinsi" class="text">Provinsi</label>
                     <select class="mb-2 form-control select" id="provinsi" name="provinsi" required>
                         <option value="" holder>Pilih Provinsi</option>
                         @foreach ($provinsi as $item)
@@ -132,7 +132,7 @@
                 </div>
 
                 <div class="form-group col-6 col-md-6 col-lg-6">
-                    <label for="destination">Kabupaten/Kota</label>
+                    <label for="destination" class="text">Kabupaten/Kota</label>
                     <select class="mb-2 form-control select" id="destination" name="destination" required>
                         <option value="" holder>Pilih Kota/Kabupaten</option>
                     </select>
@@ -142,7 +142,7 @@
             </div>
 
             <div class="form-group">
-                <label for="">Kurir</label>
+                <label for="" class="text">Kurir</label>
                 <select class="mb-2 form-control select" id="courier" name="courier" required>
                     <option value="" holder>Silahkan Pilih Kurir</option>
                     <option value="jne" holder>JNE</option>
@@ -152,7 +152,7 @@
             </div>
 
             <div class="form-group">
-                <label for="opsi_pengiriman">Opsi Pengiriman</label>
+                <label for="opsi_pengiriman" class="text">Opsi Pengiriman</label>
                 <select class="mb-2 form-control select" id="opsi_pengiriman" name="opsi_pengiriman" required>
                 </select>
                 {{-- <p style="font-size: 13px" class="text-black">Total Biaya Pengiriman akan ditambah secara otomatis
@@ -225,8 +225,8 @@
                 })
             </script>
 
-            <button class="btn  my-2 my-sm-0 text-white" id="pay-button" style="background-color: #6C5ECF; font-size:14px"
-                type="submit">Bayar
+            <button class="btn  my-2 my-sm-0 text-white" id="pay-button"
+                style="background-color: #6C5ECF; font-size:14px" type="submit">Bayar
                 Sekarang</button>
             {{-- <script type="text/javascript">
                 For example trigger on button clicked, or any time you need
