@@ -2,7 +2,7 @@
 
 @section('body')
     {{-- mobile --}}
-    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: 95px;margin-bottom: -50px">
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: 70px;margin-bottom: -50px">
         {{-- <h3 style="color: #242231; font-weight: 700; font-size: 20px ;">
             Detail Pesanan
         </h3>
@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="" class="border-0 text">Nama Barang</th>
                         <th scope="" class="border-0 text">Harga</th>
-                        <th scope="" class=" border-0 text">Jumlah</th>
+                        {{-- <th scope="" class=" border-0 text">Jumlah</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -22,8 +22,8 @@
                         <tr>
                             <th scope="" class="text">{{ $keranjangs->barang->judul }}</th>
                             <td class="text">
-                                Rp. {{ number_format($keranjangs->getTotalHarga()) }}</td>
-                            <td class=" ">{{ $keranjangs->jumblah }}</td>
+                                Rp. {{ number_format($keranjangs->getTotalHarga()) }} x {{ $keranjangs->jumblah }}</td>
+                            {{-- <td class=" ">{{ $keranjangs->jumblah }}</td> --}}
                         </tr>
                         @php $totalharga +=  $keranjangs->getTotalHarga()  @endphp
                     @endforeach

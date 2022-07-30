@@ -37,20 +37,18 @@
 </head>
 
 
-<body style="font-family: 'Poppins', sans-serif; ">
+<body style="font-family: 'Poppins', sans-serif;" style="background-color: #F3F3F3">
 
     <div class="d-block d-sm-none d-none d-sm-block d-md-none p-2 fixed-top" style="background-color: #1F1D2B">
         <div class="container text-white">
             <a href="javascript:window.history.go(-1);" class="text-white" style="text-decoration: none">
-                <div class="mt-3" style="font-size: 18px">
-                    <div class="row p-2">
-                        <div class="col-4">
-                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                        </div>
+                <div class="mt-2" style="font-size: 18px">
+                    <h5 class="">Pesanan</h5>
+                    {{-- <div class="row p-2">
                         <div class="col-8">
                             <h5 class="">Pesanan</h5>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </a>
         </div>
