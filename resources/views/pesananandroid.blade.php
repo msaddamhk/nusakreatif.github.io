@@ -1,5 +1,4 @@
 @extends('layout.maindetailandroid')
-
 @section('body')
     {{-- mobile --}}
     <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: 70px;margin-bottom: -50px">
@@ -37,6 +36,21 @@
         </div>
     </div>
 
+
+    @if (request('token'))
+        <script type="text/javascript">
+            // var payButton = document.getElementById('bayar-button');
+            // payButton.addEventListener('click', function() {
+            // });
+            // window.addEventListener('load', function() {
+            //     window.snap.pay("{{ request('token') }}");
+            // });
+            setTimeout(() => {
+                window.snap.pay("{{ request('token') }}");
+            }, 1000);
+        </script>
+    @endif
+
     <style>
         .text {
             font-size: 13px;
@@ -50,7 +64,7 @@
 
 
 
-    <div class="container  p-4 d-none d-md-block d-lg-nonex" data-aos="fade-in" style="margin-top: 120px">
+    <div class="container  p-4 d-none d-md-block d-lg-nonex" style="margin-top: 120px">
         <h3 style="color: #242231; font-weight: 700; font-size: 20px;  ;">
             Detail Pesanan
         </h3>
@@ -225,8 +239,8 @@
                 })
             </script>
 
-            <button class="btn  my-2 my-sm-0 text-white" id="pay-button"
-                style="background-color: #6C5ECF; font-size:14px" type="submit">Bayar
+            <button class="btn  my-2 my-sm-0 text-white" id="pay-button" style="background-color: #6C5ECF; font-size:14px"
+                type="submit">Bayar
                 Sekarang</button>
             {{-- <script type="text/javascript">
                 For example trigger on button clicked, or any time you need

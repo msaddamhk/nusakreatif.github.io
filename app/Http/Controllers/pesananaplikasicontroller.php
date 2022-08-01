@@ -17,6 +17,8 @@ use Illuminate\Http\Request;
 
 class pesananaplikasicontroller extends Controller
 {
+
+
     public function index()
     {
         $user_id = request()->has('user_id') ? request('user_id') : Auth::id();
@@ -28,10 +30,8 @@ class pesananaplikasicontroller extends Controller
         }, 0);
         return view('pesananandroid', compact('provinsi', 'keranjang', 'berat', 'user'));
     }
-
     public function pesanan(Request $request)
     {
-
         $user_id = request()->has('user_id') ? request('user_id') : Auth::id();
         $user = User::findOrFail($user_id);
         $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
@@ -83,7 +83,7 @@ class pesananaplikasicontroller extends Controller
             ]
         );
 
-        keranjang::where('id_user', $user_id)->delete();
+        // keranjang::where('id_user', $user_id)->delete();
 
         // Konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
@@ -107,12 +107,17 @@ class pesananaplikasicontroller extends Controller
             'vtweb' => array()
         );
 
+
+
         try {
             // Ambil halaman payment
-            $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
-
+            // $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
+            // return redirect($paymentUrl);
             // Redirect ke halaman midtrans
-            return redirect($paymentUrl);
+            $snapToken = \Midtrans\Snap::getSnapToken($midtrans);
+            // return view('tampilbayar', compact('snapToken'));\
+            return redirect()->route('pesananandroid', ['token' => $snapToken]);
+            dd($snapToken);
         } catch (Exception $e) {
             echo $e->getMessage();
         }

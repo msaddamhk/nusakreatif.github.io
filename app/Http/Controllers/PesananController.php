@@ -77,7 +77,7 @@ class PesananController extends Controller
             ]
         );
 
-        keranjang::where('id_user', auth()->user()->id)->delete();
+        // keranjang::where('id_user', auth()->user()->id)->delete();
 
         // Konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
