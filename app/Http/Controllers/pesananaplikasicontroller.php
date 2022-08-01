@@ -116,8 +116,8 @@ class pesananaplikasicontroller extends Controller
             // Redirect ke halaman midtrans
             $snapToken = \Midtrans\Snap::getSnapToken($midtrans);
             // return view('tampilbayar', compact('snapToken'));\
-            return redirect()->route('pesananandroid', ['token' => $snapToken]);
-            dd($snapToken);
+            return redirect()->route('pesananandroid', ['user_id' => $user_id, 'token' => $snapToken]);
+            // dd($snapToken);
         } catch (Exception $e) {
             echo $e->getMessage();
         }
