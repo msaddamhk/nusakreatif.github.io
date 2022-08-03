@@ -4,7 +4,28 @@
     <!-- navbar -->
 
     <div class="mb-5">
-        <h5 style="font-size: 24px; color: #242231; font-weight: 700;">Kelola Data Transaksi</h5>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5 style="font-size: 24px; color: #242231; font-weight: 700;">Kelola Data Transaksi</h5>
+            </div>
+
+            <form action="{{ route('kelolapesanan') }}" method="GET" class="col-md-6">
+                <div class="row">
+                    <div class="col-md-9">
+                        <input type="search" value="{{ request('cari') }}" name="cari" id="cari"
+                            class="form-control" placeholder="Silahkan cari data pesanan">
+                        {{-- <input class="form-control-borderless col input-lg p-2"
+                            placeholder="Silahkan cari Produk yang ingin Anda beli" name="search" type="search"
+                            value="{{ request('search') }}" /> --}}
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary">Cari Data</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
         <hr>
         <div class="row">
             <form>
@@ -48,8 +69,8 @@
                                         Aksi
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('showpesanan', $item->id) }}">Detail</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('showpesanan', $item->id) }}">Detail</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="#">Konfirmasi</a></li>
                                         <li><a class="dropdown-item" href="{{ route('updatepesanan', $item->id) }}">Update
                                                 Status Pembayaran</a>

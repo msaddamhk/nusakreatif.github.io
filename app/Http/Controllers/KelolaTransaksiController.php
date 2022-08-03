@@ -9,11 +9,26 @@ class KelolaTransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Pesanan::all();
-        return view('admin.keloladatatransaksi',  [
-            "title" => "Pesanan"
-        ], compact('transaksi'));
+        // $transaksi = Pesanan::all();
+        // return view('admin.keloladatatransaksi',  [
+        //     "title" => "Pesanan"
+        // ], compact('transaksi'));
+
+        $transaksi = Pesanan::latest()
+            ->where('kodepesanan', 'like', '%' . (request('cari') ?? '') . '%')
+            ->get();
+        $title = "Pesanan";
+        return view('admin.keloladatatransaksi', compact('transaksi', 'title'));
     }
+    // public function tampilproduk()
+    // {
+    //     $barangs = barang::latest()
+    //         ->where('judul', 'like', '%' . (request('search') ?? '') . '%')
+    //         ->get();
+
+    //     $title = "Produk";
+    //     return view('produk', compact('barangs', 'title'));
+    // }
     public function edit(Pesanan $transaksi)
     {
         // return $transaksi;

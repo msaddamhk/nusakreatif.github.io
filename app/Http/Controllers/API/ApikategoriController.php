@@ -13,8 +13,8 @@ class ApikategoriController extends Controller
     public function all(Request $request)
     {
         $id = $request->input('id');
-        $limit = $request->input('limit', 6);
-        $name = $request->input('name');
+        // $limit = $request->input('limit', 6);
+        $name = $request->input('nama');
         $show_product = $request->input('show_product');
 
         if ($id) {
@@ -36,13 +36,13 @@ class ApikategoriController extends Controller
         $category = kategori::query();
 
         if ($name)
-            $category->where('name', 'like', '%' . $name . '%');
+            $category->where('nama', 'like', '%' . $name . '%');
 
         if ($show_product)
             $category->with('barangs');
 
         return ApiFormatter::success(
-            $category->paginate($limit),
+            $category->get(),
             'Data list kategori produk berhasil diambil'
         );
     }

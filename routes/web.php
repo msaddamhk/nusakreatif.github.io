@@ -55,7 +55,7 @@ Route::post('/pesanan1', [PesananController::class, 'pesanan'])->name('pesan1');
 Route::get('/pesanandetail', [PesananController::class, 'pesanandetail'])->middleware('auth');
 
 // kelola pesanan
-Route::get('/kelolapesanan', [KelolaTransaksiController::class, 'index']);
+Route::get('/kelolapesanan', [KelolaTransaksiController::class, 'index'])->name('kelolapesanan');
 Route::get('/updatepesanan/{transaksi}', [KelolaTransaksiController::class, 'edit'])->name('updatepesanan');
 Route::patch('updatetransaksi/{transaksi}', [KelolaTransaksiController::class, 'update'])->name('updatetransaksi');
 Route::get('/showpesanan/{id}', [KelolaTransaksiController::class, 'show'])->name('showpesanan');
