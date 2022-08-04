@@ -8,6 +8,7 @@ use App\Http\Controllers\API\ApiBarangController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\API\ApikategoriController;
 use App\Http\Controllers\API\ApikeranjangController;
+use App\Http\Controllers\API\ApipesananController;
 use App\Http\Controllers\API\UserController;
 
 /*
@@ -33,6 +34,7 @@ Route::post('Tambahkeranjang', [ApikeranjangController::class, 'keranjang']);
 Route::delete('Hapuskeranjang', [ApikeranjangController::class, 'destroy']);
 
 // Route::delete('Hapuskeranjang', [ApikategoriController::class, 'destroy']);
+Route::get('Apipesanan', [ApipesananController::class, 'all']);
 Route::get('Apikategori', [ApikategoriController::class, 'all']);
 Route::get('Apibarang', [ApiBarangController::class, 'all']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
