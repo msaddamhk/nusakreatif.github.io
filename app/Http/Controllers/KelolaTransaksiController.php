@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\Pesanan;
+use App\Models\PesananItems;
 use Illuminate\Http\Request;
 
 class KelolaTransaksiController extends Controller
@@ -43,8 +45,23 @@ class KelolaTransaksiController extends Controller
     public function update(request $request, Pesanan $transaksi)
     {
         $transaksi->update([
-            'transaction_status' => $request->transaksi,
+            'resi' => $request->resi,
         ]);
         return redirect('/kelolapesanan');
+    }
+
+    public function konfirmasi($kode_pesanan)
+    {
+        $pesanan = Pesanan::where('kodepesanan', $kode_pesanan, 'barang')->with('items')->first();
+        $pesanan->update([
+            "konfirmasi" => 'SUDAH DI KONFIRMASI',
+        ]);
+        collect($pesanan->items)->each(function ($item) {
+            $barang = Barang::find($item->barang_id);
+            $barang->update([
+                'stock' => $barang->stock - $item->jumlah
+            ]);
+        });
+        return redirect()->back();
     }
 }

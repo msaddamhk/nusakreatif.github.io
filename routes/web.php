@@ -60,6 +60,11 @@ Route::get('/updatepesanan/{transaksi}', [KelolaTransaksiController::class, 'edi
 Route::patch('updatetransaksi/{transaksi}', [KelolaTransaksiController::class, 'update'])->name('updatetransaksi');
 Route::get('/showpesanan/{id}', [KelolaTransaksiController::class, 'show'])->name('showpesanan');
 
+
+// update stock
+Route::put('updatetstok/{kode_pesanan}', [KelolaTransaksiController::class, 'konfirmasi'])->name('updatestok');
+
+
 // 
 Route::get('/suksestransaksi', function () {
     return view('suksestransaksi');

@@ -11,7 +11,7 @@ class Pesanan extends Model
 
     protected $table = "pesanans";
 
-    protected $fillable = ['user_id', 'nama_penerima', 'notlp', 'alamat', 'provinsi', 'kota', 'berat', 'kurir', 'total_ongkir', 'etd', 'total_harga', 'kodepesanan', 'transaction_status', 'opsipengiriman'];
+    protected $fillable = ['user_id', 'nama_penerima', 'notlp', 'alamat', 'provinsi', 'kota', 'berat', 'kurir', 'total_ongkir', 'etd', 'total_harga', 'kodepesanan', 'transaction_status', 'resi', 'konfirmasi', 'opsipengiriman'];
 
     public function items()
     {

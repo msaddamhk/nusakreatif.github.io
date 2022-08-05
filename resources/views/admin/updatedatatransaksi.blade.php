@@ -15,13 +15,16 @@
                 <div class="form-group ">
                     {{-- <label for="nama">Nama barang</label> --}}
 
-                    <select class="mb-2 form-control" name="transaksi" id="transaksi" required>
+                    {{-- <select class="mb-2 form-control" name="transaksi" id="transaksi" required>
                         <option value="{{ $transaksi->transaction_status }}">{{ $transaksi->transaction_status }}
                         </option>
                         <option value="">-------------------------------------------------</option>
                         <option value="PENDING">PENDING</option>
                         <option>PEMBAYARAN BERHASIL | BARANG SEDANG DIKEMAS</option>
-                    </select>
+                    </select> --}}
+
+                    <input type="text" name="resi" class="form-control" id="nama" placeholder="Masukkan Resi"
+                        value="" required>
                 </div>
                 <div class="pt-1 mb-4">
                     <button class="btn " style="background-color: #6C5ECF; color: rgb(255, 255, 255);"

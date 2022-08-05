@@ -28,6 +28,7 @@ class PesananController extends Controller
 
     public function pesanan(Request $request)
     {
+        // $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
         $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
         $keranjang = keranjang::where('id_user', auth()->user()->id)->get();
         $results =  $request->opsi_pengiriman;
@@ -46,7 +47,10 @@ class PesananController extends Controller
             "total_ongkir" => $pecah[2],
             "total_harga" => $request->harga,
             "transaction_status" =>  'PENDING',
-            "kodepesanan" => 1,
+            "kodepesanan" => $code,
+            "resi" => 'PENDING',
+            "konfirmasi" => 'BELUM DI KONFIRMASI',
+
         ]);
 
         $databarang = [];
@@ -77,7 +81,7 @@ class PesananController extends Controller
             ]
         );
 
-        // keranjang::where('id_user', auth()->user()->id)->delete();
+        keranjang::where('id_user', auth()->user()->id)->delete();
 
         // Konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
@@ -88,7 +92,7 @@ class PesananController extends Controller
         // Buat array untuk dikirim ke midtrans
         $midtrans = array(
             'transaction_details' => array(
-                'order_id' =>  'NUSAKREATIF-' . $pesanan->id,
+                'order_id' =>  'TR.CODE-' . $pesanan->id,
                 'gross_amount' => (int) $request->harga + $pecah[2],
             ),
             'customer_details' => array(
@@ -103,10 +107,12 @@ class PesananController extends Controller
 
         try {
             // Ambil halaman payment
-            $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
-
+            // $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
             // Redirect ke halaman midtrans
-            return redirect($paymentUrl);
+            // return redirect($paymentUrl);
+            $snapToken = \Midtrans\Snap::getSnapToken($midtrans);
+            // return view('tampilbayar', compact('snapToken'));\
+            return redirect()->route('pesan', ['id_user', auth()->user()->id, 'token' => $snapToken]);
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -169,6 +175,13 @@ class PesananController extends Controller
         $title = "Pesanan";
         return view('invoice', compact('datatransaksi', 'title'));
     }
+    // public function update()
+    // {
+    //     $transaction = Pesanan::where('kodepesanan', $order_id)->first();
+    //     $transaction->update([
+    //         'transaction_status' => $status_baru
+    //     ]);
+    // }
 }
 
 
@@ -197,7 +210,4 @@ class PesananController extends Controller
 //      $status_baru = 'CANCELLED';
 //  }
 
-//  $transaction = Pesanan::where('kodepesanan', $order_id)->first();
-//  $transaction->update([
-//      'transaction_status' => $status_baru
-//  ]);
+// 

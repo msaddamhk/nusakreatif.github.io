@@ -52,7 +52,9 @@ class pesananaplikasicontroller extends Controller
             "total_ongkir" => $pecah[2],
             "total_harga" => $request->harga,
             "transaction_status" =>  'PENDING',
-            "kodepesanan" => 1,
+            "kodepesanan" => $code,
+            "resi" => 'PENDING',
+            "konfirmasi" => 'BELUM DI KONFIRMASI',
         ]);
 
         $databarang = [];
@@ -83,7 +85,7 @@ class pesananaplikasicontroller extends Controller
             ]
         );
 
-        // keranjang::where('id_user', $user_id)->delete();
+        keranjang::where('id_user', $user_id)->delete();
 
         // Konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
@@ -94,7 +96,7 @@ class pesananaplikasicontroller extends Controller
         // Buat array untuk dikirim ke midtrans
         $midtrans = array(
             'transaction_details' => array(
-                'order_id' =>  'NUSAKREATIF-' . $pesanan->id,
+                'order_id' =>  'TR.CODE-' . $pesanan->id,
                 'gross_amount' => (int) $request->harga + $pecah[2],
             ),
             'customer_details' => array(

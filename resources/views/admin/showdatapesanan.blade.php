@@ -43,6 +43,8 @@
                 <div class="col-md-3">
                     <h6 style="color: #275062; font-weight:800">Alamat</h6>
                     <p> {{ $pesanan->alamat }} </p>
+                    <h6 style="color: #275062; font-weight:800">Resi</h6>
+                    <p> {{ $pesanan->resi }} </p>
                 </div>
                 <div class="col-md-4">
                     <h6 style="color: #275062; font-weight:800">Pengiriman</h6>

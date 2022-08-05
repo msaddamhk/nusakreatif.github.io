@@ -14,7 +14,7 @@
                         <p class="responpesanan">No Telepon : {{ $item->notlp }}</p>
                     </div>
                     <div class="col-md-4 font-weight-bold">
-                        <p>Kode Pesanan : NUSAKREATIF-{{ $item->id }}</p>
+                        <p>Kode Pesanan :{{ $item->kodepesanan }}</p>
                     </div>
                 </div>
 
@@ -53,6 +53,8 @@
                     <div class="col-md-3">
                         <h6 style="color: #242231; font-weight:800">Alamat</h6>
                         <p> {{ $item->alamat }} </p>
+                        <h6 style="color: #242231; font-weight:800">Resi</h6>
+                        <p>{{ $item->resi }}</p>
                     </div>
                     <div class="col-md-4">
                         <h6 style="color: #242231; font-weight:800">Pengiriman</h6>
@@ -78,11 +80,11 @@
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
                         @csrf
                         @method('DELETE') --}}
-                    {{-- <a class="btn text-white ml-auto" style="background-color: #008f2b; font-size:12px"
-                        href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : NUSAKREATIF-{{ $item->id }}%0ANama : {{ $item->nama_penerima }} ">
+                    <a class="btn text-white ml-auto" style="background-color: #008f2b; font-size:12px"
+                        href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : {{ $item->kodepesanan }}%0ANama : {{ $item->nama_penerima }} ">
                         <i class="fa-brands fa-whatsapp mr-1"></i>Hubungi
                         Admin
-                    </a> --}}
+                    </a>
                     {{-- <button class="btn btn-danger " type="submit">Hapus</button> --}}
                     </form>
                 </div>
@@ -137,7 +139,9 @@
                         <p class="responpesanan">No Telepon : {{ $item->notlp }}</p>
                     </div>
                     <div class="col-md-4 font-weight-bold">
-                        <p>Kode Pesanan : NUSAKREATIF-{{ $item->id }}</p>
+                        {{-- <p>Kode Pesanan : NUSAKREATIF-{{ $item->id }}</p> --}}
+                        <p>Kode Pesanan :{{ $item->kodepesanan }}</p>
+
                     </div>
                 </div>
 
@@ -176,6 +180,8 @@
                     <div class="col-md-3">
                         <h6 style="color: #242231; font-weight:800">Alamat</h6>
                         <p> {{ $item->alamat }} </p>
+                        <h6 style="color: #242231; font-weight:800">Resi</h6>
+                        <p>{{ $item->resi }}</p>
                     </div>
                     <div class="col-md-4">
                         <h6 style="color: #242231; font-weight:800">Pengiriman</h6>
@@ -202,11 +208,11 @@
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
                         @csrf
                         @method('DELETE') --}}
-                    {{-- <a class="btn text-white ml-auto" style="background-color: #008f2b;"
-                        href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : NUSAKREATIF-{{ $item->id }}%0ANama : {{ $item->nama_penerima }} ">
+                    <a class="btn text-white ml-auto" style="background-color: #008f2b;"
+                        href=" https://api.whatsapp.com/send?phone=6285760557702&text= Hai Admin  Saya Ingin Menanyakan Informasi barang saya dengan data : %0AKode Pesanan : {{ $item->kodepesanan }}%0ANama : {{ $item->nama_penerima }} ">
                         <i class="fa-brands fa-whatsapp mr-1"></i>Hubungi
                         Admin
-                    </a> --}}
+                    </a>
                     {{-- <button class="btn btn-danger " type="submit">Hapus</button> --}}
                     </form>
                 </div>

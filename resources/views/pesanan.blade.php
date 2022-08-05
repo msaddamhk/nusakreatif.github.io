@@ -1,4 +1,6 @@
-@extends('layout.maindetail')
+{{-- @extends('layout.maindetail') --}}
+@extends('layout.maindetailandroid')
+
 
 @section('body')
     {{-- mobile --}}
@@ -36,8 +38,24 @@
             <p style="font-size: 13px" class="text-black">catatan : Total Harga Belum Termasuk Biaya Jasa Pengiriman
             </p>
         </div>
+
+        @if (request('token'))
+            <script type="text/javascript">
+                // var payButton = document.getElementById('bayar-button');
+                // payButton.addEventListener('click', function() {
+                // });
+                // window.addEventListener('load', function() {
+                //     window.snap.pay("{{ request('token') }}");
+                // });
+                setTimeout(() => {
+                    window.snap.pay("{{ request('token') }}");
+                }, 1000);
+            </script>
+        @endif
     </div>
     {{-- akhir mobile --}}
+
+
 
 
 
@@ -169,6 +187,7 @@
 
 
 
+
             <script>
                 // new AutoNumeric('#opsi_pengiriman', {
                 //     decimalPlaces: '0',
@@ -216,6 +235,7 @@
                     });
                 })
             </script>
+
 
             <button class="btn  my-2 my-sm-0 text-white" id="pay-button" style="background-color: #6C5ECF;"
                 type="submit">Bayar
