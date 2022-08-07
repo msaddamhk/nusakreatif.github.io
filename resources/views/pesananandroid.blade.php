@@ -1,7 +1,7 @@
 @extends('layout.maindetailandroid')
 @section('body')
     {{-- mobile --}}
-    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: 20px;margin-bottom: -50px">
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: 17px;margin-bottom: -50px">
         {{-- <h3 style="color: #242231; font-weight: 700; font-size: 20px ;">
             Detail Pesanan
         </h3>
