@@ -1,29 +1,32 @@
 @extends('layout.maininvoicemobile')
 
 @section('body')
-    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top:-23px ; margin-bottom:70px">
+    <div class="container p-4 d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top:-25px ; margin-bottom:40px">
         @foreach ($datatransaksi as $item)
             <div class="card p-4 mt-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <p class="responpesanan">Nama Penerima : {{ $item->nama_penerima }}</p>
-                        <p class="responpesanan">No Telepon : {{ $item->notlp }}</p>
+                        <p class="responpesanan mb-1">Nama Penerima : {{ $item->nama_penerima }}</p>
+                        <p class="responpesanan mb-1">No Telepon : {{ $item->notlp }}</p>
                     </div>
-                    <div class="col-md-4 font-weight-bold">
-                        <p>Kode Pesanan : {{ $item->kodepesanan }}</p>
+                    {{-- <div class="col-md-4 font-weight-bold ">
+                        <p class="responpesanan">Kode Pesanan : {{ $item->kodepesanan }}</p>
+                    </div> --}}
+                    <div class="col-md-4">
+                        <p class="responpesanan">Kode Pesanan : {{ $item->kodepesanan }}</p>
                     </div>
                 </div>
 
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="" class="border-0">
+                            <th scope="" class="border-0 responpesanan">
                                 <div class="text-uppercase">No</div>
                             </th>
-                            <th scope="" class="border-0">
+                            <th scope="" class="border-0 responpesanan">
                                 <div class="text-uppercase">Nama Barang</div>
                             </th>
-                            <th scope=" " class="border-0">
+                            <th scope=" " class="border-0 responpesanan">
                                 <div class="text-uppercase">jumlah</div>
                             </th>
                         </tr>
@@ -34,9 +37,9 @@
                         @endphp
                         @foreach ($item->items as $barang)
                             <tr>
-                                <th scope="row">{{ $i }}</th>
-                                <td scope="row">{{ $barang->barang->judul }}</td>
-                                <td>{{ $barang->jumlah }}</td>
+                                <th scope="row" class="responpesanan">{{ $i }}</th>
+                                <td scope="row" class="responpesanan">{{ $barang->barang->judul }}</td>
+                                <td class="responpesanan">{{ $barang->jumlah }}</td>
                             </tr>
                             @php
                                 $i++;
@@ -46,32 +49,35 @@
                 </table>
                 <hr>
                 <div class="row">
-                    <div class="col-md-3">
-                        <h6 style="color: #242231; font-weight:800">Alamat</h6>
-                        <p> {{ $item->alamat }} </p>
-                        <h6 style="color: #242231; font-weight:800">Resi</h6>
+                    <div class="col-md-3 responpesanan">
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Alamat</h6>
+                        <p class="responpesanan"> {{ $item->alamat }} </p>
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Resi</h6>
                         <p>{{ $item->resi }}</p>
                     </div>
-                    <div class="col-md-4">
-                        <h6 style="color: #242231; font-weight:800">Pengiriman</h6>
-                        <h6 style="">Kurir : {{ $item->kurir }}</h6>
-                        <h6 style="">Opsi Pengiriman : {{ $item->opsipengiriman }}</h6>
-                        <h6 style="">Estimasi Pengiriman : {{ $item->etd }} Hari</h6>
+                    <div class="col-md-4 ">
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Pengiriman</h6>
+                        <h6 class="responpesanan" style="">Kurir : {{ $item->kurir }}</h6>
+                        <h6 class="responpesanan" style="">Opsi Pengiriman : {{ $item->opsipengiriman }}</h6>
+                        <h6 class="responpesanan" style="">Estimasi Pengiriman : {{ $item->etd }} Hari</h6>
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                     <div class="col-md-5">
-                        <h6>Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b></h6>
-                        <h6 style="">Total Ongkir :
+                        <h6 class="responpesanan">Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b>
+                        </h6>
+                        <h6 class="responpesanan" style="">Total Ongkir :
                             Rp.{{ number_format($item->total_ongkir) }} </h6>
-                        <h6 style=""> Harga Barang :
+                        <h6 class="responpesanan" style=""> Harga Barang :
                             Rp.{{ number_format($item->total_harga) }}</h6>
-                        <h6 style="color: #242231; font-weight:800">Total Harga Rp.
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Total Harga Rp.
                             {{ number_format($item->total_ongkir + $item->total_harga) }}</h6>
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                 </div>
 
-                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ $user->email }}</p>
+                {{-- <p class="mt-2 responpesanan">Silahkan Cek Detail Pembayaran di Email anda : {{ $user->email }}
+                </p> --}}
+                <p class="mt-2 responpesanan">Silahkan Cek Detail Pembayaran di Email anda
 
                 <div class="row p-3">
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
@@ -89,6 +95,12 @@
 
             </div>
         @endforeach
+
+        <style>
+            .responpesanan {
+                font-size: 13px;
+            }
+        </style>
 
     </div>
 
