@@ -78,6 +78,7 @@ Route::get('/user', function () {
 Route::get('/detaildatabarang/{id}', [AdminController::class, 'show'])->name('showbarang');
 
 
-
 Route::get('/pesananandroid', [pesananaplikasicontroller::class, 'index'])->name('pesananandroid');
 Route::post('/pesananandroid', [pesananaplikasicontroller::class, 'pesanan'])->name('pesananandroid1');
+
+Route::get('/pesanandetailandroid', [pesananaplikasicontroller::class, 'pesanandetail']);

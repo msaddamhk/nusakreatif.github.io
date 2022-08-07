@@ -19,6 +19,14 @@ class pesananaplikasicontroller extends Controller
 {
 
 
+    public function pesanandetail()
+    {
+        $user_id = request()->has('user_id') ? request('user_id') : Auth::id();
+        $user = User::findOrFail($user_id);
+        $datatransaksi = Pesanan::where('user_id', $user_id)->latest()->get();
+        $title = "Invoice";
+        return view('invoicemobile', compact('datatransaksi', 'title', 'user'));
+    }
     public function index()
     {
         $user_id = request()->has('user_id') ? request('user_id') : Auth::id();
