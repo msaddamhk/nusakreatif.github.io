@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}</p>
+                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ $user->email }}</p>
 
                 <div class="row p-3">
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
