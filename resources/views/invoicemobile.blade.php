@@ -6,7 +6,7 @@
             <div class="card p-4 mt-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <p class="responpesanan mb-1">Nama Penerima : {{ $item->nama_penerima }}</p>
+                        <p class="responpesanan mb-1 mt-2">Nama Penerima : {{ $item->nama_penerima }}</p>
                         <p class="responpesanan mb-1">No Telepon : {{ $item->notlp }}</p>
                     </div>
                     {{-- <div class="col-md-4 font-weight-bold ">
@@ -52,8 +52,6 @@
                     <div class="col-md-3 responpesanan">
                         <h6 class="responpesanan" style="color: #242231; font-weight:800">Alamat</h6>
                         <p class="responpesanan"> {{ $item->alamat }} </p>
-                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Resi</h6>
-                        <p>{{ $item->resi }}</p>
                     </div>
                     <div class="col-md-4 ">
                         <h6 class="responpesanan" style="color: #242231; font-weight:800">Pengiriman</h6>
@@ -61,8 +59,18 @@
                         <h6 class="responpesanan" style="">Opsi Pengiriman : {{ $item->opsipengiriman }}</h6>
                         <h6 class="responpesanan" style="">Estimasi Pengiriman : {{ $item->etd }} Hari</h6>
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Resi</h6>
+                        <p class="responpesanan">{{ $item->resi }}</p>
                     </div>
                     <div class="col-md-5">
+
+                        <h6 class="responpesanan" style="color: #242231; font-weight:800">Status Pesanan</h6>
+                        @if ($item->transaction_status == 'PENDING')
+                            <p class="responpesanan btn btn-danger p-1">PENDING</p>
+                        @else
+                            <p class="responpesanan btn btn-success p-1">{{ $item->statuspesanan }}</p>
+                        @endif
+
                         <h6 class="responpesanan">Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b>
                         </h6>
                         <h6 class="responpesanan" style="">Total Ongkir :

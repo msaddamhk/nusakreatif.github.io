@@ -64,17 +64,12 @@
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                     <div class="col-md-5">
-
-
-                        <h6 class="" style="color: #242231; font-weight:800">Status Paket</h6>
-
+                        <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
                             <p class="btn btn-danger p-1">PENDING</p>
                         @else
-                            <p class="btn btn-success p-1">{{ $item->statuspaket }}</p>
+                            <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif
-
-
                         <h6>Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b></h6>
                         <h6 style="">Total Ongkir :
                             Rp.{{ number_format($item->total_ongkir) }} | Harga Barang :
@@ -151,7 +146,7 @@
                     </div>
                     <div class="col-md-4 font-weight-bold">
                         {{-- <p>Kode Pesanan : NUSAKREATIF-{{ $item->id }}</p> --}}
-                        <p>Kode Pesanan :{{ $item->kodepesanan }}</p>
+                        <p>Kode Pesanan :{{ $item->kodpesanan }}</p>
 
                     </div>
                 </div>
@@ -191,10 +186,6 @@
                     <div class="col-md-3">
                         <h6 style="color: #242231; font-weight:800">Alamat</h6>
                         <p> {{ $item->alamat }} </p>
-
-
-
-
                         <h6 style="color: #242231; font-weight:800">Resi</h6>
                         <p>{{ $item->resi }}</p>
                     </div>
@@ -206,10 +197,12 @@
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                     <div class="col-md-5">
+
+                        <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
                             <p class="btn btn-danger p-1">PENDING</p>
                         @else
-                            <p class="btn btn-success p-1">{{ $item->statuspaket }}</p>
+                            <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif
 
 

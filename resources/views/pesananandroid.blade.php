@@ -47,7 +47,7 @@
             // });
             setTimeout(() => {
                 window.snap.pay("{{ request('token') }}");
-            }, 1000);
+            }, 2000);
         </script>
     @endif
 

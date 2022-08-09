@@ -1,5 +1,5 @@
-{{-- @extends('layout.maindetail') --}}
-@extends('layout.maindetailandroid')
+@extends('layout.maindetail')
+{{-- @extends('layout.maindetailandroid') --}}
 
 
 @section('body')
@@ -39,21 +39,24 @@
             </p>
         </div>
 
-        @if (request('token'))
-            <script type="text/javascript">
-                // var payButton = document.getElementById('bayar-button');
-                // payButton.addEventListener('click', function() {
-                // });
-                // window.addEventListener('load', function() {
-                //     window.snap.pay("{{ request('token') }}");
-                // });
-                setTimeout(() => {
-                    window.snap.pay("{{ request('token') }}");
-                }, 1000);
-            </script>
-        @endif
+
     </div>
     {{-- akhir mobile --}}
+
+    @if (request('token'))
+        <script type="text/javascript">
+            // var payButton = document.getElementById('bayar-button');
+            // payButton.addEventListener('click', function() {
+            // });
+            // window.addEventListener('load', function() {
+            //     window.snap.pay("{{ request('token') }}");
+            // });
+            setTimeout(() => {
+                window.snap.pay("{{ request('token') }}");
+            }, 2000);
+        </script>
+    @endif
+
 
 
 
