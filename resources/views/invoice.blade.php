@@ -10,10 +10,10 @@
             <div class="card p-4 mt-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <p class="responpesanan">Nama Penerima : {{ $item->nama_penerima }}</p>
-                        <p class="responpesanan">No Telepon : {{ $item->notlp }}</p>
+                        <p class="responpesanan m-0 mb-1 mt-2">Nama Penerima : {{ $item->nama_penerima }}</p>
+                        <p class="responpesanan m-0 mb-1">No Telepon : {{ $item->notlp }}</p>
                     </div>
-                    <div class="col-md-4 font-weight-bold">
+                    <div class="col-md-4 font-weight-bold m-0">
                         <p>Kode Pesanan :{{ $item->kodepesanan }}</p>
                     </div>
                 </div>
@@ -53,8 +53,6 @@
                     <div class="col-md-3">
                         <h6 style="color: #242231; font-weight:800">Alamat</h6>
                         <p> {{ $item->alamat }} </p>
-                        <h6 style="color: #242231; font-weight:800">Resi</h6>
-                        <p>{{ $item->resi }}</p>
                     </div>
                     <div class="col-md-4">
                         <h6 style="color: #242231; font-weight:800">Pengiriman</h6>
@@ -64,23 +62,32 @@
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                     <div class="col-md-5">
+                        <h6 style="color: #242231; font-weight:800">Resi</h6>
+                        <p>{{ $item->resi }}</p>
                         <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
-                            <p class="btn btn-danger p-1">PENDING</p>
+                            <p class="btn btn-danger p-1" style="font-size: 14px">PENDING</p>
                         @else
                             <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif
                         <h6>Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b></h6>
                         <h6 style="">Total Ongkir :
-                            Rp.{{ number_format($item->total_ongkir) }} | Harga Barang :
+                            Rp.{{ number_format($item->total_ongkir) }}</h6>
+
+                        <h6 style="">Harga Barang :
                             Rp.{{ number_format($item->total_harga) }}</h6>
+
+
+
                         <h6 style="color: #242231; font-weight:800">Total Harga Rp.
                             {{ number_format($item->total_ongkir + $item->total_harga) }}</h6>
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                 </div>
 
-                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}</p>
+                {{-- <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}</p> --}}
+                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda
+                </p>
 
                 <div class="row p-3">
                     {{-- <form action="{{ route('hapuspesanan', $pesanans) }}" method="POST" class="">
@@ -146,7 +153,7 @@
                     </div>
                     <div class="col-md-4 font-weight-bold">
                         {{-- <p>Kode Pesanan : NUSAKREATIF-{{ $item->id }}</p> --}}
-                        <p>Kode Pesanan :{{ $item->kodpesanan }}</p>
+                        <p>Kode Pesanan : {{ $item->kodepesanan }}</p>
 
                     </div>
                 </div>
@@ -197,18 +204,16 @@
                         <hr class="d-block d-sm-none d-none d-sm-block d-md-none">
                     </div>
                     <div class="col-md-5">
-
                         <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
-                            <p class="btn btn-danger p-1">PENDING</p>
+                            <p class="btn btn-danger p-1" style="font-size: 14px">PENDING</p>
                         @else
                             <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif
-
-
                         <h6>Status Pembayaran : <b>{{ $barang->pesanan->transaction_status }}</b></h6>
                         <h6 style="">Total Ongkir :
-                            Rp.{{ number_format($item->total_ongkir) }} | Harga Barang :
+                            Rp.{{ number_format($item->total_ongkir) }}</h6>
+                        <h6 style="">Harga Barang :
                             Rp.{{ number_format($item->total_harga) }}</h6>
                         <h6 style="color: #242231; font-weight:800">Total Harga Rp.
                             {{ number_format($item->total_ongkir + $item->total_harga) }}</h6>
@@ -216,7 +221,10 @@
                     </div>
                 </div>
 
-                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}
+                {{-- <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda : {{ auth('')->user()->email }}
+                </p> --}}
+
+                <p class="mt-2">Silahkan Cek Detail Pembayaran di Email anda
                 </p>
 
                 <div class="row p-3">
