@@ -63,6 +63,8 @@ class pesananaplikasicontroller extends Controller
             "kodepesanan" => $code,
             "resi" => 'PENDING',
             "konfirmasi" => 'BELUM DI KONFIRMASI',
+            "statuspesanan" => 'SEDANG DIKEMAS',
+
         ]);
 
         $databarang = [];

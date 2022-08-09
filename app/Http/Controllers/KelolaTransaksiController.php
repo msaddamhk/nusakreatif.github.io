@@ -46,6 +46,7 @@ class KelolaTransaksiController extends Controller
     {
         $transaksi->update([
             'resi' => $request->resi,
+            "statuspesanan" => 'DIKIRIM',
         ]);
         return redirect('/kelolapesanan');
     }

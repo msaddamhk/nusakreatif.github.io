@@ -28,7 +28,6 @@ class PesananController extends Controller
 
     public function pesanan(Request $request)
     {
-        // $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
         $code = 'NUSAKREATIF-' . mt_rand(0000, 9999);
         $keranjang = keranjang::where('id_user', auth()->user()->id)->get();
         $results =  $request->opsi_pengiriman;
@@ -50,7 +49,7 @@ class PesananController extends Controller
             "kodepesanan" => $code,
             "resi" => 'PENDING',
             "konfirmasi" => 'BELUM DI KONFIRMASI',
-
+            "statuspesanan" => 'SEDANG DIKEMAS',
         ]);
 
         $databarang = [];
