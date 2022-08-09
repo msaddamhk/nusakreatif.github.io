@@ -66,7 +66,7 @@
                         <p>{{ $item->resi }}</p>
                         <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
-                            <p class="btn btn-danger p-1" style="font-size: 14px">PENDING</p>
+                            <p class="btn btn-danger p-1" style="font-size: 13px">MENUNGGU PEMBAYARAN</p>
                         @else
                             <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif
@@ -206,7 +206,7 @@
                     <div class="col-md-5">
                         <h6 class="" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
-                            <p class="btn btn-danger p-1" style="font-size: 14px">PENDING</p>
+                            <p class="btn btn-danger p-1" style="font-size: 13px">MENUNGGU PEMBAYARAN</p>
                         @else
                             <p class="btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif

@@ -66,7 +66,7 @@
 
                         <h6 class="responpesanan" style="color: #242231; font-weight:800">Status Pesanan</h6>
                         @if ($item->transaction_status == 'PENDING')
-                            <p class="responpesanan btn btn-danger p-1">PENDING</p>
+                            <p class="responpesanan btn btn-danger p-1">MENUNGGU PEMBAYARAN</p>
                         @else
                             <p class="responpesanan btn btn-success p-1">{{ $item->statuspesanan }}</p>
                         @endif

@@ -10,11 +10,10 @@
                             <i class="fa fa-check" aria-hidden="true"></i>
                         </h2> --}}
                         <h1>
-                            Transaksi Diproses!
+                            Transaksi Berhasil!
                         </h1>
                         <p style="font-size: 20px">
-                            Silahkan tunggu konfirmasi email dari kami dan kami akan
-                            menginformasikan resi secepat mungkin!
+                            Pesanan Anda Sedang Diproses
                         </p>
                         <div>
                             <a href="/pesanandetail" class="btn btn-success w-50">
