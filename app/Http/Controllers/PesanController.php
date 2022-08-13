@@ -13,7 +13,7 @@ class PesanController extends Controller
     public function index($id)
     {
         $barang = barang::where('id', $id)->get()->first();
-        $barangs = barang::latest()->limit(20)->get();
+        $barangs = barang::latest()->limit(4)->get();
         return view('detail', compact('barang', 'barangs'));
     }
     public function keranjang(Request $request, $id)

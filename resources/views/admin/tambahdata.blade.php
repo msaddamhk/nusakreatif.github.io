@@ -46,10 +46,17 @@
                         placeholder="Masukkan stok barang" required>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="exampleFormControlTextarea1">Deskripsi</label>
                     <input id="x" type="hidden" name="deskripsi">
                     <trix-editor input="x" placeholder="Masukkan deskripsi barang" required></trix-editor>
+                </div> --}}
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Deskripsi</label>
+                    <textarea name="deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Masukkan deskripsi barang"></textarea>
                 </div>
 
                 {{-- <div class="form-group">

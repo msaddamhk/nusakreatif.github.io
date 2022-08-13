@@ -19,8 +19,20 @@ kategori::create([
 ])
 content::paginate(2)php
 
-
-
+% proses  api keranjang
+$cek = keranjang::where('id_barang', $request->id_barang)->first();
+if (empty($cek)) {
+    $keranjang = new keranjang;
+    $keranjang->id_user =  $request->id_user;
+    $keranjang->id_barang = $request->id_barang;
+    $keranjang->jumblah = $request->jumblah;
+    $keranjang->save();
+} else {
+    $keranjang = keranjang::where('id_barang', $request->id_barang)->first();
+    $keranjang->jumblah = $keranjang->jumblah + $request->jumlah;
+    $keranjang->update();
+}
+% 
 
 
 
